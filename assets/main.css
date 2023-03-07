@@ -1,0 +1,32 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: var(--smooth);
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --light-pink: #f7cac9;
+    --light-blue: #387bf8;
+    --white: #fff;
+    --light-gray: #abb1cf;
+    --smooth: all .3s ease-in;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.navbar_icon {
+    font-size: 24px;
+    color: var(--light-blue);
+}
