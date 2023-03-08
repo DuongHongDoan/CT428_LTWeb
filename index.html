@@ -26,35 +26,42 @@
         <!-- logo, search, cart, account -->
         <div class="container">
             <div class="row">
-                <nav class="navbar navbar-expand-sm navbar-dark">
-                    <div class="col-4">
+                <nav class="navbar navbar-expand-sm navbar-dark navbar-center">
+                    <div class="col-5">
                         <div class="container-fluid">
                             <a class="navbar-brand" href="#">
-                              <img src="./img/logo.png" alt="Avatar Logo" style="width: 150px; object-fit: cover;" class="rounded-pill"> 
+                              <img src="./img/logo.png" alt="Avatar Logo" class="rounded-pill"> 
                             </a>
                           </div>
                     </div>
                     <div class="col">
+                        <div class="input-group-collap">
+                            <div class="collap mb-3">
+                                <input type="text" class="input-collap" placeholder="Search">
+                                    <i class="fas fa-search" ></i>
+                                </button>
+                            </div>
+                        </div>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Search">
-                            <button class="btn btn-primary" type="submit">
+                            <button class="btn-search" type="submit">
                                 <i class="header__search-btn-icon fas fa-search" ></i>
                             </button>
                         </div>
                     </div>
-                    <div class="col-3 ms-5">
+                    <div class="col-3 icons">
                         <a href="#">
                             <i class="icon-cart fa-solid fa-cart-plus"></i>
                         </a>
                         <a href="#">
-                            <i class="icon-user fa-regular fa-user ps-4"></i>
+                            <i class="icon-user fa-regular fa-user ps-2"></i>
                         </a>
                     </div>
                 </nav>
             </div>
         </div>
         <!-- Thanh dieu huong (navbar) -->
-        <div class="container-fluid navbar-init">
+        <div style="background-color: #ffb7ca;" class="container-fluid navbar-init">
             <nav class="navbar navbar-expand-sm navbar-light">
                 <div class="container">
                     <ul class="navbar-nav navbar-links">
