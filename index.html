@@ -18,9 +18,10 @@
 <body>
     <!-- overlay -->
     <section id="overlay"></section>
+    <section id="overlay-search"></section>
     <!-- Phan dau -->
     <header>
-        <marquee class="scroll text" bgcolor="#387bf8" behavior="" direction="">
+        <marquee class="scroll text" bgcolor="#66CC99" style="color: #387bf8;" behavior="" direction="">
             Cửa hàng Kpop
         </marquee>
         <!-- logo, search, cart, account -->
@@ -36,15 +37,17 @@
                     </div>
                     <div class="col">
                         <div class="input-group-collap">
+                            <i onclick="off()" class="close-btn fa-solid fa-xmark"></i>
                             <div class="collap mb-3">
                                 <input type="text" class="input-collap" placeholder="Search">
+                                <button>
                                     <i class="fas fa-search" ></i>
                                 </button>
                             </div>
                         </div>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Search">
-                            <button class="btn-search" type="submit">
+                            <button class="btn-search search-btn" type="submit">
                                 <i class="header__search-btn-icon fas fa-search" ></i>
                             </button>
                         </div>
@@ -61,7 +64,7 @@
             </div>
         </div>
         <!-- Thanh dieu huong (navbar) -->
-        <div style="background-color: #ffb7ca;" class="container-fluid navbar-init">
+        <div style="background-color: #66CC99;" class="container-fluid navbar-init">
             <nav class="navbar navbar-expand-sm navbar-light">
                 <div class="container">
                     <ul class="navbar-nav navbar-links">

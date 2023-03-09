@@ -23,10 +23,24 @@ html {
 #overlay.show {
     display: initial;
 }
+
+#overlay-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .4);
+    z-index: 4;
+    display: none;
+}
+#overlay-search.show-search {
+    display: initial;
+}
 /* ket thuc tao overlay */
 
 header {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
 }
 
@@ -35,10 +49,11 @@ body {
 }
 
 :root {
-    --light-pink: #ffb7ca;
+    --light-green: #66CC99;
     --light-blue: #387bf8;
     --white: #fff;
-    --light-gray: #abb1cf;
+    --orange: #FF9933;
+    --light-gray: #7a7b84;
     --smooth: all .3s ease-in;
 }
 
@@ -77,18 +92,27 @@ img {
     display: none;
 }
 
-.input-group button{
+.search-btn{
     background-color: transparent;
     color: #387bf8;
     border: none;
     height: 18px;
 }
 
-.input-group button:hover {
+.search-btn:hover {
     background-color: transparent;
-    color: var(--light-pink);
+    color: var(--orange);
     transition: var(--smooth);
     border: none;
+}
+
+.cancle-btn .search-btn {
+    position: fixed;
+    top: 16px;
+    right: 40%;
+    cursor: pointer;
+    transform: translateX(-50px);
+    background: transparent;
 }
 /* Ket thuc thanh search */
 
@@ -100,11 +124,17 @@ img {
     right: 0;
     width: 100%;
     height: 50%;
-    background-color: #f8e0df;
+    background-color: var(--light-green);
     z-index: 8;
     transition: var(--smooth);
-    /* transform: translateY(-100%);
-    opacity: 0; */
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.input-group-collap.search-open {
+    transform: translateY(0);
+    opacity: 1;
+    transition: var(--smooth);
 }
 
 .collap {
@@ -115,12 +145,49 @@ img {
 }
 
 .collap input {
-   border-radius: 3px;
-   border-color: #abb1cf;
+   border-top-left-radius: 3px;
+   border-bottom-left-radius: 3px;
+   border-color: var(--light-green);
+   border: 1rem;
+   height: 35px;
+   padding: 0 8px;
+}
+
+.collap button {
+    display: inline-block;
+    /* font-weight: 400; */
+    /* line-height: 1.5; */
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding: 0 16px;
+    margin: -8px;
+    font-size: 1rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: var(--light-blue);
+    border: 1rem;
+    height: 40px;
+}
+.collap button i {
+    color: var(--white);
+}
+
+.close-btn {
+    color: var(--light-gray);
+    font-size: 25px;
+    display: flex;
+    justify-content: end;
+    padding: 4px 12px;
+    cursor: pointer;
 }
 /* ket thuc xu ly */
 .icons a:hover {
-    color: var(--light-pink);
+    color: var(--orange);
     transition: var(--smooth);
 }
 
@@ -129,12 +196,12 @@ img {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: var(--white);
-    font-weight: 300;
+    color: var(--light-blue);
+    font-weight: 400;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: var(--light-blue);
+    color: var(--orange);
     transition: var(--smooth);
 }
 
@@ -145,7 +212,7 @@ img {
     left: 0;
     width: 60%;
     height: 100%;
-    background-color: var(--light-pink);
+    background-color: var(--light-green);
     z-index: 5;
     transition: var(--smooth);
     transform: translateX(-100%);
@@ -225,7 +292,7 @@ img {
 
 @media (min-width: 62em) {
     .navbar-init {
-        background-color: var(--light-pink);
+        background-color: var(--light-green);
     }
     .navbar-links {
         position:initial;
@@ -253,7 +320,7 @@ img {
         align-items: left;
     }
     .input-group button:hover {
-        background-color: var(--light-blue);
+        background-color: var(--orange);
         color: var(--white);
     }
     .icons {
