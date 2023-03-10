@@ -291,12 +291,7 @@ img {
 }
 
 /* Slide chuyen dong */
-.carousel-inner {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* width: 50%; */
-    /* margin: 0 120px; */
-}
+
 
 @media (min-width: 62em) {
     .navbar-init {
