@@ -18,7 +18,6 @@
 <body>
     <!-- overlay -->
     <section id="overlay"></section>
-    <section id="overlay-search"></section>
     <!-- Phan dau -->
     <header>
         <marquee class="scroll text" bgcolor="#66CC99" style="color: #387bf8;" behavior="" direction="">
@@ -36,15 +35,18 @@
                           </div>
                     </div>
                     <div class="col">
-                        <div class="input-group-collap">
-                            <i onclick="off()" class="close-btn fa-solid fa-xmark"></i>
-                            <div class="collap mb-3">
-                                <input type="text" class="input-collap" placeholder="Search">
-                                <button>
-                                    <i class="fas fa-search" ></i>
-                                </button>
-                            </div>
-                        </div>
+                        <section id="overlay-search">
+                            <div class="input-group-collap">
+                                <i class="close-btn fa-solid fa-xmark"></i>
+                                <div class="collap mb-3">
+                                    <input type="text" class="input-collap" placeholder="Search">
+                                    <button>
+                                        <i class="fas fa-search" ></i>
+                                    </button>
+                                </div>
+                            </div>   
+                        </section>
+                        
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Search">
                             <button class="btn-search search-btn" type="submit">
@@ -87,8 +89,32 @@
         </div>
     </header>
     <!-- Phan than -->
+    <!-- Phan slide chuyen dong -->
     <section>
-
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img width="100%" height="50%" src="./img/TWICE SLIDE.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img width="100%" height="50%" src="./img/RedVelvet_Slide.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img width="100%" height="50%" src="./img/NCTDREAM SLIDE.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img width="100%" height="50%" src="./img/SEVENTEEN_SLIDE.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </section>
     <!-- Phan chan -->
     <footer>

@@ -29,10 +29,3 @@ overlaySearch.addEventListener('click', () => {
     searchButton.classList.toggle("cancle-btn");
     overlaySearch.classList.toggle("show-search");
 });
-function on() {
-    document.getElementById("overlay-search").style.display = "block";
-  }
-  
-  function off() {
-    document.getElementById("overlay-search").style.display = "none";
-  }

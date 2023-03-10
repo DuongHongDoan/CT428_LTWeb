@@ -31,7 +31,7 @@ html {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, .4);
-    z-index: 4;
+    z-index: 10;
     display: none;
 }
 #overlay-search.show-search {
@@ -290,6 +290,14 @@ img {
     transform: rotate(-45deg) translate(35px, 35px);
 }
 
+/* Slide chuyen dong */
+.carousel-inner {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* width: 50%; */
+    /* margin: 0 120px; */
+}
+
 @media (min-width: 62em) {
     .navbar-init {
         background-color: var(--light-green);
@@ -326,5 +334,13 @@ img {
     .icons {
         padding-left: 16px;
         font-size: 22px;
+    }
+
+    .input-group-collap.search-open {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    #overlay-search.show-search {
+        display: none;
     }
 }
