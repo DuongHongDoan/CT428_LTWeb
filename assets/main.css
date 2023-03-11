@@ -291,7 +291,45 @@ img {
 }
 
 /* Slide chuyen dong */
+.overview {
+    margin-top: 16px;
+}
 
+.category {
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 3px;
+}
+
+.category-heading {
+    color: var(--light-blue);
+    border-radius: 3px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    height: auto;
+}
+
+.category-heading-icon {
+    font-size: 1.4rem;
+    margin: 4px 16px;
+}
+
+.category-list {
+    padding-left: 0;
+    list-style: none;
+    /* height: 487px; */
+}
+
+.category-item-link {
+    text-decoration: none;
+    color: var(--light-gray);
+    margin: 8px 16px;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.category-item-link:hover {
+    color: var(--orange);
+    transition: var(--smooth);
+}
 
 @media (min-width: 62em) {
     .navbar-init {
