@@ -585,3 +585,18 @@ img {
         font-size: 1rem;
     }
 }
+
+/* footer */
+
+.hoten a:hover{
+    background-color: rgb(5, 152, 103);
+    color:rgb(249, 249, 249) ;
+}
+
+.footertext{
+  color: white;
+}
+
+.icon i{
+  padding-left: 15px;
+}
