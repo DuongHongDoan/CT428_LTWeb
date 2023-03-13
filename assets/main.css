@@ -293,10 +293,10 @@ img {
 }
 
 /* Slide chuyen dong */
-.col-lg-3 {
+.col-lg-3, .col-lg-2 {
     display: none;
 }
-.col-lg-9 {
+.col-lg-9, .col-lg-10 {
     padding: 0;
 }
 
@@ -413,6 +413,52 @@ img {
     transition: var(--smooth);
 }
 
+/* ---------------- */
+/* Trang deco */
+
+/* title */
+.drop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
+}
+.title-deco, .product-filter{
+    border-bottom: none;
+    cursor: pointer;
+    color: var(--light-blue);
+}
+
+.drop-title:hover .drop-hover{
+    display: block;
+    margin-top: -10px;
+}
+
+.dropdown-item {
+    color: var(--light-blue);
+}
+
+.dropdown-item:hover {
+    color: var(--orange);
+}
+
+.dropdown-toggle::after {
+    color: var(--light-blue);
+    cursor: pointer;
+}
+/* List product */
+.card {
+    border: none;
+    align-items: center;
+}
+
+.card-img,.card-img-bottom,.card-img-top {
+    width: 60%;
+}
+
+.card-body {
+    padding: 1rem 5rem;
+}
 @media (min-width: 36em) {
 /* slide chuyen dong */
     .col-lg-9 {
@@ -501,10 +547,10 @@ img {
         display: none;
     }
 /* category and carousel */
-    .col-lg-3 {
+    .col-lg-3, .col-lg-2 {
         display: block;
     }
-    .col-lg-9 {
+    .col-lg-9, .col-lg-10 {
         padding: 0;
     }
     .overview {
