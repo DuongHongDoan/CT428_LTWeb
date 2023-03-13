@@ -50,10 +50,12 @@ body {
 
 :root {
     --light-green: #66CC99;
+    --gainsboro: #DCDCDC;;
     --light-blue: #387bf8;
     --white: #fff;
     --orange: #FF9933;
     --light-gray: #7a7b84;
+    --text-color: #1C1C1C;
     --smooth: all .3s ease-in;
 }
 
@@ -291,44 +293,166 @@ img {
 }
 
 /* Slide chuyen dong */
-.overview {
-    margin-top: 16px;
+.col-lg-3 {
+    display: none;
+}
+.col-lg-9 {
+    padding: 0;
 }
 
-.category {
+/* Phan loai hang va mat hang */
+.products {
+    background-color: var(--gainsboro);
+}
+.product-items {
+    margin: 4px 16px;
+    padding: 0 0 36px 0;
+}
+.title {
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    margin-bottom: 16px;
+}
+.title h2 {
+    color: var(--light-blue);
+    border-bottom: 2px solid var(--light-green);
+    display: inline-block;
+    margin-bottom: -1px;
+    margin-top: 12px;
+}
+
+.item {
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 3px;
 }
 
-.category-heading {
-    color: var(--light-blue);
-    border-radius: 3px;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    height: auto;
-}
-
-.category-heading-icon {
-    font-size: 1.4rem;
-    margin: 4px 16px;
-}
-
-.category-list {
-    padding-left: 0;
-    list-style: none;
-    /* height: 487px; */
-}
-
-.category-item-link {
+.item a {
     text-decoration: none;
-    color: var(--light-gray);
-    margin: 8px 16px;
-    display: block;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
-.category-item-link:hover {
+.product {
+    margin-left: 4px;
+}
+
+.product a {
+    margin-top: 5px;
+}
+
+.product-detail {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.product-detail:hover {
     color: var(--orange);
     transition: var(--smooth);
+}
+
+.product-price {
+    color: var(--orange);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.item p {
+    margin-bottom: 8px;
+}
+
+.item img {
+    border-radius: 8px;
+    padding: 4px 4px;
+    transition: transform linear 0.1s;
+}
+
+.item img:hover {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    transform: translateY(-1px);
+    transition: var(--smooth);
+}
+
+.product-icon {
+    margin-top: -4px;
+}
+
+.lookat-product {
+    font-size: 0.6rem;
+    color: var(--light-blue);
+}
+
+.lookat-product:hover {
+    color: var(--orange);
+    transition: var(--smooth);
+}
+
+.add-product {
+    font-size: 0.6rem;
+    color: var(--light-blue);
+}
+
+.add-product:hover {
+    color: var(--orange);
+    cursor: pointer;
+    transition: var(--smooth);
+}
+
+.product-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.product-link .xemthem{
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.product-link .xemthem:hover {
+    color: var(--orange);
+    transition: var(--smooth);
+}
+
+@media (min-width: 36em) {
+/* slide chuyen dong */
+    .col-lg-9 {
+        padding: 0 0 0 38px;
+    }
+/* product icons */
+    .lookat-product {
+        padding-left: 16px;
+    }
+    .product-link {
+        display: none;
+    }
+}
+
+@media (min-width: 48em) {
+/* product icons */
+    .product-detail {
+        font-size: 1.0rem;
+    }
+    .product-price {
+        font-size: 1.0rem;
+    }
+    .product-icon {
+        margin-top: 0;
+    }
+    .lookat-product {
+        padding-left: 32px;
+        font-size: 0.8rem;
+    }
+    .add-product {
+        /* margin-left: 14px; */
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 60em) {
+    .lookat-product {
+        padding-left: 28px;
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 62em) {
@@ -376,4 +500,103 @@ img {
     #overlay-search.show-search {
         display: none;
     }
+/* category and carousel */
+    .col-lg-3 {
+        display: block;
+    }
+    .col-lg-9 {
+        padding: 0;
+    }
+    .overview {
+        margin-top: 16px;
+        margin-left: 16px;
+    }
+    
+    .category {
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 3px;
+    }
+    
+    .category-heading {
+        color: var(--light-blue);
+        border-radius: 3px;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        height: auto;
+    }
+    
+    .category-heading-icon {
+        font-size: 1.4rem;
+        margin: 4px 16px;
+    }
+    
+    .category-list {
+        padding-left: 0;
+        list-style: none;
+        /* height: 487px; */
+    }
+    
+    .category-item-link {
+        text-decoration: none;
+        color: var(--light-gray);
+        margin: 8px 16px;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    
+    .category-item-link:hover {
+        color: var(--orange);
+        transition: var(--smooth);
+        border-bottom: 1px solid rgba(232, 16, 16, 0.2);
+    }
+    .carousel-inner {
+        border-radius: 5px;
+    }
+/* product icons */
+    .product-detail {
+        font-size: 1.2rem;
+        /* font-weight: 300; */
+    }
+    .product-price {
+        font-size: 1.2rem;
+    }
+    .product-icon {
+        margin-top: 4px;
+    }
+    .lookat-product {
+        padding-left: 54px;
+        font-size: 1rem;
+    }
+    .add-product {
+        /* margin-left: 14px; */
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 75em) {
+    .lookat-product {
+        padding-left: 76px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 88em) {
+    .lookat-product {
+        padding-left: 96px;
+        font-size: 1rem;
+    }
+}
+
+/* footer */
+
+.hoten a:hover{
+    background-color: rgb(5, 152, 103);
+    color:rgb(249, 249, 249) ;
+}
+
+.footertext{
+  color: white;
+}
+
+.icon i{
+  padding-left: 15px;
 }
