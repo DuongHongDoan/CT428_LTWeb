@@ -1,0 +1,126 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+:root {
+    --smooth: all .3s ease-in;
+    --blue-l: #a4cec0;
+    --yellow: rgb(231, 180, 14);
+}
+
+.navbar_avt {
+    display: block;
+    margin: 5px auto;
+    width: 180px;
+    height: 200px;
+    object-fit: cover; /*luôn hiển thị kích thước mà ta định sẵn*/
+}
+
+.img {
+    border-radius: 150px;
+}
+
+.navbar_name {
+    text-align: center;
+}
+
+.navbar_name h1 {
+    color: var(--yellow);
+    font-size: 26px;
+    font-weight:700;
+}
+
+.navbar_name h3 {
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.things {
+    position: relative;
+    overflow-x: hidden;
+    margin-top: 10em;
+}
+
+.thing_decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-60%);
+    z-index: -1;
+}
+
+.thing_decor:nth-child(2) {
+    top: initial;
+    left: initial;
+    bottom: 15%;
+    right: 0;
+    transform: translateX(60%);
+    z-index: -1;
+}
+
+.thing_item {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.thing_item img {
+    padding-bottom: 4em;
+    width: 30%;
+}
+
+.thing_item:nth-child(even) img{
+    order: 2;
+    width: 30%;
+    padding-bottom: 0;
+}
+
+.thing_item-text h4{
+    color: var(--yellow);
+    padding: 6px 0;
+}
+
+.thing_item-text span{
+    font-weight: 300;
+}
+
+.thing_item-text li{
+    list-style: none;
+}
+
+.icon {
+    font-size: 16px;
+}
+
+.thing_item-link {
+    text-decoration: none;
+    color: black;
+}
+
+.thing_item-link:hover {
+    color: var(--blue-l);
+    transition: var(--smooth);
+}
+
+.footer {
+    font-size: 20px;
+    padding-top: 10px;
+}
