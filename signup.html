@@ -24,13 +24,13 @@
     <main>
         <div class="container">
             <header>
-              <h2>Sign Up Form (Coded)</h2>
-              <p>Based on <a href="https://drc8llcc7rqy7.cloudfront.net/shots/2409898/24-sign-up-large" target="blank">Sign Up Design #39</a> by <a href="https://dribbble.com/deab" target="blank">Denis Abdullin</a>.</p>
+              <h2>Sign Up Form</h2>
             </header>
             <div id="app" class="signup">
               <transition name="fade" mode="out-in">
                 <component :is="compname" @change_comp="swapcomp($event)"></component>
               </transition>
+              <img src="./sign/YJH.jpg" style="width:350px;">
             </div>
             <template id="signup-form">
                 <form>
@@ -79,6 +79,7 @@
     </footer>
     <!-- Nhung cac script -->
     <script src="./assets/main.js"></script>
+    <script src="./sign/signup.js"></script>
     <script src="./introassets/intro.js"></script>
     <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
     <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>

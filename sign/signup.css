@@ -4,9 +4,10 @@
 }
 
 body {
+  color:#FFFFFF;
   height: 100%;
-  font-family: "Roboto", sans-serif;
-  background: linear-gradient(to left, #79CB0A, #B5D020);
+  font-family: "Georgia", serif;
+  background: linear-gradient(to left, #556B2F,#6E8B3D);
 }
 
 .container {
@@ -52,7 +53,7 @@ header a {
   height: 100%;
   transform: scaleX(-1);
   z-index: -1;
-  background: url(https://source.unsplash.com/Qmox1MkYDnY/900x500) no-repeat;
+  background-image: url(./white.jpg);
 }
 
 form {
