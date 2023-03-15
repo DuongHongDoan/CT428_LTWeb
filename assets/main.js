@@ -31,4 +31,26 @@ overlaySearch.addEventListener('click', () => {
     overlaySearch.classList.toggle("show-search");
 });
 
-//owl carousel
+//Nut tang giam so luong mua sp
+let dealElement = document.getElementById("deal");
+let deal = dealElement.value;
+let render = (deal) => {
+    dealElement.value = deal;
+}
+
+let handlePlus = () => {
+    deal++;
+    render(deal);
+}
+let handleMinus = () => {
+    if (deal > 1)
+        deal--;
+    render(deal);
+}
+
+dealElement.addEventListener('input',() => {
+   deal = dealElement.value;
+   deal = parseInt(deal);
+   deal = (isNaN(deal)|| deal==0)?1:deal; 
+   render(deal);
+});

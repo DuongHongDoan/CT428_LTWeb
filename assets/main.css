@@ -314,7 +314,8 @@ img {
 .products {
     background-color: var(--gainsboro);
 }
-.product-items {
+.product-items, .item-detail, .item-description,
+.item-relate, .item-follow {
     margin: 4px 16px;
     padding: 0 0 36px 0;
 }
@@ -495,7 +496,101 @@ a {
 
 /* ------------- */
 /* Trang chi tiet san pham */
+.item-title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--light-blue);
+}
 
+.img-bornPink {
+    margin-top: 8px;
+}
+
+.item-rated .item-icon-empty {
+    color: rgba(0, 0, 0, .2);
+}
+
+.item-price {
+    font-size: 1.6rem;
+    color: var(--orange);
+}
+
+.item-deal, .item-transport, .id-item span {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.item-deal button {
+    width: 30px;
+    height: 30px;
+    outline: none;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.item-deal button:hover {
+    background-color: rgba(205, 202, 202, 0.3);
+    transition: var(--smooth);
+}
+
+.deal-buy {
+    display: flex;
+}
+
+.deal-buy #deal {
+    width: 45px;
+    outline: none;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, .2);
+    text-align: center;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.btn-minus, .btn-plus i {
+    font-size: 1rem;
+    color: var(--light-gray);
+}
+
+.item-transport,
+.item-deal, .item-price, .id-item,
+.item-rating {
+    margin-top: 12px;
+}
+
+.button-add {
+    padding-top: 40px;
+    display: inline-block;
+}
+
+.item-transport p {
+    font-size: 1rem;
+    font-weight: 350;
+}
+
+.btn-lg {
+    border-radius: 2rem;
+}
+
+.btn-lg:hover {
+    transition: var(--smooth);
+    color: var(--orange);
+    background-color: var(--white);
+}
+
+.content {
+    display: flex;
+}
+
+.content h5 {
+    color: var(--orange);
+}
+
+.content li {
+    list-style: none;
+    font-weight: 300;
+    font-size: 1rem;
+}
 @media (min-width: 36em) {
 /* slide chuyen dong */
     .col-lg-9 {
