@@ -49,7 +49,7 @@ body {
 }
 
 :root {
-    --light-green: #66CC99;
+    --light-green: #2E8B57;
     --gainsboro: #DCDCDC;;
     --light-blue: #387bf8;
     --white: #fff;
@@ -198,7 +198,7 @@ img {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: var(--light-blue);
+    color: var(--white);
     font-weight: 400;
 }
 
@@ -247,7 +247,7 @@ img {
 .navbar-icon {
     width: 25px;
     height: 4px;
-    background-color: var(--light-gray);
+    background-color: var(--white);
     border-radius: 5px;
     transition: var(--smooth);
     position: relative;
@@ -259,7 +259,7 @@ img {
     position: absolute;
     width: 25px;
     height: 4px;
-    background-color: var(--light-gray);
+    background-color: var(--white);
     border-radius: 5px;
     transition: var(--smooth);
 }
@@ -292,11 +292,21 @@ img {
     transform: rotate(-45deg) translate(35px, 35px);
 }
 
+/* Tao breadcrumb */
+.breadcrumb {
+    margin: 12px 0 0 28px;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--orange);
+    transition: var(--smooth);
+}
+
 /* Slide chuyen dong */
-.col-lg-3 {
+.col-lg-3, .col-lg-2 {
     display: none;
 }
-.col-lg-9 {
+.col-lg-9, .col-lg-10 {
     padding: 0;
 }
 
@@ -304,7 +314,7 @@ img {
 .products {
     background-color: var(--gainsboro);
 }
-.sale-item {
+.product-items {
     margin: 4px 16px;
     padding: 0 0 36px 0;
 }
@@ -317,6 +327,7 @@ img {
     border-bottom: 2px solid var(--light-green);
     display: inline-block;
     margin-bottom: -1px;
+    margin-top: 12px;
 }
 
 .item {
@@ -379,6 +390,10 @@ img {
     color: var(--light-blue);
 }
 
+a {
+    text-decoration: none;
+}
+
 .lookat-product:hover {
     color: var(--orange);
     transition: var(--smooth);
@@ -395,6 +410,92 @@ img {
     transition: var(--smooth);
 }
 
+.product-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.product-link .xemthem{
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.product-link .xemthem:hover {
+    color: var(--orange);
+    transition: var(--smooth);
+}
+
+/* ---------------- */
+/* Trang cac loai san pham */
+
+/* title */
+.drop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
+}
+.title-deco, .product-filter{
+    border-bottom: none;
+    cursor: pointer;
+    color: var(--light-blue);
+}
+
+.drop-title:hover .drop-hover{
+    display: block;
+    margin-top: -10px;
+}
+
+.dropdown-item {
+    color: var(--light-blue);
+}
+
+.dropdown-item:hover {
+    color: var(--orange);
+}
+
+.dropdown-toggle::after {
+    color: var(--light-blue);
+    cursor: pointer;
+}
+/* List product */
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    transition: transform linear 0.1s;
+    will-change: transform;
+}
+
+.card:hover {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .3);
+    transform: translateY(-2px);
+}
+
+.card-body {
+    padding: 16px 8px 0;
+}
+
+.card-text {
+    font-size: 0.7rem;
+    display: block;
+    font-weight: 400;
+    color: var(--light-blue);
+}
+
+.card-text:hover {
+    color: var(--orange);
+    transition: var(--smooth);
+}
+
+.card .product-icon {
+    margin-left: 46px;
+}
+
+/* ------------- */
+/* Trang chi tiet san pham */
+
 @media (min-width: 36em) {
 /* slide chuyen dong */
     .col-lg-9 {
@@ -403,6 +504,16 @@ img {
 /* product icons */
     .lookat-product {
         padding-left: 16px;
+    }
+    .product-link .xemthem {
+        font-size: 1rem;
+    }
+    .card-text {
+        font-size: 0.8rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -16px;
     }
 }
 
@@ -425,6 +536,13 @@ img {
         /* margin-left: 14px; */
         font-size: 0.8rem;
     }
+    .card-text {
+        font-size: 0.8rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -18px;
+    }
 }
 
 @media (min-width: 60em) {
@@ -435,6 +553,13 @@ img {
 }
 
 @media (min-width: 62em) {
+    .card-text {
+        font-size: 1rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -40px;
+    }
     .navbar-init {
         background-color: var(--light-green);
     }
@@ -480,10 +605,10 @@ img {
         display: none;
     }
 /* category and carousel */
-    .col-lg-3 {
+    .col-lg-3, .col-lg-2 {
         display: block;
     }
-    .col-lg-9 {
+    .col-lg-9, .col-lg-10 {
         padding: 0;
     }
     .overview {
@@ -494,6 +619,7 @@ img {
     .category {
         border: 1px solid rgba(0, 0, 0, .2);
         border-radius: 3px;
+        margin-top: 16px;
     }
     
     .category-heading {
@@ -529,6 +655,7 @@ img {
     }
     .carousel-inner {
         border-radius: 5px;
+        margin-top: 16px;
     }
 /* product icons */
     .product-detail {
@@ -549,12 +676,22 @@ img {
         /* margin-left: 14px; */
         font-size: 1rem;
     }
+    .drop-title:hover .drop-hover{
+        display: none;
+    }
 }
 
 @media (min-width: 75em) {
     .lookat-product {
         padding-left: 76px;
         font-size: 1rem;
+    }
+    .card-text {
+        font-size: 1rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -45px;
     }
 }
 
@@ -563,4 +700,26 @@ img {
         padding-left: 96px;
         font-size: 1rem;
     }
+    .card-text {
+        font-size: 1rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -48px;
+    }
+}
+
+/* footer */
+
+.hoten a:hover{
+    background-color: #059867;
+    color:var(--white) ;
+}
+
+.footertext{
+  color: var(--white);
+}
+
+.icon i{
+  padding-left: 15px;
 }
