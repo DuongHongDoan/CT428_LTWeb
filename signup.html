@@ -22,58 +22,59 @@
     <header>
     </header>
     <main>
-        <div class="container">
-            <header>
-              <h2>Sign Up Form</h2>
-            </header>
-            <div id="app" class="signup">
-              <transition name="fade" mode="out-in">
-                <component :is="compname" @change_comp="swapcomp($event)"></component>
-              </transition>
-              <img src="./sign/YJH.jpg" style="width:350px;">
+      <div class="content-wrapper">
+        <div class="content">
+            <div class="signup-wrapper shadow-box">
+                <div class="company-details ">
+                  <div class="shadow">  
+                  </div>
+                    <div class="wrapper-1">
+                        <div class="logo">
+                          <!-- <div class="icon-food">
+                          </div> -->
+                        </div>
+                        <!-- <h1 class="title"></h1> -->
+                        <div class="slogan">
+                        </div>
+                    </div>
+                </div>
+                <div class="signup-form ">
+                    <div class="wrapper-2">
+                        <div class="form-title">Sign up today!</div>
+                        <div class="form">
+                            <form>
+                                <p class="content-item">
+                                    <label>full name
+                                        <input type="text" placeholder="Lorem ipsum"  required>
+                                    </label>
+                                </p>
+
+                                <p class="content-item">
+                                    <label>email address
+                                        <input type="text"  placeholder="lorem@loremipsum.com" name="email" required>
+                                    </label>
+                                </p>
+
+                                <p class="content-item">
+
+                                    <label>password
+                                        <input type="password" placeholder="*****" name="psw" required>
+                                    </label>
+                                </p>
+
+
+                                <button type="submit"  class="signup">i want cupcakes </button>
+                                <a href="#" class="login">login</a>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-            <template id="signup-form">
-                <form>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" v-model="email" />
-                    <span v-if="email.length > 1">{{ email_msg }}</span>
-                  </div>
-                  <div class="form-group">
-                    <label for="psw1">Password <span id="characters">(6 or more characters required)</span></label>
-                    <input type="password" v-model="password1" />
-                    <span v-show="msg1">{{ pwd1_msg }}</span>
-                  </div>
-                  <div class="form-group">
-                    <label for="psw2">Repeat Password</label>
-                    <input type="password" v-model="password2" />
-                    <span v-show="msg2">{{ pwd2_msg }}</span>
-                  </div>
-                  <div class="form-group">
-                    <button :class="{active: disable_btn}":disabled="disable_btn" @click.prevent="on_signup()">Sign Up</button>
-                    <a href="#0" @click="show_terms()">terms & conditions</a>
-                  </div>
-                </form>
-              </template>
-            
-              <template id="results">
-                <div class="results">
-                  <h4>FORM SUBMIT SUCCESSFUL</h4>
-                  <p>Form data gets saved and/or sent to server. There could also be a confirmation sent to email address</p>
-                  <p>Button would take you to some sort of after signup page.<br>In this case it just shows the form again</p>
-                  <button @click="back_to_signup()">Continue</button>
-                </div>
-              </template>
-            
-              <template id="terms">
-                <div class="terms">
-                  <h4>TERMS & CONDITIONS</h4>
-                  <p>A list of terms, conditions, and policies.</p>
-                  <button @click="back_to_signup()">Back</button>
-                </div>
-              </template>
-            
-          </div>
+        </div>
+     </div>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     </main>
     <footer>
     </footer>

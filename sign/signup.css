@@ -1,138 +1,212 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
 * {
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
-
 body {
-  color:#FFFFFF;
-  height: 100%;
-  font-family: "Georgia", serif;
-  background: linear-gradient(to left, #556B2F,#6E8B3D);
+  margin: 0;
+  padding: 0;
+  background: #e9e9e9;
+}
+.content {
+  width: 1280px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.shadow-box {
+  background: white;
 }
-
-header {
-  margin: 30px 0;
-  text-align: center;
-}
-header h2 {
-  text-transform: uppercase;
+p {
+  padding: 0;
   margin: 0;
 }
-header p {
-  font-size: 1em;
-}
-header a {
-  text-decoration: none;
-  border-bottom: 2px dotted #FF8700;
-  color: inherit;
+@media (min-width: 700px) {
+  .shadow-box {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
 }
 
-.signup {
-  width: 700px;
-  height: 460px;
+.signup-wrapper .company-details {
+  background: url(./YJH.jpg);
+  background-size: cover;
   position: relative;
-  overflow: hidden;
-  box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  border-radius: 5px;
 }
-
-.signup:before {
+.signup-wrapper .company-details:before {
   content: "";
   position: absolute;
-  width: 100%;
+  display: block;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 100%;
-  transform: scaleX(-1);
-  z-index: -1;
-  background-image: url(./white.jpg);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-form {
-  width: 50%;
-  height: 80%;
-  padding: 20px 50px 20px 20px;
+.signup-wrapper .company-details .wrapper-1 {
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 22px;
+}
+.signup-wrapper .company-details .logo {
+  padding: 0 20px;
+  width: 20%;
+  margin: 0 auto;
+}
+.signup-wrapper .company-details .logo .icon-food {
+  /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/food.png); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 38px;
+  height: 38px;
+  margin: 0 auto;
+}
+.signup-wrapper .company-details .title {
+  padding: 20px;
+  width: 74%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  font-size: 2em;
+  text-shadow: 1px 1px #4b4a4a;
+  text-align: center;
+}
+.signup-wrapper .company-details .slogan {
+  display: none;
 }
 
-form .form-group {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 20px 0;
-  color: #8F949B;
-  font-size: 0.9em;
+.signup-wrapper .signup-form .wrapper-2 {
+  padding: 14px 20px;
+  margin: 30px 80px;
 }
-form .form-group label {
-  margin: 0 0 16px 0;
+.signup-wrapper .signup-form .form-title {
+  font-size: 1.5em;
+  color: #d60ca7;
+  padding: 5px;
+  text-align: center;
 }
-form .form-group span {
-  font-size: 0.8em;
-  color: #FF3400;
-}
-form .form-group span#characters {
-  font-size: 0.8em;
-  color: #8F949B;
-}
-
-.form-group input[type=text],
-.form-group input[type=password] {
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 0 0 10px 0;
-  font-size: 1em;
-  border-bottom: 1px dotted #8F949B;
-}
-
-.form-group input[type=password] {
-  color: #FF3400;
-}
-
-form .form-group:last-child {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 40px 0 0 0;
-}
-form .form-group:last-child button {
-  border: none;
-  background: linear-gradient(to left, #FF8700, #FFB100);
-  padding: 10px 30px;
-  border-radius: 20px;
-  color: #FFFFFF;
-  font-size: 0.8em;
-  font-weight: bold;
+.signup-wrapper .signup-form .form .content-item {
+  text-transform: uppercase;
+  color: #a19f9c;
+  font-size: 0.7em;
   letter-spacing: 1px;
-  cursor: pointer;
+  margin-top: 35px;
+  text-align: center;
 }
-form .form-group:last-child button.active {
-  opacity: 0.5;
-  cursor: default;
+.signup-wrapper .signup-form .form input[type="text"],
+.signup-wrapper .signup-form .form input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #e4e4e4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+
+  text-align: center;
+  width: 100%;
 }
-form .form-group:last-child a {
-  color: #8F949B;
-  text-decoration: dotted;
-  font-size: 0.8em;
+.signup-wrapper .signup-form .signup {
+  background-color: #d60ca7;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  font-size: 1em;
+  text-transform: capitalize;
+  margin-top: 49px;
+  border-radius: 5px;
+}
+.signup-wrapper .signup-form .login {
+  color: #d60ca7;
+  padding: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9em;
+  width: 95%;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+}
+input::placeholder {
+  color: #575757;
 }
 
-.results, .terms {
-  width: 50%;
-  height: 80%;
-  padding: 20px 50px 20px 20px;
+@media (min-width: 200px) {
+  .signup-wrapper .signup-form .wrapper-2 {
+    margin: 30px 23px;
+  }
+
+  .signup-wrapper .company-details .title {
+    width: 90%;
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 300px) {
+  .signup-wrapper .signup-form .login {
+    display: inline-block;
+  }
+  .signup-wrapper .signup-form .wrapper-2 {
+    margin: 30px 60px;
+  }
+
+  .signup-wrapper .company-details .title {
+    width: 80%;
+    font-size: 2em;
+  }
+}
+@media (min-width: 500px) {
+  .signup-wrapper .signup-form .login {
+    display: inline;
+  }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: all 0.8s;
-}
+@media (min-width: 700px) {
+  .signup-wrapper .company-details,
+  .signup-wrapper .signup-form {
+    width: 50%;
+  }
+  .signup-wrapper {
+    display: flex;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 5%;
+  }
+  .signup-wrapper .company-details .wrapper-1 {
+    padding-bottom: 150px;
+    padding-top: 160px;
+  }
+  .signup-wrapper .company-details .slogan {
+    padding: 0 20px;
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    text-shadow: 1px 1px #4b4a4a;
+    display: block;
+  }
+  .signup-wrapper .company-details .title {
+    width: 76%;
+  }
+  .signup-wrapper .signup-form .wrapper-2 {
+    padding: 50px 40px;
+    margin: 0;
+  }
 
-.fade-enter, .fade-leave-active {
-  opacity: 0;
-  transform: translateX(-40px);
+  .signup-wrapper .signup-form .login {
+    display: inline;
+  }
+  .signup-wrapper .signup-form .form .content-item {
+    text-align: initial;
+  }
+  .signup-wrapper .signup-form .form input[type="text"],
+  .signup-wrapper .signup-form .form input[type="password"] {
+    text-align: initial;
+  }
+  .signup-wrapper .signup-form .form-title {
+    text-align: initial;
+    padding: 0;
+  }
 }
