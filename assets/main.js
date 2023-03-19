@@ -39,11 +39,12 @@ let render = (deal) => {
 }
 
 let handlePlus = () => {
-    deal++;
+    if (deal < max)
+        deal++;
     render(deal);
 }
 let handleMinus = () => {
-    if (deal > 1)
+    if (deal > min)
         deal--;
     render(deal);
 }
