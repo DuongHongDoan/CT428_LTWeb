@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   background: aquamarine;
+  background-image: url(./daisy.jpg);
 }
 .content {
   width: 1280px;

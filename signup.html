@@ -34,56 +34,58 @@
                     </div>
                     <div class="signup-form ">
                         <div class="wrapper-2">
-                            <div class="form-title">Sign up now!</div>
+                            <div class="form-title">SIGN UP NOW!</div>
                             <div class="form" style="padding-top: 20px;">
                                 <form>
                                     <p class="content-item">
-                                        <label><a class="form-label lbs">Họ và tên:</a>
-                                            <input type="text" placeholder="Lorem ipsum"  required>
+                                        <label><a class="form-label lbs">Fullname: </a>
+                                            <input type="text" placeholder="Enter fullname" name="fullname"  required>
                                         </label>
                                     </p>
                                     <p class="content-item">
-                                        <label><a class="form-label lbs">Số điện thoại:</a>
-                                            <input type="text" placeholder="Lorem ipsum"  required>
+                                        <label><a class="form-label lbs">Phone number: </a>
+                                            <input type="text" placeholder="Enter your phone number" name="phonenumber"  required>
                                         </label>
                                     </p>
                                     <p class="content-item">
-                                        <label><a class="form-label lbs">Email:</a>
-                                            <input type="text"  placeholder="lorem@loremipsum.com" name="email" required>
+                                        <label><a class="form-label lbs">Email: </a>
+                                            <input type="text"  placeholder="btmy@loremipsum.com" name="email" required>
                                         </label>
                                     </p>
                                     <p class="content-item" style="padding-top: 15px;">
-                                        <label id="gt"> <a class="form-label lbs">Giới tính:</a>
-                                            <input type= "radio" id="gt" name="gt" value="nam"><a class="lbs">Nam</a>
-                                            <input  type= "radio" id="gt" name="gt" value="nu"><a class="lbs">Nữ</a>
+                                        <label id="gt"> <a class="form-label lbs">Gender:</a>
+                                            <input type= "radio" id="gender" name="gender" value="nam"><a class="lbs">Male</a>
+                                            <input  type= "radio" id="gender" name="gender" value="nu"><a class="lbs">Female</a>
                                         </label>
                                     </p>
                                     <p class="content-item" style="padding-top: 10px;">
-                                        <label> <a class="form-label lbs">Ngày sinh:</a>
-                                            <input type="date" style="border:none" placeholder="Lorem ipsum"  required>
+                                        <label> <a class="form-label lbs">Birth of date: </a>
+                                            <input type="date" style="border:none" required>
                                         </label>
                                     </p>
                                     <p class="content-item" style="padding-top: 15px;">
-
-                                        <label> <a class="form-label lbs">Mật khẩu:</a>
-                                            <input type="password" placeholder="*****" name="psw" required>
-                                        </label>
-                                    </p>
-                                    <p class="content-item">
-                                        <label><a class="form-label lbs">Tên đăng nhập:</a>
-                                            <input type="text" placeholder="Lorem ipsum"  required>
+                                        <label><a class="form-label lbs">Username: </a>
+                                            <input type="text" placeholder="At least 8 chars"  required>
                                         </label>
                                     </p>
                                     <p class="content-item">
 
-                                        <label><a class="form-label lbs">Nhập lại mật khẩu:</a>
-                                            <input type="password" placeholder="*****" name="psw" required>
+                                        <label> <a class="form-label lbs">Password:</a>
+                                            <input type="password" placeholder="*****" name="password" required>
+                                        </label>
+                                    </p>
+                                    
+                                    <p class="content-item">
+
+                                        <label><a class="form-label lbs">Confirm password:</a>
+                                            <input type="password" placeholder="*****" name="repassword" required>
                                         </label>
                                     </p>
 
-                                    <button type="submit"  class="signup">SIGN UP </button>
-                                    <button class="signup" href="#">SIGN IN</a></button>
+                                    <button type="submit"  class="signup" style="margin-top: 10px;">SIGN UP </button>
+                                    <button class="signup" style="margin-top: 10px;">RESET</a></button>
                                 </form>
+                                <button onclick="open1()" class="signup" style="margin-top: 5px;">SIGN IN </button>
                             </div>
                         </div>
 
