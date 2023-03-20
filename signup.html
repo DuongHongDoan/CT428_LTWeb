@@ -36,7 +36,7 @@
                         <div class="wrapper-2">
                             <div class="form-title">SIGN UP NOW!</div>
                             <div class="form" style="padding-top: 20px;">
-                                <form>
+                                <form action="./signup.php" method="post">
                                     <p class="content-item">
                                         <label><a class="form-label lbs">Fullname: </a>
                                             <input type="text" placeholder="Enter fullname" name="fullname"  required>
@@ -64,21 +64,21 @@
                                         </label>
                                     </p>
                                     <p class="content-item" style="padding-top: 15px;">
-                                        <label><a class="form-label lbs">Username: </a>
-                                            <input type="text" placeholder="At least 8 chars"  required>
+                                        <label for="username"><a class="form-label lbs">Username: </a>
+                                            <input type="text" id="username" name="username"  placeholder="At least 8 chars"  required>
                                         </label>
                                     </p>
                                     <p class="content-item">
 
-                                        <label> <a class="form-label lbs">Password:</a>
-                                            <input type="password" placeholder="*****" name="password" required>
+                                        <label for="password"> <a class="form-label lbs">Password:</a>
+                                            <input type="password" id="password" name="password" placeholder="*****" name="password" required>
                                         </label>
                                     </p>
                                     
                                     <p class="content-item">
 
-                                        <label><a class="form-label lbs">Confirm password:</a>
-                                            <input type="password" placeholder="*****" name="repassword" required>
+                                        <label for="confirmpassword"><a class="form-label lbs">Confirm password:</a>
+                                            <input type="password" placeholder="*****" id="confirmpassword" name="confirmpassword" required>
                                         </label>
                                     </p>
 
