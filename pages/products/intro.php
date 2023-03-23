@@ -2,12 +2,50 @@
     <title>Giới thiệu</title>
 </head>
 <link rel="stylesheet" href="./introassets/intro.css">
-
+<style>
+    li {
+        list-style: none; 
+        text-align:justify;
+    }
+</style> 
 <main>
         <section>
             <div id="tieude">
                 <h1>GIỚI THIỆU ĐỀ TÀI</h1>
             </div>
+        </section>
+        <section>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <div style="text-align: center;">
+                        <h3>Kpop Store - Mang kpop đến gần bên bạn</h3>
+                    </div>   
+                    <p>
+                        <li> Dành cho những người có đam mê đối với làng giải trí xử sở Kim Chi.
+                            Không tập trung vào một độ tuổi nhất định, chỉ cần bạn có đam mê chúng tôi sẵn sàng phục vụ bạn.
+                        </li>
+                        <br>
+                        <li>Đa dạng ngành hàng cùng với nhiều mức giá khác nhau giúp cho ai cũng dễ dàng tiếp cận.
+                            Cung cấp những vật phẩm dễ thương đến khách hàng để idol luôn gần bên bạn.
+                            Không chỉ dễ thương những món hàng còn là những vật phẩm đều hữu dụng trong cuộc sống chẳng hạn như:
+                            những chiếc túi, những chiếc gương, những chiếc móc khóa dành cho bạn hay quên,...và còn nhiều thứ khác.
+                            Bạn cũng có thể mua để làm quà tặng dành cho bạn bè của mình nếu họ là một người hâm mộ kpop chính hiệu.
+                        </li>
+                        <br>
+                        <li> Hỗ trợ nhiều phương thức vận chuyển, đa dạng phương thức thanh toán. Đồng thời, chính sách bảo hành,
+                            đổi trả, chăm sóc khách hàng cũng được shop đề cao.
+                        </li>
+                        <br>
+                        <li>
+                            Trang web được thiết kế với đầy đủ các chức năng như một trang thương mại điện tử như: trang sản phẩm, giỏ hàng,
+                            thanh toán,...Giao diện thân thiên dễ sử dụng.
+                        </li>
+                </p>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+            
         </section>
         <section>
             <div id="tieude">
@@ -24,7 +62,7 @@
                 </div>
               
                 <div class="mySlides">
-                  <img src="./B2013574_MTV/mtv.png" style="width:100%">
+                  <img src="./B2013574_MTV/MTV.png" style="width:100%">
                 </div>
                 <div class="mySlides">
                     <img src="./B2013538_VHNK/VHNK.png" style="width:100%">

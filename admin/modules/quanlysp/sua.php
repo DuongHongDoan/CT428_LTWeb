@@ -64,9 +64,9 @@
             </td>
         </tr>
         <tr>
-            <td>Nội dung</td>
+            <td>Chi tiết</td>
             <td>
-                <textarea name="noidung" rows="10" style="resize: none;"> <?php echo $row['noidung'] ?></textarea>
+                <textarea name="chitiet" rows="10" style="resize: none;"> <?php echo $row['chitiet'] ?></textarea>
             </td>
         </tr>
         <tr>

@@ -18,7 +18,7 @@
                             <img src="admin/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>" alt="">
                         </a>
                         <div class="product">
-                            <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>" class="product-detail"><?php echo $row['mota']?></a>
+                            <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>" class="product-detail"><?php echo $row['tensp']?></a>
                             <div class="row product-footer">
                                 <div class="col-6">
                                     <p class="product-price"><?php echo number_format($row['giasp'],0,',', '.')?><sup>đ</sup></p>
@@ -66,7 +66,7 @@
                                 <img src="admin/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>" alt="">
                             </a>
                             <div class="product">
-                                <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>" class="product-detail"><?php echo $row['mota']?></a>
+                                <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>" class="product-detail"><?php echo $row['tensp']?></a>
                                 <div class="row product-footer">
                                     <div class="col-6">
                                         <p class="product-price"><?php echo number_format($row['giasp'],0,',', '.')?><sup>đ</sup></p>
@@ -114,7 +114,7 @@
                                 <img src="admin/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>" alt="">
                             </a>
                             <div class="product">
-                                <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>" class="product-detail"><?php echo $row['mota']?></a>
+                                <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>" class="product-detail"><?php echo $row['tensp']?></a>
                                 <div class="row product-footer">
                                     <div class="col-6">
                                         <p class="product-price"><?php echo number_format($row['giasp'],0,',', '.')?><sup>đ</sup></p>
@@ -162,7 +162,7 @@
                                 <img src="admin/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>" alt="">
                             </a>
                             <div class="product">
-                                <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>" class="product-detail"><?php echo $row['mota']?></a>
+                                <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>" class="product-detail"><?php echo $row['tensp']?></a>
                                 <div class="row product-footer">
                                     <div class="col-6">
                                         <p class="product-price"><?php echo number_format($row['giasp'],0,',', '.')?><sup>đ</sup></p>

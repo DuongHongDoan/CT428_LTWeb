@@ -85,16 +85,16 @@ img {
     border-radius: .25rem;
 }
 
-.input-group {
+/* .input-group {
     justify-content: end;
     align-items: end;
-}
+} */
 
-.input-group input{
+/* .input-group input{
     display: none;
-}
+} */
 
-.search-btn{
+/* .search-btn{
     background-color: transparent;
     color: #387bf8;
     border: none;
@@ -115,11 +115,11 @@ img {
     cursor: pointer;
     transform: translateX(-50px);
     background: transparent;
-}
+} */
 /* Ket thuc thanh search */
 
 /* xu ly thanh search xo ra khi bam icon search */
-.input-group-collap {
+/* .input-group-collap {
     position: fixed;
     top: 0;
     left: 0;
@@ -131,34 +131,32 @@ img {
     transition: var(--smooth);
     transform: translateY(-100%);
     opacity: 0;
-}
+} */
 
-.input-group-collap.search-open {
+/* .input-group-collap.search-open {
     transform: translateY(0);
     opacity: 1;
     transition: var(--smooth);
-}
+} */
 
-.collap {
+/* .collap {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 25%;
-}
+} */
 
-.collap input {
+/* .collap input {
    border-top-left-radius: 3px;
    border-bottom-left-radius: 3px;
    border-color: var(--light-green);
    border: 1rem;
    height: 35px;
    padding: 0 8px;
-}
+} */
 
-.collap button {
+/* .collap button {
     display: inline-block;
-    /* font-weight: 400; */
-    /* line-height: 1.5; */
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
@@ -177,16 +175,16 @@ img {
 }
 .collap button i {
     color: var(--white);
-}
+} */
 
-.close-btn {
+/* .close-btn {
     color: var(--light-gray);
     font-size: 25px;
     display: flex;
     justify-content: end;
     padding: 4px 12px;
     cursor: pointer;
-}
+} */
 /* ket thuc xu ly */
 .icons a:hover {
     color: var(--orange);
@@ -349,7 +347,7 @@ img {
 }
 
 .product-detail {
-    color: var(--text-color);
+    color: var(--light-blue);
     font-weight: 400;
     font-size: 0.8rem;
     display: inline-block;
@@ -670,20 +668,20 @@ a {
     .navbar-icons {
         display: none;
     }
-    .input-group input{
+    .search-lg input{
         display: block;
     }
-    .input-group button{
+    .search-lg button{
         background-color: var(--light-blue);
         color: var(--white);
         border: initial;
         height: 38px;
     }
-    .input-group {
+    .search-lg {
         justify-content: left;
         align-items: left;
     }
-    .input-group button:hover {
+    .search-lg button:hover {
         background-color: var(--orange);
         color: var(--white);
     }

@@ -1,3 +1,57 @@
+<style>
+    .product-item {
+        margin-top: 16px;
+    }
+    .card-text {
+        font-size: 1rem;
+        display: block;
+        font-weight: 400;
+        color: var(--light-blue);
+    }
+    .product-price {
+        color: var(--orange);
+        font-size: 1.2rem;
+    }
+    .card .product-icon {
+        margin-left: 54px;
+        margin-top: 4px;
+    }
+    .lookat-product, .add-product {
+        font-size: 1rem;
+        color: var(--light-blue);
+    }
+    .lookat-product:hover, .add-product:hover {
+        color: var(--orange);
+        cursor: pointer;
+        transition: var(--smooth);
+    }
+
+    @media (min-width: 36em) {
+        .card .product-icon {
+            margin-left: 42px;
+            margin-top: 4px;
+        }
+    }
+
+    @media (min-width: 48em) {
+        .card .product-icon {
+            margin-left: 12px;
+            margin-top: 4px;
+        }
+        .col-md-3 {
+            flex: 0 0 auto;
+            width: 33.33333333%;
+        }
+    }
+
+    @media (min-width: 62em) {
+        .card .product-icon {
+            margin-left: -8px;
+            margin-top: 4px;
+        }
+    }
+</style>
+
 <?php
     if(isset($_POST['timkiem'])) {
         $tukhoa = $_POST['tukhoa'];
@@ -7,6 +61,9 @@
     }
     $sql_products = "SELECT * FROM tbl_products WHERE tbl_products.tensp LIKE '%".$tukhoa."%'";
     $query_products = mysqli_query($conn, $sql_products);
+    $sql_category = "SELECT * FROM tbl_products, tbl_category WHERE tbl_products.id_danhmuc=tbl_category.id_danhmuc";
+    $query_category = mysqli_query($conn, $sql_category);
+    $row_category = mysqli_fetch_array($query_category);
 ?>
 
 <head>
@@ -35,7 +92,7 @@ include("pages/main/category.php");
             <?php
                 while($row_pro = mysqli_fetch_array($query_products)){
             ?>
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <div class="card">
                     <img src="admin/modules/quanlysp/uploads/<?php echo $row_pro['hinhanh']?>" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -53,6 +110,9 @@ include("pages/main/category.php");
                                 </a>
                             </div>
                         </div>
+                        <!-- <div class="category">
+                            <p>Danh mục: <?php echo $row_category['tendanhmuc']?></p>
+                        </div> -->
                     </div>
                 </div>
             </div>

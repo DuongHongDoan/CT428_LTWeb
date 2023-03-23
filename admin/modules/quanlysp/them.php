@@ -49,9 +49,9 @@
             </td>
         </tr>
         <tr>
-            <td>Nội dung</td>
+            <td>Chi tiết</td>
             <td>
-                <textarea name="noidung" rows="10" style="resize: none;"></textarea>
+                <textarea name="chitiet" rows="10" style="resize: none;"></textarea>
             </td>
         </tr>
         <tr>
