@@ -61,9 +61,6 @@
     }
     $sql_products = "SELECT * FROM tbl_products WHERE tbl_products.tensp LIKE '%".$tukhoa."%'";
     $query_products = mysqli_query($conn, $sql_products);
-    $sql_category = "SELECT * FROM tbl_products, tbl_category WHERE tbl_products.id_danhmuc=tbl_category.id_danhmuc";
-    $query_category = mysqli_query($conn, $sql_category);
-    $row_category = mysqli_fetch_array($query_category);
 ?>
 
 <head>
@@ -110,9 +107,6 @@ include("pages/main/category.php");
                                 </a>
                             </div>
                         </div>
-                        <!-- <div class="category">
-                            <p>Danh mục: <?php echo $row_category['tendanhmuc']?></p>
-                        </div> -->
                     </div>
                 </div>
             </div>

@@ -1,3 +1,23 @@
+<style>
+    .scroll-icon {
+        font-size: 1.5rem;
+        background-color: var(--white);
+        padding: 6px;
+        border-radius: 40px;
+        color: var(--light-green);
+        transition: var(--smooth);
+        position: fixed;
+        z-index: 100;
+        right: 12px;
+        bottom: 77px;
+    }
+    .scroll-icon:hover {
+        background-color: rgb(0, 0, 0, 0.3);
+        color: var(--orange);
+        transition: var(--smooth);
+    }
+</style>
+
 <footer class="text-center text-lg-start bg-opacity-100 text-muted" style="margin-top: 50px;">
     <section class="footertext" style="padding-top: 5px; background-color: #2E8B57;">
         <div class="container text-center text-md-start mt-5">
@@ -102,9 +122,25 @@
                 </div>
             </div>
         </div>
+        
+        <a href="#onTop" id="scroll-top" title="đầu trang">
+            <i class="scroll-icon fa-solid fa-angle-up"></i>
+        </a>
     </section>
     <div class="text-center p-4 footertext" style="background-color: #1a5534;">
         © 2023 Copyright:
         <a class="text-reset fw-bold footertext" href="https://mdbootstrap.com/">Kpopstore.com</a>
     </div>
 </footer>
+
+<script>
+    var onTop = document.getElementById("scroll-top");
+    window.onscroll = function() {
+    if (document.body.onscroll > 10 || document.documentElement.scrollTop > 10) {
+        onTop.style.opacity = 1;
+    }
+    else {
+        onTop.style.opacity = 0;
+    }
+}
+</script>

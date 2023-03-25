@@ -31,6 +31,9 @@
             margin-left: -12px;
             margin-top: -5px;
         }
+        .btn-lg {
+            margin-top: 4px;
+        }
     }
 
     @media (min-width: 48em) {
@@ -59,6 +62,9 @@
             flex: 1 0 0%;
             width: 25%;
         }
+        .btn-lg {
+            margin-top: 4px;
+        }
     }
 </style>
 
@@ -67,6 +73,7 @@
     $query_detail = mysqli_query($conn, $sql_detail);
     while ($row_detail = mysqli_fetch_array($query_detail)){
 ?>
+<title><?php echo $row_detail["tensp"]?></title>
 <!-- Phan than -->
     <div class="container-fluid">
         <!-- Tao breadcrumb -->
