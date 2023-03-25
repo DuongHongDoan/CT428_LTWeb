@@ -35,53 +35,62 @@
                     <div class="signup-form ">
                         <div class="wrapper-2">
                             <div class="form-title">SIGN UP NOW!</div>
-                            <div class="form" style="padding-top: 20px;">
+                            <div class="form">
                                 <form action="./signup.php" method="post">
                                     <p class="content-item">
-                                        <label><a class="form-label lbs">Fullname: </a>
-                                            <input type="text" placeholder="Enter fullname" name="fullname"  required>
-                                        </label>
-                                    </p>
-                                    <p class="content-item">
-                                        <label><a class="form-label lbs">Phone number: </a>
-                                            <input type="text" placeholder="Enter your phone number" name="phonenumber"  required>
-                                        </label>
-                                    </p>
-                                    <p class="content-item">
-                                        <label><a class="form-label lbs">Email: </a>
-                                            <input type="text"  placeholder="btmy@loremipsum.com" name="email" required>
-                                        </label>
-                                    </p>
-                                    <p class="content-item" style="padding-top: 15px;">
-                                        <label id="gt"> <a class="form-label lbs">Gender:</a>
-                                            <input type= "radio" id="gender" name="gender" value="nam"><a class="lbs">Male</a>
-                                            <input  type= "radio" id="gender" name="gender" value="nu"><a class="lbs">Female</a>
-                                        </label>
-                                    </p>
-                                    <p class="content-item" style="padding-top: 10px;">
-                                        <label> <a class="form-label lbs">Birth of date: </a>
-                                            <input type="date" style="border:none" required>
-                                        </label>
-                                    </p>
-                                    <p class="content-item" style="padding-top: 15px;">
                                         <label for="username"><a class="form-label lbs">Username: </a>
                                             <input type="text" id="username" name="username"  placeholder="At least 8 chars"  required>
                                         </label>
                                     </p>
-                                    <p class="content-item">
 
+                                    <p class="content-item">
                                         <label for="password"> <a class="form-label lbs">Password:</a>
                                             <input type="password" id="password" name="password" placeholder="*****" name="password" required>
                                         </label>
                                     </p>
                                     
                                     <p class="content-item">
-
                                         <label for="confirmpassword"><a class="form-label lbs">Confirm password:</a>
                                             <input type="password" placeholder="*****" id="confirmpassword" name="confirmpassword" required>
                                         </label>
                                     </p>
 
+                                    <p class="content-item">
+                                        <label for="fullname"><a class="form-label lbs">Fullname: </a>
+                                            <input type="text" placeholder="Enter fullname" id="fullname" name="fullname"  required>
+                                        </label>
+                                    </p>
+
+                                    <p class="content-item">
+                                        <label for="phonenumber"><a class="form-label lbs">Phone number: </a>
+                                            <input type="text" placeholder="Enter your phone number" id="phonenumber" name="phonenumber"  required>
+                                        </label>
+                                    </p>
+
+                                    <p class="content-item">
+                                        <label for="email"><a class="form-label lbs">Email: </a>
+                                            <input type="text"  placeholder="btmy@loremipsum.com" id="email" name="email" required>
+                                        </label>
+                                    </p>
+
+                                    <p class="content-item" style="padding-top: 5px;">
+                                        <label id="gender"> <a class="form-label lbs">Gender:</a>
+                                            <input type= "radio" id="gender" name="gender" value=1><a class="lbs">Male</a>
+                                            <input  type= "radio" id="gender" name="gender" value=0><a class="lbs">Female</a>
+                                        </label>
+                                    </p>
+
+                                    <p class="content-item" style="padding-top: 10px;">
+                                        <label for="ngaysinh"> <a class="form-label lbs">Birth of date: </a>
+                                            <input type="date" id="ngaysinh" name="ngaysinh" style="border:none" required>
+                                        </label>
+                                    </p>
+
+                                    <p class="content-item" style="padding-top: 10px;">
+                                        <label for="diachi"><a class="form-label lbs">Address: </a>
+                                            <input type="text" placeholder="Enter your address" id="diachi" name="diachi"  required>
+                                        </label>
+                                    </p>
                                     <button type="submit"  class="signup" style="margin-top: 10px;">SIGN UP </button>
                                     <button class="signup" style="margin-top: 10px;">RESET</a></button>
                                 </form>
