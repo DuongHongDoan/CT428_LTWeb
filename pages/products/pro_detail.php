@@ -73,7 +73,6 @@
     $query_detail = mysqli_query($conn, $sql_detail);
     while ($row_detail = mysqli_fetch_array($query_detail)){
 ?>
-<title><?php echo $row_detail["tensp"]?></title>
 <!-- Phan than -->
     <div class="container-fluid">
         <!-- Tao breadcrumb -->
