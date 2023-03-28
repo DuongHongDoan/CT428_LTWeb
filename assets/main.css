@@ -49,7 +49,7 @@ body {
 }
 
 :root {
-    --light-green: #66CC99;
+    --light-green: #2E8B57;
     --gainsboro: #DCDCDC;;
     --light-blue: #387bf8;
     --white: #fff;
@@ -85,16 +85,16 @@ img {
     border-radius: .25rem;
 }
 
-.input-group {
+/* .input-group {
     justify-content: end;
     align-items: end;
-}
+} */
 
-.input-group input{
+/* .input-group input{
     display: none;
-}
+} */
 
-.search-btn{
+/* .search-btn{
     background-color: transparent;
     color: #387bf8;
     border: none;
@@ -115,11 +115,11 @@ img {
     cursor: pointer;
     transform: translateX(-50px);
     background: transparent;
-}
+} */
 /* Ket thuc thanh search */
 
 /* xu ly thanh search xo ra khi bam icon search */
-.input-group-collap {
+/* .input-group-collap {
     position: fixed;
     top: 0;
     left: 0;
@@ -131,34 +131,32 @@ img {
     transition: var(--smooth);
     transform: translateY(-100%);
     opacity: 0;
-}
+} */
 
-.input-group-collap.search-open {
+/* .input-group-collap.search-open {
     transform: translateY(0);
     opacity: 1;
     transition: var(--smooth);
-}
+} */
 
-.collap {
+/* .collap {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 25%;
-}
+} */
 
-.collap input {
+/* .collap input {
    border-top-left-radius: 3px;
    border-bottom-left-radius: 3px;
    border-color: var(--light-green);
    border: 1rem;
    height: 35px;
    padding: 0 8px;
-}
+} */
 
-.collap button {
+/* .collap button {
     display: inline-block;
-    /* font-weight: 400; */
-    /* line-height: 1.5; */
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
@@ -177,16 +175,16 @@ img {
 }
 .collap button i {
     color: var(--white);
-}
+} */
 
-.close-btn {
+/* .close-btn {
     color: var(--light-gray);
     font-size: 25px;
     display: flex;
     justify-content: end;
     padding: 4px 12px;
     cursor: pointer;
-}
+} */
 /* ket thuc xu ly */
 .icons a:hover {
     color: var(--orange);
@@ -198,7 +196,7 @@ img {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: var(--light-blue);
+    color: var(--white);
     font-weight: 400;
 }
 
@@ -247,7 +245,7 @@ img {
 .navbar-icon {
     width: 25px;
     height: 4px;
-    background-color: var(--light-gray);
+    background-color: var(--white);
     border-radius: 5px;
     transition: var(--smooth);
     position: relative;
@@ -259,7 +257,7 @@ img {
     position: absolute;
     width: 25px;
     height: 4px;
-    background-color: var(--light-gray);
+    background-color: var(--white);
     border-radius: 5px;
     transition: var(--smooth);
 }
@@ -292,11 +290,21 @@ img {
     transform: rotate(-45deg) translate(35px, 35px);
 }
 
+/* Tao breadcrumb */
+.breadcrumb {
+    margin: 12px 0 0 28px;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--orange);
+    transition: var(--smooth);
+}
+
 /* Slide chuyen dong */
-.col-lg-3 {
+.col-lg-3, .col-lg-2 {
     display: none;
 }
-.col-lg-9 {
+.col-lg-9, .col-lg-10 {
     padding: 0;
 }
 
@@ -304,7 +312,8 @@ img {
 .products {
     background-color: var(--gainsboro);
 }
-.product-items {
+.product-items, .item-detail, .item-description,
+.item-relate, .item-follow {
     margin: 4px 16px;
     padding: 0 0 36px 0;
 }
@@ -338,7 +347,7 @@ img {
 }
 
 .product-detail {
-    color: var(--text-color);
+    color: var(--light-blue);
     font-weight: 400;
     font-size: 0.8rem;
     display: inline-block;
@@ -380,6 +389,10 @@ img {
     color: var(--light-blue);
 }
 
+a {
+    text-decoration: none;
+}
+
 .lookat-product:hover {
     color: var(--orange);
     transition: var(--smooth);
@@ -413,6 +426,169 @@ img {
     transition: var(--smooth);
 }
 
+/* ---------------- */
+/* Trang cac loai san pham */
+
+/* title */
+.drop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
+}
+.title-deco, .product-filter{
+    border-bottom: none;
+    cursor: pointer;
+    color: var(--light-blue);
+}
+
+.drop-title:hover .drop-hover{
+    display: block;
+    margin-top: -10px;
+}
+
+.dropdown-item {
+    color: var(--light-blue);
+}
+
+.dropdown-item:hover {
+    color: var(--orange);
+}
+
+.dropdown-toggle::after {
+    color: var(--light-blue);
+    cursor: pointer;
+}
+/* List product */
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    transition: transform linear 0.1s;
+    will-change: transform;
+}
+
+.card:hover {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .3);
+    transform: translateY(-2px);
+}
+
+.card-body {
+    padding: 16px 8px 0;
+}
+
+.card-text {
+    font-size: 0.7rem;
+    display: block;
+    font-weight: 400;
+    color: var(--light-blue);
+}
+
+.card-text:hover {
+    color: var(--orange);
+    transition: var(--smooth);
+}
+
+.card .product-icon {
+    margin-left: 46px;
+}
+
+/* ------------- */
+/* Trang chi tiet san pham */
+.item-title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--light-blue);
+}
+
+.img-bornPink {
+    margin-top: 8px;
+}
+
+.item-rated .item-icon-empty {
+    color: rgba(0, 0, 0, .2);
+}
+
+.item-price {
+    font-size: 1.6rem;
+    color: var(--orange);
+}
+
+.item-deal, .item-transport, .id-item span {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.item-deal button {
+    width: 30px;
+    height: 30px;
+    outline: none;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.item-deal button:hover {
+    background-color: rgba(205, 202, 202, 0.3);
+    transition: var(--smooth);
+}
+
+.deal-buy {
+    display: flex;
+}
+
+.deal-buy #deal {
+    width: 45px;
+    outline: none;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, .2);
+    text-align: center;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.btn-minus, .btn-plus i {
+    font-size: 1rem;
+    color: var(--light-gray);
+}
+
+.item-transport,
+.item-deal, .item-price, .id-item,
+.item-rating {
+    margin-top: 12px;
+}
+
+.button-add {
+    padding-top: 40px;
+    display: inline-block;
+}
+
+.item-transport p {
+    font-size: 1rem;
+    font-weight: 350;
+}
+
+.btn-lg {
+    border-radius: 2rem;
+}
+
+.btn-lg:hover {
+    transition: var(--smooth);
+    color: var(--orange);
+    background-color: var(--white);
+}
+
+.content {
+    display: flex;
+}
+
+.content h5 {
+    color: var(--orange);
+}
+
+.content li {
+    list-style: none;
+    font-weight: 300;
+    font-size: 1rem;
+}
 @media (min-width: 36em) {
 /* slide chuyen dong */
     .col-lg-9 {
@@ -422,8 +598,15 @@ img {
     .lookat-product {
         padding-left: 16px;
     }
-    .product-link {
-        display: none;
+    .product-link .xemthem {
+        font-size: 1rem;
+    }
+    .card-text {
+        font-size: 0.8rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -16px;
     }
 }
 
@@ -446,6 +629,13 @@ img {
         /* margin-left: 14px; */
         font-size: 0.8rem;
     }
+    .card-text {
+        font-size: 0.8rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -18px;
+    }
 }
 
 @media (min-width: 60em) {
@@ -456,6 +646,13 @@ img {
 }
 
 @media (min-width: 62em) {
+    .card-text {
+        font-size: 1rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -40px;
+    }
     .navbar-init {
         background-color: var(--light-green);
     }
@@ -471,20 +668,20 @@ img {
     .navbar-icons {
         display: none;
     }
-    .input-group input{
+    .search-lg input{
         display: block;
     }
-    .input-group button{
+    .search-lg button{
         background-color: var(--light-blue);
         color: var(--white);
         border: initial;
         height: 38px;
     }
-    .input-group {
+    .search-lg {
         justify-content: left;
         align-items: left;
     }
-    .input-group button:hover {
+    .search-lg button:hover {
         background-color: var(--orange);
         color: var(--white);
     }
@@ -501,10 +698,10 @@ img {
         display: none;
     }
 /* category and carousel */
-    .col-lg-3 {
+    .col-lg-3, .col-lg-2 {
         display: block;
     }
-    .col-lg-9 {
+    .col-lg-9, .col-lg-10 {
         padding: 0;
     }
     .overview {
@@ -515,6 +712,7 @@ img {
     .category {
         border: 1px solid rgba(0, 0, 0, .2);
         border-radius: 3px;
+        margin-top: 16px;
     }
     
     .category-heading {
@@ -550,6 +748,7 @@ img {
     }
     .carousel-inner {
         border-radius: 5px;
+        margin-top: 16px;
     }
 /* product icons */
     .product-detail {
@@ -570,12 +769,22 @@ img {
         /* margin-left: 14px; */
         font-size: 1rem;
     }
+    .drop-title:hover .drop-hover{
+        display: none;
+    }
 }
 
 @media (min-width: 75em) {
     .lookat-product {
         padding-left: 76px;
         font-size: 1rem;
+    }
+    .card-text {
+        font-size: 1rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -45px;
     }
 }
 
@@ -584,17 +793,24 @@ img {
         padding-left: 96px;
         font-size: 1rem;
     }
+    .card-text {
+        font-size: 1rem;
+        display: block;
+    }
+    .card .product-icon {
+        margin-left: -48px;
+    }
 }
 
 /* footer */
 
 .hoten a:hover{
-    background-color: rgb(5, 152, 103);
-    color:rgb(249, 249, 249) ;
+    background-color: #059867;
+    color:var(--white) ;
 }
 
 .footertext{
-  color: white;
+  color: var(--white);
 }
 
 .icon i{
