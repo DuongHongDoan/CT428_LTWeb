@@ -19,6 +19,20 @@
     <title>SIGN IN</title>
 </head>
 <body>
+<?php
+    if(isset($_POST['signin'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $conn = new mysqli('localhost','root','','ct428');
+        $sql = "SELECT * FROM account WHERE Username='$username'";
+        $kq = $conn->query($sql)->fetch_assoc();
+        if($kq['Password'] == $password){
+            echo "<h1>Dang nhap thanh cong !</h1>";
+        } else{
+            echo "<h1>Dang nhap khong thanh cong !</h1>";
+        }
+    }
+?>
     <header>
     </header>
     <main style="margin-top: -30px;">
@@ -36,22 +50,22 @@
                         <div class="wrapper-2">
                             <div class="form-title">SIGN IN NOW !</div>
                             <div class="form" style="padding-top: 20px;">
-                                <form>
+                                <form name="signin" action="./signin.php" method="POST">
                                     <p class="content-item">
                                         <label><a class="form-label lbs">Username:</a>
-                                            <input type="text" placeholder="Enter username"  required>
+                                            <input type="text" id="username" name="username" placeholder="Enter username"  required>
                                         </label>
                                     </p>
                                     <p class="content-item" style="padding-top: 10px;">
 
                                         <label> <a class="form-label lbs">Password:</a>
-                                            <input type="password" placeholder="*****" name="password" required>
+                                            <input type="password" id="password" placeholder="*****" name="password" required>
                                         </label>
                                     </p>
-                                    <button type="submit"  class="signup" style="margin-top: 10px;">SIGN IN </button>
+                                    <button type="submit" name="signin" class="signup" style="margin-top: 10px;">SIGN IN </button>
                                     <button class="signup" style="margin-top: 10px;">RESET</a></button>
                                 </form>
-                                    <button onclick="open2()" class="signup" style="margin-top: 5px;">SIGN UP</button>
+                                    <button onclick="open2()" class="signup" style="margin-top: 5px;"><a href="./signupp.php">SIGN UP</a></button>
                             </div>
                         </div>
 
@@ -65,6 +79,7 @@
     <footer>
     </footer>
     <!-- Nhung cac script -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="./assets/main.js"></script>
     <script src="./sign/signup.js"></script>
     <script src="./introassets/intro.js"></script>

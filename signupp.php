@@ -36,7 +36,7 @@
             echo "$conn->connect_error";
             die("Connection Failed : ". $conn->connect_error);
         } else {
-            $stmt1 = $conn->prepare("insert into account(username, password) values(?, ?)");
+            $stmt1 = $conn->prepare("insert into account(Username, Password) values(?, ?)");
             $stmt1->bind_param("si",$username,$password);
             $execval1 = $stmt1->execute();
             $stmt1->close();

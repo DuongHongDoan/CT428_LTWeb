@@ -1,6 +1,6 @@
 function open1(){
-    window.location.href = "./signin.html";
+    window.location.href = "./signin.php";
 }
 function open2(){
-    window.location.href = "./signup.html";
+    window.location.href = "./signupp.php";
 }
