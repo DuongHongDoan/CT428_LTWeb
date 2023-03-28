@@ -15,7 +15,7 @@
                             </a>
                           </div>
                     </div>
-                    <div class="col">
+                    <div class="col"> 
                         <section id="overlay-search">
                             <div class="input-group-collap">
                                 <i class="close-btn fa-solid fa-xmark"></i>

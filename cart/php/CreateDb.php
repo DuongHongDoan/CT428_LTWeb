@@ -1,6 +1,4 @@
 <?php
-
-
 class CreateDB{
     public $servername;
     public $username;

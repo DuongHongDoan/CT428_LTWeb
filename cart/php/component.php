@@ -59,7 +59,7 @@ function cartElement($productimg, $productname, $productprice, $productid) {
 </form>
 ";
 
-    echo  $element;
+echo  $element;
 }
 
 
