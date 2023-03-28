@@ -49,7 +49,9 @@
                     <div class="signup-form">
                         <div class="wrapper-2">
                             <div style="text-align:center;">
-                                <img src="/CT428_LTWeb/img/logo.png" style="width:50px; border-radius: 30px;"></img></div>
+                                <A href="/CT428_LTWeb/index.php">
+                                    <img src="/CT428_LTWeb/img/logo.png" style="width:50px; border-radius: 30px;"></img>
+                                </A></div>
                             <div class="form-title" style="text-align:center;">
                                 SIGN IN NOW !
                             </div>
