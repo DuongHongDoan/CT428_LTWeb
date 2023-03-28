@@ -930,3 +930,33 @@ a {
 .form-message {
     color: red;
 }
+
+
+/* cart */
+
+img{
+    max-width: 100%;
+    height: auto;
+    background: lightblue;
+    background: radial-gradient(white 30%, lightblue 70%);
+}
+
+.shopping-cart{
+    padding: 3% 0;
+}
+
+
+.cart-items + .cart-items{
+    padding: 2% 0;
+}
+
+
+.fa-minus, 
+.fa-plus {
+    font-size: 20px;
+}
+
+
+.price-details h6{
+    padding: 3% 2%;
+}
