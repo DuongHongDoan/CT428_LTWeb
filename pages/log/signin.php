@@ -48,7 +48,11 @@
                     </div>
                     <div class="signup-form">
                         <div class="wrapper-2">
-                            <div class="form-title">SIGN IN NOW !</div>
+                            <div style="text-align:center;">
+                                <img src="/CT428_LTWeb/img/logo.png" style="width:50px; border-radius: 30px;"></img></div>
+                            <div class="form-title" style="text-align:center;">
+                                SIGN IN NOW !
+                            </div>
                             <div class="form" style="padding-top: 20px;">
                                 <form name="signin" action="./signin.php" method="POST">
                                     <p class="content-item">
