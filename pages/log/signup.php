@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./assets/bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/main.css">
     <link rel="stylesheet" href="./introassets/intro.css">
-    <link rel="stylesheet" href="sign/signup.css">
+    <link rel="stylesheet" href="./sign/signup.css">
     <title>SIGN UP</title>
 </head>
 <body>
@@ -146,6 +146,7 @@
     <footer>
     </footer>
     <!-- Nhung cac script -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="./assets/main.js"></script>
     <script src="./sign/signup.js"></script>
     <script src="./introassets/intro.js"></script>

@@ -71,7 +71,7 @@
                                     <button type="submit" name="signin" class="signup" style="margin-top: 10px;">SIGN IN </button>
                                     <button class="signup" style="margin-top: 10px;">RESET</a></button>
                                 </form>
-                                    <button onclick="open2()" class="signup" style="margin-top: 5px;"><a href="./signupp.php">SIGN UP</a></button>
+                                    <button onclick="open2()" class="signup" style="margin-top: 5px;">SIGN UP</button>
                             </div>
                         </div>
 
