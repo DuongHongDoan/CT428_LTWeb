@@ -4,3 +4,6 @@ function open1(){
 function open2(){
     window.location.href = "./signup.php";
 }
+function open3(){
+    window.location.href = "./signup.php";
+}

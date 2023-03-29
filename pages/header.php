@@ -196,8 +196,9 @@
                         <div class="dropdown">
                             <span><i class="icon-user fa-regular fa-user ps-2"></i></span>
                             <div class="dropdown-content">
-                                <p><a href="/CT428_LTWeb/pages/log/signup.php">Sign Up</a></p>
-                                <p><a href="/CT428_LTWeb/pages/log/signin.php">Sign In</a></p>
+                                <p><a href="index.php?quanly=dangky">Sign Up</a></p>
+                                <p><a href="index.php?quanly=dangnhap">Sign In</a></p>
+                                <p><a href="index.php?quanly=datlai">Re Pass</a></p>
                             </div>
                         </div>
                     </a>

@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Nhung gg font -> Start -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     Nhung gg font -> Start -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet"> -->
     <!-- Nhung gg font -> End -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-6.0.0-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-6.0.0-web/js/all.min.js">
     <link rel="stylesheet" href="./assets/bootstrap-5.1.3-dist/css/bootstrap.min.css">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./sign/signup.css">
     <title>SIGN UP</title>
 </head>
-<body>
+<body> -->
 <?php
     if(isset($_POST['signupp'])){
         $username = $_POST['username'];
@@ -51,11 +51,243 @@
         }
     }
 ?>
-    <header>
-    </header>
-    <main style="margin-top: -30px;">
+<style>
+    * {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+header{
+  margin-top: 30px;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background: aquamarine; */
+  background-image: url(./daisy.jpg);
+}
+.content1 {
+  width: 1280px;
+  max-width: 100%;
+  margin: -50px 0 0 0;
+}
+@media (max-width: 62em){
+    .content1{
+        margin: 30px 0 0 0;
+    }
+}
+
+.shadow-box {
+  background: white;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 700px) {
+  .shadow-box {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+}
+
+.signup-wrapper .company-details {
+  background: url(/CT428_LTWeb/pages/log/sign/YA.jpg);
+  background-size: cover;
+  position: relative;
+}
+.signup-wrapper .company-details:before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.signup-wrapper .company-details .wrapper-1 {
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 22px;
+}
+.signup-wrapper .company-details .logo {
+  padding: 0 20px;
+  width: 20%;
+  margin: 0 auto;
+}
+.signup-wrapper .company-details .logo .icon-food {
+  /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/food.png); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 38px;
+  height: 38px;
+  margin: 0 auto;
+}
+.signup-wrapper .company-details .title {
+  padding: 20px;
+  width: 74%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  font-size: 2em;
+  text-shadow: 1px 1px #4b4a4a;
+  text-align: center;
+}
+.signup-wrapper .company-details .slogan {
+  display: none;
+}
+
+.signup-wrapper .signup-form .wrapper-2 {
+  padding: 14px 20px;
+  margin: 30px 80px;
+}
+.signup-wrapper .signup-form .form-title {
+  font-size: 1.5em;
+  color: #007700;
+  padding: 5px;
+  text-align: center;
+}
+.signup-wrapper .signup-form .form .content-item {
+  text-transform: uppercase;
+  color: #a19f9c;
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  text-align: center;
+}
+.signup-wrapper .signup-form .form input[type="text"],
+.signup-wrapper .signup-form .form input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #e4e4e4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+
+  text-align: center;
+  width: 100%;
+}
+.signup-wrapper .signup-form .signup {
+  background-color: #007700;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  font-size: 1em;
+  text-transform: capitalize;
+  margin-top: 49px;
+  border-radius: 5px;
+}
+.signup-wrapper .signup-form .login {
+  color: #007700;
+  padding: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9em;
+  width: 95%;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+}
+input::placeholder {
+  color: #575757;
+}
+
+@media (min-width: 200px) {
+  .signup-wrapper .signup-form .wrapper-2 {
+    margin: 30px 23px;
+  }
+
+  .signup-wrapper .company-details .title {
+    width: 90%;
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 300px) {
+  .signup-wrapper .signup-form .login {
+    display: inline-block;
+  }
+  .signup-wrapper .signup-form .wrapper-2 {
+    margin: 30px 60px;
+  }
+
+  .signup-wrapper .company-details .title {
+    width: 80%;
+    font-size: 2em;
+  }
+}
+@media (min-width: 500px) {
+  .signup-wrapper .signup-form .login {
+    display: inline;
+  }
+}
+
+@media (min-width: 700px) {
+  .signup-wrapper .company-details,
+  .signup-wrapper .signup-form {
+    width: 50%;
+  }
+  .signup-wrapper {
+    display: flex;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 5%;
+  }
+  .signup-wrapper .company-details .wrapper-1 {
+    padding-bottom: 150px;
+    padding-top: 160px;
+  }
+  .signup-wrapper .company-details .slogan {
+    padding: 0 20px;
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    text-shadow: 1px 1px #4b4a4a;
+    display: block;
+  }
+  .signup-wrapper .company-details .title {
+    width: 76%;
+  }
+  .signup-wrapper .signup-form .wrapper-2 {
+    padding: 50px 40px;
+    margin: 0;
+  }
+
+  .signup-wrapper .signup-form .login {
+    display: inline;
+  }
+  .signup-wrapper .signup-form .form .content-item {
+    text-align: initial;
+  }
+  .signup-wrapper .signup-form .form input[type="text"],
+  .signup-wrapper .signup-form .form input[type="password"] {
+    text-align: initial;
+  }
+  .signup-wrapper .signup-form .form-title {
+    text-align: initial;
+    padding: 0;
+  }
+}
+.lbs{
+  font-weight: bolder;
+  text-decoration: none;
+  color: #4b4a4a;
+}
+
+</style>
+    <!-- <header>
+    </header> -->
+    <main>
         <div class="content-wrapper"> 
-            <div class="content">
+            <div class="content1">
                 <div class="signup-wrapper shadow-box">
                     <div class="company-details ">
                         <div class="shadow"></div>
@@ -129,10 +361,24 @@
                                             <input type="text" placeholder="Enter your address" id="diachi" name="diachi"  required>
                                         </label>
                                     </p>
-                                    <button type="submit" name="signupp" class="signup" style="margin-top: 10px;">SIGN UP </button>
-                                    <button type="reset" class="signup" style="margin-top: 10px;">RESET</a></button>
+                                    <p class="content-item" style="padding-top: 10px;">
+                                        <button type="submit" name="signupp" class="signup" style="margin-top: 10px;">SIGN UP </button>
+                                        <button type="reset" class="signup" style="margin-top: 10px;">RESET</a></button>
+                                    </p>
+                                    
                                 </form>
-                                <button onclick="open1()" class="signup" style="margin-top: 5px;">SIGN IN </button>
+                                <div>
+                                  <a href="index.php?quanly=dangnhap" class="content-item">
+                                        <button class="signup" style="margin-top: 5px;">
+                                            SIGN IN
+                                        </button>
+                                  </a> 
+                                  <a href="index.php?quanly=datlai" class="content-item">
+                                          <button class="signup" style="margin-top: 5px;">
+                                              CHANGE
+                                          </button>
+                                  </a> 
+                                </div>                                
                             </div>
                         </div>
 
@@ -141,11 +387,10 @@
                 </div>
             </div>
         </div>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     </main>
+        <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <footer>
     </footer>
-    <!-- Nhung cac script -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="./assets/main.js"></script>
     <script src="./sign/signup.js"></script>
@@ -154,4 +399,4 @@
     <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
     <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html> -->

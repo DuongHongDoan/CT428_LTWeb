@@ -1,22 +1,22 @@
 <?php
-    if(isset($_POST['signin'])){
+    if(isset($_POST['change'])){
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $oldpassword = $_POST['oldpassword'];
+        $newpassword = $_POST['oldpassword'];
         $conn = new mysqli('localhost','root','','ct428');
         $sql = "SELECT * FROM account WHERE Username='$username'";
         $kq = $conn->query($sql)->fetch_assoc();
-        if($kq['Password'] == $password){
-            echo "<h1>Dang nhap thanh cong !</h1>";
+        if($kq['Password'] == $oldpassword){
+          $stmt = $conn->prepare("insert into account(Username, Password) values(?, ?)");
+          $stmt->bind_param("si",$username,$password);
+          $execval = $stmt->execute();
+          $stmt1->close();
+          echo "<h1>Thay doi thanh cong !</h1>";
         } else{
-            echo "<h1>Dang nhap khong thanh cong !</h1>";
+            echo "<h1>Sai username or password</h1>";
         }
     }
 ?>
-<script>
-    function open3(){
-        window.location.href = "./signup.php";
-    }
-</script>
 <style>
     * {
     box-sizing: border-box;
@@ -264,7 +264,7 @@
                                     <img src="/CT428_LTWeb/img/logo.png" style="width:50px; border-radius: 30px;"></img>
                                 </A></div>
                             <div class="form-title" style="text-align:center;">
-                                SIGN IN NOW !
+                                CHANGE PASSWORD NOW !
                             </div>
                             <div class="form" style="padding-top: 20px;">
                                 <form name="signin" action="./signin.php" method="POST">
@@ -277,13 +277,20 @@
 
                                     <p class="content-item" style="padding-top: 10px;">
 
-                                        <label> <a class="form-label lbs">Password:</a>
-                                            <input type="password" id="password" placeholder="*****" name="password" required>
+                                        <label> <a class="form-label lbs">Old Password:</a>
+                                            <input type="password" id="oldpassword" placeholder="*****" name="oldpassword" required>
                                         </label>
                                     </p>
 
                                     <p class="content-item" style="padding-top: 10px;">
-                                        <button type="submit" name="signin" class="signup" style="margin-top: 10px;">SIGN IN </button>
+
+                                        <label> <a class="form-label lbs">New Password:</a>
+                                            <input type="password" id="newpassword" placeholder="*****" name="newpassword" required>
+                                        </label>
+                                    </p>
+
+                                    <p class="content-item" style="padding-top: 10px;">
+                                        <button type="submit" name="change" class="signup" style="margin-top: 10px;">CHANGE</button>
                                         <button type="reset" class="signup" style="margin-top: 10px;">RESET</a></button>
                                     </p>
 
@@ -294,9 +301,9 @@
                                             SIGN UP
                                         </button>
                                   </a> 
-                                  <a href="index.php?quanly=datlai" class="content-item">
+                                  <a href="index.php?quanly=dangnhap" class="content-item">
                                           <button class="signup" style="margin-top: 5px;">
-                                              CHANGE
+                                              SIGN IN
                                           </button>
                                   </a> 
                                 </div> 
