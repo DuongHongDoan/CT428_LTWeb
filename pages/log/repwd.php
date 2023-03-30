@@ -2,15 +2,14 @@
     if(isset($_POST['change'])){
         $username = $_POST['username'];
         $oldpassword = $_POST['oldpassword'];
-        $newpassword = $_POST['oldpassword'];
+        $newpassword = $_POST['newpassword'];
         $conn = new mysqli('localhost','root','','ct428');
         $sql = "SELECT * FROM account WHERE Username='$username'";
         $kq = $conn->query($sql)->fetch_assoc();
         if($kq['Password'] == $oldpassword){
-          $stmt = $conn->prepare("insert into account(Username, Password) values(?, ?)");
-          $stmt->bind_param("si",$username,$password);
-          $execval = $stmt->execute();
-          $stmt1->close();
+          $sqll = "UPDATE account SET Password = ? WHERE Username = ?";
+          $stmt = $conn->prepare($sqll);
+          $stmt->execute([$newpassword,$username]);
           echo "<h1>Thay doi thanh cong !</h1>";
         } else{
             echo "<h1>Sai username or password</h1>";
@@ -267,8 +266,7 @@
                                 CHANGE PASSWORD NOW !
                             </div>
                             <div class="form" style="padding-top: 20px;">
-                                <form name="signin" action="./signin.php" method="POST">
-
+                                <form name="change" action="" method="POST">
                                     <p class="content-item">
                                         <label><a class="form-label lbs">Username:</a>
                                             <input type="text" id="username" name="username" placeholder="Enter username"  required>
