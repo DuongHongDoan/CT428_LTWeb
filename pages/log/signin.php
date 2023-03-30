@@ -273,18 +273,10 @@
                                     </p>
 
                                 </form>
-                                <div>
-                                  <a href="index.php?quanly=dangky" class="content-item">
-                                        <button class="signup" style="margin-top: 5px;">
-                                            SIGN UP
-                                        </button>
-                                  </a> 
-                                  <a href="index.php?quanly=datlai" class="content-item">
-                                          <button class="signup" style="margin-top: 5px;">
-                                              CHANGE
-                                          </button>
-                                  </a> 
-                                </div> 
+                                <p class="content-item" style="margin-top:-40px">
+                                  <a href="index.php?quanly=dangky"><button type="button" class="signup">SIGN UP</button></a>
+                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup">CHANGE</button></a>
+                                </p>
                             </div>
                         </div>
 

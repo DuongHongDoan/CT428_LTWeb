@@ -331,18 +331,10 @@ input::placeholder {
                                     </p>
                                     
                                 </form>
-                                <div>
-                                  <a href="index.php?quanly=dangnhap" class="content-item">
-                                        <button class="signup" style="margin-top: 5px;">
-                                            SIGN IN
-                                        </button>
-                                  </a> 
-                                  <a href="index.php?quanly=datlai" class="content-item">
-                                          <button class="signup" style="margin-top: 5px;">
-                                              CHANGE
-                                          </button>
-                                  </a> 
-                                </div>                                
+                                <p class="content-item" style="margin-top:-40px">
+                                  <a href="index.php?quanly=dangnhap"><button type="button" class="signup">SIGN IN</button></a>
+                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup">CHANGE</button></a>
+                                </p>                              
                             </div>
                         </div>
 
