@@ -17,7 +17,6 @@
         transition: var(--smooth);
     }
 </style>
-f
 
 <footer class="text-center text-lg-start bg-opacity-100 text-muted" style="margin-top: 50px;">
     <section class="footertext" style="padding-top: 5px; background-color: #2E8B57;">
