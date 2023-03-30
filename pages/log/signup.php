@@ -1,24 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     Nhung gg font -> Start -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet"> -->
-    <!-- Nhung gg font -> End -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="./assets/fontawesome-free-6.0.0-web/css/all.min.css">
-    <link rel="stylesheet" href="./assets/fontawesome-free-6.0.0-web/js/all.min.js">
-    <link rel="stylesheet" href="./assets/bootstrap-5.1.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/main.css">
-    <link rel="stylesheet" href="./introassets/intro.css">
-    <link rel="stylesheet" href="./sign/signup.css">
-    <title>SIGN UP</title>
-</head>
-<body> -->
 <?php
     if(isset($_POST['signupp'])){
         $username = $_POST['username'];
@@ -52,22 +31,6 @@
     }
 ?>
 <style>
-    * {
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
-header{
-  margin-top: 30px;
-  text-align: center;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  /* background: aquamarine; */
-  background-image: url(./daisy.jpg);
-}
 .content1 {
   width: 1280px;
   max-width: 100%;
@@ -82,7 +45,7 @@ body {
 .shadow-box {
   background: white;
 }
-p {
+.form p {
   padding: 0;
   margin: 0;
 }
@@ -93,7 +56,7 @@ p {
 }
 
 .signup-wrapper .company-details {
-  background: url(/CT428_LTWeb/pages/log/sign/YA.jpg);
+  background: url(./pages/log/sign/YA.jpg);
   background-size: cover;
   position: relative;
 }
@@ -299,9 +262,10 @@ input::placeholder {
                     <div class="signup-form ">
                         <div class="wrapper-2">
                         <div style="text-align:center;">
-                                <A href="/CT428_LTWeb/index.php">
-                                    <img src="/CT428_LTWeb/img/logo.png" style="width:50px; border-radius: 30px;"></img>
-                                </A></div>
+                                <a href="/CT428_LTWeb/index.php">
+                                    <img src="./img/logo.png" style="width:50px; border-radius: 30px;"></img>
+                                </a>
+                        </div>
                             <div class="form-title" style="text-align:center;">
                                 SIGN UP NOW !
                             </div>
@@ -388,15 +352,3 @@ input::placeholder {
             </div>
         </div>
     </main>
-        <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <footer>
-    </footer>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="./assets/main.js"></script>
-    <script src="./sign/signup.js"></script>
-    <script src="./introassets/intro.js"></script>
-    <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
-    <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
-    <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html> -->

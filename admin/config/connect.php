@@ -1,5 +1,6 @@
 <?php
-    $conn = new mysqli("localhost", "root", "", "ct428");
+
+    $conn = new mysqli("localhost", "root", "", "ct428_ltweb");
 
     // Kiem tra ket noi
     if($conn->connect_errno) {

@@ -18,21 +18,6 @@
     }
 </script>
 <style>
-    * {
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-  }
-  
-  header{
-    margin-top: 30px;
-    text-align: center;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    background-image: url(./daisy.jpg);
-  }
   .content1 {
   width: 1280px;
   max-width: 100%;
@@ -47,7 +32,7 @@
   .shadow-box {
     background: white;
   }
-  p {
+  .form p {
     padding: 0;
     margin: 0;
   }
@@ -58,7 +43,7 @@
   }
   
   .signup-wrapper .company-details {
-    background: url(/CT428_LTWeb/pages/log/sign/WonWoo.jpg);
+    background: url(./pages/log/sign/WonWoo.jpg);
     background-size: cover;
     position: relative;
   }
@@ -261,7 +246,7 @@
                         <div class="wrapper-2">
                             <div style="text-align:center;">
                                 <A href="/CT428_LTWeb/index.php">
-                                    <img src="/CT428_LTWeb/img/logo.png" style="width:50px; border-radius: 30px;"></img>
+                                    <img src="./img/logo.png" style="width:50px; border-radius: 30px;"></img>
                                 </A></div>
                             <div class="form-title" style="text-align:center;">
                                 SIGN IN NOW !

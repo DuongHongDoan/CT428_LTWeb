@@ -177,8 +177,6 @@
                             <button name="timkiem" type="submit"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
-
-
                     <form method="POST" action="index.php?quanly=timkiem">
                         <div class="search-lg mb-3">
                             <input type="text" name="tukhoa" class="form-control" placeholder="Search">
