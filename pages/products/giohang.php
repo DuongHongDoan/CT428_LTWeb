@@ -87,6 +87,7 @@
                       <?php
                           if ($tongtien < $dk){
                             echo number_format($phivanchuyen, 0, ',', ".").'Đ';
+                            $tongtien1 = $tongtien + $phivanchuyen;
                           }else{
                             $str = "FREE";
                             $phivanchuyen = $str;
@@ -96,7 +97,15 @@
                     </h6>
                     <hr>
                     <h6>
-                    <?php echo number_format($tongtien, 0, ',', '.').'Đ'; ?>
+                    <?php 
+                    if ($tongtien < $dk) {
+                      echo number_format( $tongtien1, 0, ',', '.').'Đ';
+                    }else{
+
+                      echo number_format( $tongtien, 0, ',', '.').'Đ'; 
+                    }
+                    ?>
+
                     </h6>
 
                     <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
