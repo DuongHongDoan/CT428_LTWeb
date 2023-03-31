@@ -253,7 +253,9 @@
                                     <a href="index.php?quanly=pro_detail&id=<?php echo $row_same['id_sanpham']?>">
                                         <i class="lookat-product fa-solid fa-eye"></i>
                                     </a>
-                                    <i class="add-product fa-solid fa-cart-plus"></i>
+
+                                    <i class="add-product fa-solid fa-cart-plus" name="themgiohang"></i>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -290,7 +292,7 @@
                                     <a href="index.php?quanly=pro_detail&id=<?php echo $row_khac['id_sanpham']?>">
                                         <i class="lookat-product fa-solid fa-eye"></i>
                                     </a>
-                                    <i class="add-product fa-solid fa-cart-plus"></i>
+                                    <i class="add-product fa-solid fa-cart-plus" name="Themgiohang"></i>
                                 </div>
                             </div>
                         </div>

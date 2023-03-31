@@ -21,7 +21,7 @@
           $total = 0;
           $tongtien =0;
           $phivanchuyen=35000;
-          $dk = number_format(500000, 0, ',', ".").'Đ';
+          $dk = 500000;
           foreach($_SESSION['cart'] as $cart_item){
             $total = $cart_item['soluong'] * $cart_item['giasp'];
             $tongtien+= $total;
@@ -49,7 +49,13 @@
               </div>
               <div class="col-md-3 py-5">
                 <div>
-                  <td><?php echo $cart_item['soluong']; ?></td>
+                  <td>
+
+                    <a href="pages/products/add_cart.php?cong=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-plus" style="padding: 7px 0 0 7px"></i></i></a>
+                    <?php echo $cart_item['soluong']; ?>
+                    <a href="pages/products/add_cart.php?tru=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-minus" style="padding: 5px 0 0 5px"></i></a>
+                  
+                  </td>
                 </div>
               </div>
             </div>
@@ -59,7 +65,7 @@
         }
         ?>
 
-        <h4 style ="padding-top: 30px"><a href="pages/products/add_cart.php?xoatatca=1" style="color: #fff; background-color:#059867; border-radius: 5px; ">Xóa tất cả</a></h4>
+        <h4 style ="padding-top: 30px"><a href="pages/products/add_cart.php?xoatatca=1" style="color: red; font-size: 20px">Xóa tất cả</a></h4>
 
       </div>
     <div class="col-md-4 offset-md-1 border rounded mt-5-bg-while h-25">
