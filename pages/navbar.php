@@ -12,7 +12,7 @@
                             <a class="nav-link" href="index.php?quanly=gioithieu">Giới thiệu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?quanly=lienhe">Liên hệ</a>
+                            <a class="nav-link" href="lienhe.php">Liên hệ</a>
                         </li>
                     </ul>
                     <!-- nut gom menu -->

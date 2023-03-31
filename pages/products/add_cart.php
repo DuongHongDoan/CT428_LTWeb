@@ -4,6 +4,18 @@
     //tru so luong
     //them so luong
     //xoa sp
+    if(isset($_SESSION['cart']) && $_GET['xoa']){
+        $id= $_GET['xoa'];
+        foreach($_SESSION['cart'] as $cart_item){
+            if($cart_item['id'] != $id){
+                $product[] = array('tensp'=>$cart_item['tensp'], 'id'=> $cart_item['id'], 'soluong'=>$cart_item['soluong']+1,'giasp'=> $cart_item['giasp'], 'hinhanh'=>$cart_item['hinhanh'] );
+
+            }
+        $_SESSION['cart'] = $product;
+        header('Location: ../../index.php?quanly=giohang');
+
+        }
+    }
     //xoa tat ca
     if(isset($_GET['xoatatca']) && $_GET['xoatatca']==1){
         unset($_SESSION['cart']);

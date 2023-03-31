@@ -1,6 +1,7 @@
 
 <?php
     if(isset($_SESSION['cart'])) {
+
     }
 ?>
 
@@ -19,6 +20,8 @@
           $i=0;
           $total = 0;
           $tongtien =0;
+          $phivanchuyen=35000;
+          $dk = number_format(500000, 0, ',', ".").'Đ';
           foreach($_SESSION['cart'] as $cart_item){
             $total = $cart_item['soluong'] * $cart_item['giasp'];
             $tongtien+= $total;
@@ -39,7 +42,10 @@
                 <h5 class="pt-2">
                   <?php echo number_format( $cart_item['giasp'], 0, ',', '.').'Đ'; ?>
                 </h5>
-                <button type="submit" class="btn-danger mx-2" name="remove">Remove</button>
+                <a href="pages/products/add_cart.php?xoa=<?php echo $cart_item['id'] ?>">
+                  <!-- <button type="#" class="btn-danger mx-2" name="remove">Remove</button> -->
+                  <h5 class="pt-2" style="color:red; font-size: 18px;">Xóa</h5>
+                </a>
               </div>
               <div class="col-md-3 py-5">
                 <div>
@@ -52,6 +58,9 @@
         <?php
         }
         ?>
+
+        <h4 style ="padding-top: 30px"><a href="pages/products/add_cart.php?xoatatca=1" style="color: #fff; background-color:#059867; border-radius: 5px; ">Xóa tất cả</a></h4>
+
       </div>
     <div class="col-md-4 offset-md-1 border rounded mt-5-bg-while h-25">
             <h6 style="font-size: 30px; padding-top: 15px; text-align: center; letter-spacing: 4px">DETAILS</h6>
@@ -75,15 +84,25 @@
                     <h6>
                     <?php echo number_format($tongtien, 0, ',', '.').'Đ'; ?>
                     </h6>
-
-                    <h6 class="text-success">Free</h6>
+                      <?php
+                          if ($tongtien < $dk){
+                            echo number_format($phivanchuyen, 0, ',', ".").'Đ';
+                          }else{
+                            $str = "FREE";
+                            $phivanchuyen = $str;
+                            echo $phivanchuyen;
+                          }
+                      ?>
+                    </h6>
                     <hr>
                     <h6>
                     <?php echo number_format($tongtien, 0, ',', '.').'Đ'; ?>
                     </h6>
+
+                    <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
                 </div>
                 <a href="#">
-                  <button type="submit" name="thanhtoan" style="background-color: #059867; color: #fff;">Thanh toán</button>
+                  <button type="submit" name="thanhtoan" style="background-color: #059867; color: #fff; border-radius: 5px">Thanh toán</button>
                 </a>
 
             </div>

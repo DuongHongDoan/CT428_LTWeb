@@ -1,5 +1,9 @@
 <?php
     session_start();
+    // if(isset($_POST['themgiohang'])){
+    //     if(isset($_SESSION['cart'])){
+    //     }
+    // }
 ?> 
 
 <!DOCTYPE html>
@@ -40,6 +44,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
+
+    
     <script>
         var owl = $('.owl-carousel');
         owl.owlCarousel({
