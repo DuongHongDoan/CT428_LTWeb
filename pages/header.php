@@ -174,7 +174,7 @@
                     <form method="POST" class="example" action="index.php?quanly=timkiem" style="margin-top:-58px;max-width:300px">
                         <div class="search-mb mb-3">
                             <input type="text" placeholder="Search.." name="tukhoa">
-                            <button name="timkiem" type="submit"><i class="fa fa-search"></i></button>
+                            <button name="timkiem" type="submit" style="color: white"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
                     <form method="POST" action="index.php?quanly=timkiem">
