@@ -71,7 +71,7 @@
     padding: 5px;
     border-width:2px;
 }
-@media (max-width:800px) {
+@media (max-width:1190px) {
   .hoten a{
     border: none;
   }

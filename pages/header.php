@@ -134,6 +134,25 @@
         }
 
     }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        z-index: 50;
+    }
 </style>
 
 <header>
@@ -155,11 +174,9 @@
                     <form method="POST" class="example" action="index.php?quanly=timkiem" style="margin-top:-58px;max-width:300px">
                         <div class="search-mb mb-3">
                             <input type="text" placeholder="Search.." name="tukhoa">
-                            <button name="timkiem" type="submit"><i class="fa fa-search"></i></button>
+                            <button name="timkiem" type="submit" style="color: white"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
-
-
                     <form method="POST" action="index.php?quanly=timkiem">
                         <div class="search-lg mb-3">
                             <input type="text" name="tukhoa" class="form-control" placeholder="Search">
@@ -174,7 +191,14 @@
                         <i class="icon-cart fa-solid fa-cart-shopping"></i>
                     </a>
                     <a href="#">
-                        <i class="icon-user fa-regular fa-user ps-2"></i>
+                        <div class="dropdown">
+                            <span><i class="icon-user fa-regular fa-user ps-2"></i></span>
+                            <div class="dropdown-content">
+                                <p><a href="index.php?quanly=dangky">Sign Up</a></p>
+                                <p><a href="index.php?quanly=dangnhap">Sign In</a></p>
+                                <p><a href="index.php?quanly=datlai">Re Pass</a></p>
+                            </div>
+                        </div>
                     </a>
                 </div>
             </nav>
