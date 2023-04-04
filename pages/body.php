@@ -26,6 +26,12 @@
             elseif($tmp=='lienhe') {
                 include("products/contact.php");
             }
+            elseif($tmp=='vanchuyen') {
+                include("products/vanchuyen.php");
+            }
+            elseif($tmp=='thanhtoan') {
+                include("products/thanhtoan.php");
+            }
             else
                 include("main/index.php");
         ?>
@@ -40,7 +46,7 @@
     else {
         $t = '';
     }
-    if ($t != "categories" && $t != "pro_detail" && $t != "giohang" && $t != "timkiem" && $t != "gioithieu" && $t != "lienhe"){
+    if ($t != "categories" && $t != "pro_detail" && $t != "giohang" && $t != "timkiem" && $t != "gioithieu" && $t != "lienhe" && $t != "vanchuyen" && $t != "thanhtoan"){
         include("products/product.php");
     }
 ?>
