@@ -24,7 +24,16 @@
                 include("products/intro.php");
             }
             elseif($tmp=='lienhe') {
-                include("products/contact.php");
+                include("products/lienhe.php");
+            }
+            elseif($tmp=='dangky') {
+                include("./pages/log/signup.php");
+            }
+            elseif($tmp=='dangnhap') {
+                include("./pages/log/signin.php");
+            }
+            elseif($tmp=='datlai') {
+                include("./pages/log/repwd.php");
             }
             else
                 include("main/index.php");
@@ -40,7 +49,7 @@
     else {
         $t = '';
     }
-    if ($t != "categories" && $t != "pro_detail" && $t != "giohang" && $t != "timkiem" && $t != "gioithieu" && $t != "lienhe"){
+    if ($t != "categories" && $t != "pro_detail" && $t != "giohang" && $t != "timkiem" && $t != "gioithieu" && $t != "lienhe" && $t != "dangky" && $t != "dangnhap" && $t != "datlai"){
         include("products/product.php");
     }
 ?>

@@ -36,7 +36,15 @@
     // body
         include("pages/body.php");
     // <!-- Phan chan -->
+    if (isset($_GET['quanly'])) {
+        $t = $_GET['quanly'];
+    }
+    else {
+        $t = '';
+    }
+    if ($t != "giohang"){
         include("pages/footer.php");
+    }
     ?>
     <!-- Nhung cac script -->
     <script src="./assets/main.js"></script>

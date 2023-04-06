@@ -63,16 +63,3 @@
 .infor img{
     width:500px;
 }
-
-.hoten a{
-    text-decoration: none;
-    color:#000000;
-    border: #000000 solid;
-    padding: 5px;
-    border-width:2px;
-}
-@media (max-width:800px) {
-  .hoten a{
-    border: none;
-  }
-}
