@@ -189,6 +189,15 @@
                 <div class="col-4 icons">
                     <a href="index.php?quanly=giohang">
                         <i class="icon-cart fa-solid fa-cart-shopping"></i>
+                        <?php
+
+                                if (isset($_SESSION['cart'])){
+                                    $count = count($_SESSION['cart']);
+                                    echo "<span id=\"#\">$count</span>";
+                                }else{
+                                    echo "<span id=\"#\">0</span>";
+                                 }
+                        ?>
                     </a>
                     <a href="#">
                         <div class="dropdown">

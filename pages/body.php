@@ -24,7 +24,7 @@
                 include("products/intro.php");
             }
             elseif($tmp=='lienhe') {
-                include("products/contact.php");
+                include("products/lienhe.php");
             }
             elseif($tmp=='dangky') {
                 include("./pages/log/signup.php");

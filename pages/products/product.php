@@ -1,3 +1,34 @@
+<style>
+    .product-icon {
+        margin-top: -3px;
+        margin-left: 3px;
+    }
+    .product-icon button {
+        border: none;
+        background-color: transparent;
+    }
+    .icon-cart{
+        margin-left: 0;
+    }
+    @media (min-width: 36em) {
+        .product-icon {
+            margin-left: 0;
+            margin-top: -4px;
+        }
+    }
+
+    @media (min-width: 48em) {
+        .product-icon {
+            margin-top: 1px;
+        }
+    }
+
+    @media (min-width: 62em) {
+        .product-icon {
+            margin-top: 4px;
+        }
+    }
+</style>
 <div class="container-fluid products">
         <div class="container">
             <!-- Sale -->
@@ -24,10 +55,13 @@
                                     <p class="product-price"><?php echo number_format($row['giasp'],0,',', '.')?><sup>đ</sup></p>
                                 </div>
                                 <div class="col product-icon">
-                                    <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>">
+                                    
+                                    <form method="POST" action="pages/products/add_cart.php?id_sanpham=<?php echo $row['id_sanpham']?>">
+                                            <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>">
                                         <i class="lookat-product fa-solid fa-eye"></i>
                                     </a>
-                                    <i class="add-product fa-solid fa-cart-plus"></i>
+                                            <button class="icon-cart" type="submit" name="themgiohang" value="Thêm giỏ hàng" ><i class="add-product fa-solid fa-cart-plus"></i></button>
+                                        </form>
                                 </div>
                             </div>
                         </div>
@@ -72,10 +106,12 @@
                                         <p class="product-price"><?php echo number_format($row['giasp'],0,',', '.')?><sup>đ</sup></p>
                                     </div>
                                     <div class="col product-icon">
-                                        <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>">
-                                            <i class="lookat-product fa-solid fa-eye"></i>
-                                        </a>
-                                        <i class="add-product fa-solid fa-cart-plus"></i>
+                                        <form method="POST" action="pages/products/add_cart.php?id_sanpham=<?php echo $row['id_sanpham']?>">
+                                            <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>">
+                                        <i class="lookat-product fa-solid fa-eye"></i>
+                                    </a>
+                                            <button class="icon-cart" type="submit" name="themgiohang" value="Thêm giỏ hàng" ><i class="add-product fa-solid fa-cart-plus"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -120,10 +156,12 @@
                                         <p class="product-price"><?php echo number_format($row['giasp'],0,',', '.')?><sup>đ</sup></p>
                                     </div>
                                     <div class="col product-icon">
-                                        <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>">
-                                            <i class="lookat-product fa-solid fa-eye"></i>
-                                        </a>
-                                        <i class="add-product fa-solid fa-cart-plus"></i>
+                                        <form method="POST" action="pages/products/add_cart.php?id_sanpham=<?php echo $row['id_sanpham']?>">
+                                            <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>">
+                                        <i class="lookat-product fa-solid fa-eye"></i>
+                                    </a>
+                                            <button class="icon-cart" type="submit" name="themgiohang" value="Thêm giỏ hàng" ><i class="add-product fa-solid fa-cart-plus"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -168,10 +206,12 @@
                                         <p class="product-price"><?php echo number_format($row['giasp'],0,',', '.')?><sup>đ</sup></p>
                                     </div>
                                     <div class="col product-icon">
-                                        <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>">
-                                            <i class="lookat-product fa-solid fa-eye"></i>
-                                        </a>
-                                        <i class="add-product fa-solid fa-cart-plus"></i>
+                                        <form method="POST" action="pages/products/add_cart.php?id_sanpham=<?php echo $row['id_sanpham']?>">
+                                            <a href="index.php?quanly=pro_detail&id=<?php echo $row['id_sanpham']?>">
+                                        <i class="lookat-product fa-solid fa-eye"></i>
+                                    </a>
+                                            <button class="icon-cart" type="submit" name="themgiohang" value="Thêm giỏ hàng" ><i class="add-product fa-solid fa-cart-plus"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

@@ -148,8 +148,10 @@
                         </div>
                     <form method="POST" action="pages/products/add_cart.php?id_sanpham=<?php echo $row_detail['id_sanpham']?>">
                         <div class="button-add">
-                            <button type="submit" value="mua ngay" class="btn btn-success btn-lg">Mua ngay</button>
-                            <button type="submit" name="themgiohang" value="Thêm giỏ hàng" class="btn btn-success btn-lg">Thêm vào giỏ hàng</button>
+                            <div class="chitiet_sanpham">
+                                <button type="submit" value="mua ngay" class="btn btn-success btn-lg">Mua ngay</button>
+                                <button type="submit" name="themgiohang" value="Thêm giỏ hàng" class="themgiohang btn btn-success btn-lg">Thêm vào giỏ hàng</button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -251,7 +253,9 @@
                                     <a href="index.php?quanly=pro_detail&id=<?php echo $row_same['id_sanpham']?>">
                                         <i class="lookat-product fa-solid fa-eye"></i>
                                     </a>
-                                    <i class="add-product fa-solid fa-cart-plus"></i>
+
+                                    <i class="add-product fa-solid fa-cart-plus" name="themgiohang"></i>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -288,7 +292,7 @@
                                     <a href="index.php?quanly=pro_detail&id=<?php echo $row_khac['id_sanpham']?>">
                                         <i class="lookat-product fa-solid fa-eye"></i>
                                     </a>
-                                    <i class="add-product fa-solid fa-cart-plus"></i>
+                                    <i class="add-product fa-solid fa-cart-plus" name="Themgiohang"></i>
                                 </div>
                             </div>
                         </div>

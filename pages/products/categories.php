@@ -13,6 +13,10 @@
         margin-left: 54px;
         margin-top: 4px;
     }
+    .product-icon button {
+        border: none;
+        background-color: transparent;
+    }
     .lookat-product, .add-product {
         font-size: 1rem;
         color: var(--light-blue);
@@ -162,12 +166,12 @@ include("pages/main/category.php");
                                 <p class="product-price"><?php echo number_format($row_pro['giasp'],0,',', '.')?><sup>đ</sup></p>
                             </div>
                             <div class="col product-icon">
-                                <a href="index.php?quanly=pro_detail&id=<?php echo $row_pro['id_sanpham']?>">
-                                    <i class="lookat-product fa-solid fa-eye"></i>
-                                </a>
-                                <a href="index.php?quanly=giohang">
-                                    <i class="add-product fa-solid fa-cart-plus"></i>
-                                </a>
+                                <form method="POST" action="pages/products/add_cart.php?id_sanpham=<?php echo $row_pro['id_sanpham']?>">
+                                            <a href="index.php?quanly=pro_detail&id=<?php echo $row_pro['id_sanpham']?>">
+                                        <i class="lookat-product fa-solid fa-eye"></i>
+                                    </a>
+                                            <button class="icon-cart" type="submit" name="themgiohang" value="Thêm giỏ hàng" ><i class="add-product fa-solid fa-cart-plus"></i></button>
+                                        </form>
                             </div>
                         </div>
                     </div>
