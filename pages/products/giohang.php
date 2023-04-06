@@ -122,7 +122,7 @@
 
       ?>
         <tr>
-            <td><p>Giỏ hàng đang rỗng =))))</p></td>
+            <td><p>Giỏ hàng đang rỗng</p></td>
         </tr>
       <?php
         }
