@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hồ sơ Mai Tấn Võ</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/cv.css" />
+  </head>
+  <body>
+    <div class="wrapper flex">
+      <div class="sidebar">
+        <div class="avatar">
+          <img src="img/avatar.jpg" width="235" height="235" alt="" />
+          <h1 class="name">Mai Tấn Võ</h1>
+          <h4 class="job">Kỹ sư an ninh mạng</h4>
+        </div>
+
+        <div class="module">
+          <h3 class="module__title">
+            <i class="fa fa-user circle circle--medium"></i>
+            <span>Thông tin cá nhân</span>
+          </h3>
+          <div class="module__content">
+            <p>Ngày sinh: 04/06/2002</p>
+            <p>
+              Địa chỉ: Tổ 15 khóm 4 phường Cái Vồn, thị xã Bình Minh, tỉnh Vĩnh
+              Long
+            </p>
+            <p>SĐT: (+84) 921939084</p>
+          </div>
+        </div>
+
+        <div class="module">
+          <h3 class="module__title">
+            <i class="fas fa-phone circle circle--medium"></i>
+            <span>Liên Hệ</span>
+          </h3>
+          <div class="module__content">
+            <ul>
+              <li class="flex">
+                <i
+                  class="fas fa-envelope-open-text circle circle--small circle--white"
+                ></i>
+                <div>maitanvo462@gmail.com</div>
+              </li>
+              <li class="flex">
+                <i
+                  class="fab fa-facebook circle circle--small circle--white"
+                ></i>
+                <div>fb.com/maitanvo</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="module module--progress">
+          <h3 class="module__title">
+            <i class="fa fa-graduation-cap circle circle--medium"></i>
+            <span>Kỹ năng</span>
+          </h3>
+          <div class="module__content">
+            <ul>
+              <li class="flex">
+                <i
+                  class="fa fa-paint-brush circle circle--small circle--white"
+                ></i>
+                <div class="flex--1">
+                  <span>Adobe Photoshop</span>
+                  <span class="progress-bar"
+                    ><span style="width: 90%"></span
+                  ></span>
+                </div>
+              </li>
+              <li class="flex">
+                <i class="fab fa-html5 circle circle--small circle--white"></i>
+                <div class="flex--1">
+                  <span>HTML / CSS / JS</span>
+                  <span class="progress-bar"
+                    ><span style="width: 95%"></span
+                  ></span>
+                </div>
+              </li>
+              <li class="flex">
+                <i
+                  class="fab fa-android circle circle--small circle--white"
+                ></i>
+                <div class="flex--1">
+                  <span>Android Development</span>
+                  <span class="progress-bar"
+                    ><span style="width: 80%"></span
+                  ></span>
+                </div>
+              </li>
+              <li class="flex">
+                <i class="fa fa-globe circle circle--small circle--white"></i>
+                <div class="flex--1">
+                  <span>Web Design</span>
+                  <span class="progress-bar"
+                    ><span style="width: 85%"></span
+                  ></span>
+                </div>
+              </li>
+              <li class="flex">
+                <i class="fab fa-java circle circle--small circle--white"></i>
+                <div class="flex--1">
+                  <span>Java</span>
+                  <span class="progress-bar"
+                    ><span style="width: 90%"></span
+                  ></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="module">
+          <h3 class="module__title">
+            <i class="fas fa-heart circle circle--medium"></i>
+            <span>Sở thích</span>
+          </h3>
+          <div class="module__content">
+            <ul>
+              <li class="flex">
+                <i class="fas fa-book circle circle--small circle--white"></i>
+                <div>Đọc sách</div>
+              </li>
+              <li class="flex">
+                <i
+                  class="fas fa-volleyball-ball circle circle--small circle--white"
+                ></i>
+                <div>Bóng Chuyền</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="section">
+          <h2 class="section__title">
+            <i class="fa fa-briefcase circle circle--large"></i>
+            <span>Trình độ học vấn</span>
+          </h2>
+          <div class="section__content">
+            <div class="module">
+              <h3 class="module__title">Đại Học Cần Thơ</h3>
+              <div class="module__meta">
+                <span><i class="fa fa-building-o"></i>Công Nghệ Thông Tin</span>
+                <span><i class="fa fa-calendar"></i>20 Sep 2020-Hiện tại</span>
+              </div>
+              <div class="module__content">
+                <p>Chuyên ngành: Mạng máy tính và truyền thông dữ liệu</p>
+                <p>Xếp loại Giỏi 8.0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section__title">
+            <i class="fa fa-briefcase circle circle--large"></i>
+            <span>Kinh nghiệm làm việc</span>
+          </h2>
+          <div class="section__content">
+            <div class="module">
+              <h3 class="module__title">Sinh Viên Mới Ra Trường</h3>
+              <div class="module__meta">
+                <span><i class="fa fa-calendar"></i>01 Feb 2023-Hiện tại</span>
+              </div>
+              <div class="module__content">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <h2 class="section__title">
+            <i class="fas fa-user-md circle circle--large"></i>
+            <span>Mục tiêu nghề nghiệp</span>
+          </h2>
+          <div class="section__content">
+            <div class="module">
+              <div class="module__content">
+                <p>
+                  Không ngừng học thêm nhiều ngôn ngữ lập trình, Phát triển thêm
+                  về kỹ năng chuyên môn. Trong vòng 1 năm tới tôi sẽ trở thành
+                  kỹ sư an ninh mạng, hay mục tiêu của tôi tìm môi trường chuyên
+                  nghiệp và tôn trọng lẫn nhau
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <h2 class="section__title">
+            <i class="fa fa-briefcase circle circle--large"></i>
+            <span>Chứng Chỉ</span>
+          </h2>
+          <div class="section__content">
+            <div class="lang flex">
+              <div class="lang__content">
+                <img src="img/tienganh.jpg" width="133" height="89" />
+                <h4>English</h4>
+                <div class="star">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
