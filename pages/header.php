@@ -174,7 +174,7 @@
                     <form method="POST" class="example" action="index.php?quanly=timkiem" style="margin-top:-58px;max-width:300px">
                         <div class="search-mb mb-3">
                             <input type="text" placeholder="Search.." name="tukhoa">
-                            <button name="timkiem" type="submit"><i class="fa fa-search"></i></button>
+                            <button name="timkiem" type="submit" style="color: white"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
                     <form method="POST" action="index.php?quanly=timkiem">
@@ -189,6 +189,15 @@
                 <div class="col-4 icons">
                     <a href="index.php?quanly=giohang">
                         <i class="icon-cart fa-solid fa-cart-shopping"></i>
+                        <?php
+
+                                if (isset($_SESSION['cart'])){
+                                    $count = count($_SESSION['cart']);
+                                    echo "<span id=\"#\">$count</span>";
+                                }else{
+                                    echo "<span id=\"#\">0</span>";
+                                 }
+                        ?>
                     </a>
                     <a href="#">
                         <div class="dropdown">

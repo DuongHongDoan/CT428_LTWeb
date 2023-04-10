@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(isset($_POST['themgiohang'])){
+    //     if(isset($_SESSION['cart'])){
+    //     }
+    }
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +36,15 @@
     // body
         include("pages/body.php");
     // <!-- Phan chan -->
+    if (isset($_GET['quanly'])) {
+        $t = $_GET['quanly'];
+    }
+    else {
+        $t = '';
+    }
+    if ($t != "giohang"){
         include("pages/footer.php");
+    }
     ?>
     <!-- Nhung cac script -->
     <script src="./assets/main.js"></script>
@@ -36,6 +52,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
+
+    
     <script>
         var owl = $('.owl-carousel');
         owl.owlCarousel({

@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST['change'])){
+    if(isset($_POST['change']) && isset($_POST['change'])){
         $username = $_POST['username'];
         $oldpassword = $_POST['oldpassword'];
         $newpassword = $_POST['newpassword'];
@@ -252,7 +252,7 @@
               CHANGE PASSWORD NOW !
             </div>
             <div class="form" style="padding-top: 20px;">
-              <form name="change" action="" method="POST">
+              <form name="change" action="./CT428_LTWeb/pages/log/sign/repwd.php" method="POST">
 
                 <p class="content-item">
                   <label><a class="form-label lbs">Username:</a>
