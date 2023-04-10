@@ -5,7 +5,7 @@
 ?>
 
 <div class="container-fluid" style="width: 100%; text-align:center">
-  <div class="row px-5">
+  <div class="row px-5" style="justify-content:center; text-align: center; align-items:center; width: 100%; padding-bottom: 100px">
     <div class="col-md-7">
       <div class="shopping-cart">
         <h6 style="font-size: 30px; padding-top: 15px; text-align: center; letter-spacing: 4px">MY CART</h6>
@@ -17,7 +17,7 @@
           $total = 0;
           $tongtien =0;
           $phivanchuyen=35000;
-          $dk = 500000;
+          $dk = 1000000;
           foreach($_SESSION['cart'] as $cart_item){
             $total = $cart_item['soluong'] * $cart_item['giasp'];
             $tongtien+= $total;
@@ -108,7 +108,7 @@
 
               </h6>
 
-              <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
+              <h6><i>Freeship với hóa đơn trên 1.000.000Đ</i></h6>
           </div>
           <a href="#">
             <button type="submit" name="thanhtoan" style="background-color: #059867; color: #fff; border-radius: 5px">Thanh toán</button>
@@ -122,7 +122,13 @@
 
       ?>
         <tr>
-            <td><p>Giỏ hàng đang rỗng =))))</p></td>
+            <td>
+              <img src="img/empty_cart.png" alt="">
+              <p style="padding-top: 25px; font-size: 18px; padding-bottom: 15px">Giỏ hàng của bạn đang rỗng </p>
+              <a href="./index.php">
+                <button type="submit" name="themgiohang" value="Thêm giỏ hàng" class="themgiohang btn btn-success btn-lg">Tiếp tục mua sắm</button>
+              </a>
+            </td>
         </tr>
       <?php
         }
