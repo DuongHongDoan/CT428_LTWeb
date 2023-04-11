@@ -211,6 +211,16 @@ input::placeholder {
   text-decoration: none;
   color: #4b4a4a;
 }
+.signup1{
+    background-color: #007700;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1em;
+    text-transform: capitalize;
+    /* margin-top: 10px; */
+    border-radius: 5px;
+  }
 
 </style>
 <?php
@@ -224,6 +234,9 @@ input::placeholder {
       $mail = $_POST['email'];
       $sdt = $_POST['phonenumber'];
       $dchi = $_POST['diachi'];
+      $date=strtotime(date('Y-m-d'));
+      $date1 = strtotime($ngaysinh);
+      $kqne =  $date - $date1;                                     
       $check1=0;
       $check2=0;
       $check3=0;
@@ -250,6 +263,9 @@ input::placeholder {
           }elseif(strlen($sdt) != 10){
             $fail4="<h6>So dien thoai khong hop le!</h6>";
             $check4 = 1;
+          }elseif($kqne < 473353920){
+            $fail5="<h6>Phai lon hon 15 tuoi !</h6>";
+            $check5=1;
           }
           else{
               $stmt1 = $conn->prepare("insert into account(Username, Password) values(?, ?)");
@@ -361,16 +377,10 @@ input::placeholder {
                                         <label for="ngaysinh"> <a class="form-label lbs">Birth of date: </a>
                                             <input type="date" id="ngaysinh" name="ngaysinh" style="border:none" required>
                                             <?php
-                                            if(isset($_POST['signup']))
-                                              $date=strtotime(date('Y-m-d'));
-                                              // echo $date;
-                                              $date1 = strtotime($ngaysinh);
-                                              $kqne =  $date - $date1;
-                                              // echo strtotime($ngaysinh);
-                                              if($kqne < 473353920){
-                                                echo "flase";
+                                              if(isset($_POST['signup']) && $check5==1){
+                                                echo $fail5;
                                               }
-                                              
+                                                
                                             ?>
                                         </label>
                                     </p>
@@ -386,9 +396,9 @@ input::placeholder {
                                     </p>
                                     
                                 </form>
-                                <p class="content-item" style="margin-top:-40px">
-                                  <a href="index.php?quanly=dangnhap"><button type="button" class="signup">SIGN IN</button></a>
-                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup">CHANGE</button></a>
+                                <p class="content-item">
+                                  <a href="index.php?quanly=dangnhap"><button type="button" class="signup1">SIGN IN</button></a>
+                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup1">CHANGE</button></a>
                                 </p>                              
                             </div>
                         </div>

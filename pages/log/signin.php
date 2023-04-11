@@ -211,6 +211,16 @@
     text-decoration: none;
     color: #4b4a4a;
   }
+  .signup1{
+    background-color: #007700;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1em;
+    text-transform: capitalize;
+    /* margin-top: 10px; */
+    border-radius: 5px;
+  }
 </style>
 <?php
     if(isset($_POST['signin'])){
@@ -266,9 +276,9 @@
                                       <button class="signup" style="margin-top: 10px;">RESET</a></button>
                                     </p> 
                                 </form>
-                                <p class="content-item" style="margin-top:-40px">
-                                  <a href="index.php?quanly=dangky"><button type="button" class="signup">SIGN UP</button></a>
-                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup">CHANGE</button></a>
+                                <p class="content-item">
+                                  <a href="index.php?quanly=dangky"><button type="button" class="signup1">SIGN UP</button></a>
+                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup1">CHANGE</button></a>
                                 </p>
                             </div>
                         </div>

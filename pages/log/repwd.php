@@ -132,6 +132,16 @@
     margin-top: 49px;
     border-radius: 5px;
   }
+  .signup1{
+    background-color: #007700;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1em;
+    text-transform: capitalize;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
   .signup-wrapper .signup-form .login {
     color: #007700;
     padding: 20px;
@@ -278,10 +288,11 @@
                 </p>
 
               </form>
-              <p class="content-item" style="margin-top:-40px">
-                  <a href="index.php?quanly=dangnhap"><button type="button" class="signup">SIGN IN</button></a>
-                  <a href="index.php?quanly=dangky" ><button type="button" class="signup">SIGN UP</button></a>
+              <p class="content-item">
+                <a href="index.php?quanly=dangnhap"><button type="button" class="signup1">SIGN IN</button></a>
+                <a href="index.php?quanly=dangky" ><button type="button" class="signup1">SIGN UP</button></a>
               </p>
+                
               <!--  -->
             </div>
           </div>
