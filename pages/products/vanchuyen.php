@@ -55,7 +55,7 @@
 	  </div>
 		<div class="form-group">
 	    <label for="email">Phone</label>
-	    <input type="text" name="phone" class="form-control" value="<?php echo $phone ?>"  placeholder="Nhập số điện thoại của bạn">
+	    <input type="number" name="phone" class="form-control" value="<?php echo $phone ?>"  placeholder="Nhập số điện thoại của bạn">
 	  </div>
 	  <div class="form-group">
 	    <label for="email">Địa chỉ</label>
@@ -105,8 +105,8 @@
     <td>
     	<?php echo $cart_item['soluong']; ?>
     </td>
-    <td><?php echo number_format($cart_item['giasp'],0,',','.').'vnđ'; ?></td>
-    <td><?php echo number_format($thanhtien,0,',','.').'vnđ' ?></td>
+    <td><?php echo number_format($cart_item['giasp'],0,',','.').'đ'; ?></td>
+    <td><?php echo number_format($thanhtien,0,',','.').'đ' ?></td>
     
   </tr>
   <?php
@@ -114,7 +114,7 @@
   ?>
    <tr>
     <td colspan="8">
-    	<p style="float: left;">Tổng tiền: <?php echo number_format($tongtien,0,',','.').'vnđ' ?></p><br/>
+    	<p style="float: left;">Tổng tiền: <?php echo number_format($tongtien,0,',','.').'đ' ?></p><br/>
     	
       <div style="clear: both;"></div>
       <?php
@@ -124,7 +124,7 @@
       <?php
         }else{
       ?>
-        <p><a href="index.php?quanly=dangky">Đăng kí để đặt hàng</a></p>
+        <p><a href="index.php?quanly=dangnhap">Đăng kí để đặt hàng</a></p>
       <?php
         }
       ?>

@@ -64,8 +64,8 @@
 		    <td>
 		    	<?php echo $cart_item['soluong']; ?>
 		    </td>
-		    <td><?php echo number_format($cart_item['giasp'],0,',','.').'vnđ'; ?></td>
-		    <td><?php echo number_format($thanhtien,0,',','.').'vnđ' ?></td>
+		    <td><?php echo number_format($cart_item['giasp'],0,',','.').'đ'; ?></td>
+		    <td><?php echo number_format($thanhtien,0,',','.').'đ' ?></td>
 		   
 		  </tr>
 		  <?php
@@ -78,18 +78,15 @@
 		  ?>
 		   <tr>
 		    <td colspan="8">
-		    	<p style="float: left;">Tổng tiền: <?php echo number_format($tongtien,0,',','.').'vnđ' ?></p><br/>
-		    
-		      <div style="clear: both;"></div>
+		    	<p style="float: left;">Tổng tiền: <?php echo number_format($tongtien,0,',','.').'đ' ?></p><br/>
 		    </td>
 		  </tr>
 		  <?php	
 		  }else{ 
 		  ?>
 		   <tr>
-		    <td colspan="8"><p>Hiện tại giỏ hàng trống</p></td>
-		   
-		  </tr>
+    			<td><p>Giỏ hàng đang rỗng =))))</p></td>
+    		</tr>
 		  <?php
 		  } 
 		  ?>
@@ -128,15 +125,8 @@
 		<input type="hidden" name="" value="<?php echo $tongtien_usd ?>" id="tongtien">
 		<div id="paypal-button"></div>
 
-		
-		
 		 </div>
-		 	
 		 </div>
-
-		  
-	
-
 		</div>
 	
 	
