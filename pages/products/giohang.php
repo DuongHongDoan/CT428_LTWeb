@@ -17,7 +17,7 @@
           $total = 0;
           $tongtien =0;
           $phivanchuyen=35000;
-          $dk = 1000000;
+          $dk = 500000;
           foreach($_SESSION['cart'] as $cart_item){
             $total = $cart_item['soluong'] * $cart_item['giasp'];
             $tongtien+= $total;
@@ -107,11 +107,10 @@
               ?>
 
               </h6>
-
-              <h6><i>Freeship với hóa đơn trên 1.000.000Đ</i></h6>
+              <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
           </div>
-          <a href="#">
-            <button type="submit" name="thanhtoan" style="background-color: #059867; color: #fff; border-radius: 5px">Thanh toán</button>
+          <a href="index.php?quanly=vanchuyen">
+            <button type="submit" name="vanchuyen" style="background-color: #059867; color: #fff; border-radius: 5px">Đặt hàng</button>
           </a>
 
       </div>    
