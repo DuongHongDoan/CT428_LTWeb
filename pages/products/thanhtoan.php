@@ -49,10 +49,13 @@
 		  if(isset($_SESSION['cart'])){
 		  	$i = 0;
 		  	$tongtien = 0;
+			$phivanchuyen=35000;
+			$dk = 500000;
 		  	foreach($_SESSION['cart'] as $cart_item){
 		  		$thanhtien = $cart_item['soluong']*$cart_item['giasp'];
 		  		$tongtien+=$thanhtien;
 		  		$i++;
+			
 		  ?>
 		  <tr>
 		    <td><?php echo $i; ?></td>
@@ -67,6 +70,11 @@
 		  </tr>
 		  <?php
 		  	}
+		  ?>
+		  <?php
+		  if ($tongtien < $dk){
+			$tongtien += $phivanchuyen;
+			}	
 		  ?>
 		   <tr>
 		    <td colspan="8">
