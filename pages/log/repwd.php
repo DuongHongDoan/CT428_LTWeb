@@ -1,20 +1,23 @@
 <?php
-    if(isset($_POST['change'])){
+    if(isset($_POST['change']) && isset($_POST['change'])){
         $username = $_POST['username'];
         $oldpassword = $_POST['oldpassword'];
         $newpassword = $_POST['newpassword'];
-        $conn = new mysqli('localhost','root','','ct428');
-        $sql = "SELECT * FROM account WHERE Username='$username'";
-        $kq = $conn->query($sql)->fetch_assoc();
-        if($kq['Password'] == $oldpassword){
-          $sqll = "UPDATE account SET Password = ? WHERE Username = ?";
-          $stmt = $conn->prepare($sqll);
+        $conn = new mysqli('localhost','root','','ct428_ltweb');
+        $sql_pwd = "SELECT * FROM account WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
+        $row = mysqli_query($conn,$sql_pwd);
+        $count = mysqli_num_rows($row);
+
+        if($count>0){
+          $sql_doipass = "UPDATE account SET Password = ? WHERE Username = ?";
+          $stmt = $conn->prepare($sql_doipass);
           $stmt->execute([$newpassword,$username]);
-          echo "<h1>Thay doi thanh cong !</h1>";
-        } else{
-            echo "<h1>Sai username or password</h1>";
+          echo '<script>alert("Thay đổi mật khẩu thành công")</script>';
+        }else{
+            echo '<script>alert("Tài khoản không tồn tại hoặc sai mật khẩu hay username")</script>';
         }
     }
+    
 ?>
 <style>
   .content1 {
@@ -130,6 +133,16 @@
     font-size: 1em;
     text-transform: capitalize;
     margin-top: 49px;
+    border-radius: 5px;
+  }
+  .signup1{
+    background-color: #007700;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1em;
+    text-transform: capitalize;
+    margin-top: 5px;
     border-radius: 5px;
   }
   .signup-wrapper .signup-form .login {
@@ -278,10 +291,11 @@
                 </p>
 
               </form>
-              <p class="content-item" style="margin-top:-40px">
-                  <a href="index.php?quanly=dangnhap"><button type="button" class="signup">SIGN IN</button></a>
-                  <a href="index.php?quanly=dangky" ><button type="button" class="signup">SIGN UP</button></a>
+              <p class="content-item">
+                <a href="index.php?quanly=dangnhap"><button type="button" class="signup1">SIGN IN</button></a>
+                <a href="index.php?quanly=dangky" ><button type="button" class="signup1">SIGN UP</button></a>
               </p>
+                
               <!--  -->
             </div>
           </div>
