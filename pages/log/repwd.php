@@ -3,18 +3,21 @@
         $username = $_POST['username'];
         $oldpassword = $_POST['oldpassword'];
         $newpassword = $_POST['newpassword'];
-        $conn = new mysqli('localhost','root','','ct428');
-        $sql = "SELECT * FROM account WHERE Username='$username'";
-        $kq = $conn->query($sql)->fetch_assoc();
-        if($kq['Password'] == $oldpassword){
-          $sqll = "UPDATE account SET Password = ? WHERE Username = ?";
-          $stmt = $conn->prepare($sqll);
+        $conn = new mysqli('localhost','root','','ct428_ltweb');
+        $sql_pwd = "SELECT * FROM account WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
+        $row = mysqli_query($conn,$sql_pwd);
+        $count = mysqli_num_rows($row);
+
+        if($count>0){
+          $sql_doipass = "UPDATE account SET Password = ? WHERE Username = ?";
+          $stmt = $conn->prepare($sql_doipass);
           $stmt->execute([$newpassword,$username]);
-          echo "<h1>Thay doi thanh cong !</h1>";
-        } else{
-            echo "<h1>Sai username or password</h1>";
+          echo '<script>alert("Thay đổi mật khẩu thành công")</script>';
+        }else{
+            echo '<script>alert("Tài khoản không tồn tại hoặc sai mật khẩu hay username")</script>';
         }
     }
+    
 ?>
 <style>
   .content1 {
@@ -262,7 +265,7 @@
               CHANGE PASSWORD NOW !
             </div>
             <div class="form" style="padding-top: 20px;">
-              <form name="change" action="./CT428_LTWeb/pages/log/sign/repwd.php" method="POST">
+              <form name="change" action="" method="POST">
 
                 <p class="content-item">
                   <label><a class="form-label lbs">Username:</a>

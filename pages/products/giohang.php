@@ -1,5 +1,5 @@
 <?php
-    if(isset($_SESSION['cart'])) {
+  if(isset($_SESSION['cart'])) {
 
   }
 ?>
@@ -110,8 +110,8 @@
 
               <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
           </div>
-          <a href="#">
-            <button type="submit" name="thanhtoan" style="background-color: #059867; color: #fff; border-radius: 5px">Thanh toán</button>
+          <a href="index.php?quanly=vanchuyen">
+            <button type="submit" name="vanchuyen" style="background-color: #059867; color: #fff; border-radius: 5px">Đặt hàng</button>
           </a>
 
       </div>    
@@ -122,11 +122,10 @@
 
       ?>
         <tr>
-            <td><p>Giỏ hàng đang rỗng</p></td>
+            <td><p>Giỏ hàng đang rỗng =))))</p></td>
         </tr>
       <?php
         }
       ?>
   </div>
 </div>
-
