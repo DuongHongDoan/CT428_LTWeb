@@ -279,7 +279,10 @@ input::placeholder {
               $stmt2->close();
               //echo $execval;
               echo '<script>alert("Đăng ký thành công hãy đăng nhập đi")</script>';
-                $_SESSION['id_khachhang'] = -1;
+              $sql_dangky = "SELECT * FROM account WHERE Username='".$username."' LIMIT 1 ";
+              $row = mysqli_query($conn,$sql_dangky);
+              $row_data = mysqli_fetch_array($row);
+                $_SESSION['id_khachhang'] = $row_data['IDTaikhoan'];
                 echo '<script>location.href = "index.php?quanly=dangnhap";</script>';
               $conn->close();
            }
