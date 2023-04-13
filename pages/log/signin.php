@@ -226,18 +226,21 @@
     if(isset($_POST['signin'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $conn = new mysqli('localhost','root','','ct428');
-        $sql = "SELECT * FROM account WHERE Username='$username'";
-        $kqll = $conn->query($sql);
-        $kq = $conn->query($sql)->fetch_assoc();
-        if(mysqli_num_rows($kqll)>0){
-          if($kq['Password'] == $password){
-              echo "<h1>Dang nhap thanh cong !</h1>";
-          } else{
-              echo "<h1>Dang nhap khong thanh cong !</h1>";
+        $conn = new mysqli('localhost','root','','ct428_ltweb');
+        $sql_dangnhap = "SELECT * FROM account WHERE Username='".$username."' LIMIT 1 ";
+        $row = mysqli_query($conn,$sql_dangnhap);
+        $count = mysqli_num_rows($row);
+        if($count>0){
+          $row_data = mysqli_fetch_array($row);
+          if($row_data['Password'] == $password){
+              echo '<script>alert("Đăng nhập thành công")</script>';
+              $_SESSION['id_khachhang'] = $row_data['IDTaikhoan'];
+              echo '<script>location.href = "index.php?quanly=index";</script>';
+          }else{
+              echo '<script>alert("Đăng nhập sai mật khẩu")</script>';
           }
         }else{
-          echo "<h1>Dang nhap khong thanh cong !</h1>";
+          echo '<script>alert("Đăng nhập không thành công")</script>';
         }
           
     }

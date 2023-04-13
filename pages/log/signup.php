@@ -243,7 +243,7 @@ input::placeholder {
       $check4=0;
       $check5=0;
       // Database connection
-      $conn = new mysqli('localhost','root','','ct428');
+      $conn = new mysqli('localhost','root','','ct428_ltweb');
       if($conn->connect_error){
           echo "$conn->connect_error";
           die("Connection Failed : ". $conn->connect_error);
@@ -251,34 +251,36 @@ input::placeholder {
           $sql = "SELECT * FROM account WHERE Username='$username'";
           $kq = $conn->query($sql);
           if(mysqli_num_rows($kq)>0){
-              $fail1="<h6>Username da ton tai!</h6>";
+              $fail1='<script>alert("Username đã tồn tại vui lòng nhập username khác!!!")</script>';
               $check1 = 1;
           }elseif($password != $confirmpwd){
-            $fail2="<h6>Password khong khop!</h6>";
+            $fail2='<script>alert("Mật khẩu không trùng nhau vui lòng nhập lại!!!")</script>';
             $check2 = 1;
           } 
           elseif(strlen($password) < 8){
-            $fail3="<h6>Password khong hop le!</h6>";
+            $fail3='<script>alert("Mật khẩu không hợp lệ !!!")</script>';
             $check3 = 1;
           }elseif(strlen($sdt) != 10){
-            $fail4="<h6>So dien thoai khong hop le!</h6>";
+            $fail4='<script>alert("Số điện thoại nhập không hợp lệ")</script>';
             $check4 = 1;
           }elseif($kqne < 473353920){
-            $fail5="<h6>Phai lon hon 15 tuoi !</h6>";
+            $fail5='<script>alert("Hãy trở lại khi đã 16 tuổi nhé !!!")</script>';
             $check5=1;
           }
           else{
               $stmt1 = $conn->prepare("insert into account(Username, Password) values(?, ?)");
-              $stmt1->bind_param("si",$username,$password);
+              $stmt1->bind_param("ss",$username,$password);
               $execval1 = $stmt1->execute();
               $stmt1->close();
 
               $stmt2 = $conn->prepare("insert into user(tennguoidung,gioitinh,ngaysinh,email,sdt,diachi) value(?, ?, ?, ?, ?, ?)");
-              $stmt2->bind_param("sssssi",$hoten,$gioitinh,$ngaysinh,$mail,$sdt,$dchi);
+              $stmt2->bind_param("sissis",$hoten,$gioitinh,$ngaysinh,$mail,$sdt,$dchi);
               $execval2 = $stmt2->execute();
               $stmt2->close();
               //echo $execval;
-              echo "Registration successfully...";
+              echo '<script>alert("Đăng ký thành công hãy đăng nhập đi")</script>';
+                $_SESSION['id_khachhang'] = -1;
+                echo '<script>location.href = "index.php?quanly=dangnhap";</script>';
               $conn->close();
            }
       }
