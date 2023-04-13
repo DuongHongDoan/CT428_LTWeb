@@ -84,7 +84,7 @@
 			$diachi=$_POST['address'];
 			$sdt=$_POST['phone'];
 			if($name1==''|| $diachi=='' || $sdt==''){
-				echo '<script>alert("nhập thông tin đi!!")</script>';
+				echo '<script>alert("Hãy nhập thông tin đi!!")</script>';
 			}else{
 				echo '<script>location.href = "index.php?quanly=thanhtoan";</script>';
 			}
@@ -137,7 +137,7 @@
 	  <?php
         }else{
       ?>
-        <p><a href="index.php?quanly=dangnhap">Đăng kí để đặt hàng</a></p>
+        <p><a href="index.php?quanly=dangnhap">Đăng nhập để đặt hàng</a></p>
       <?php
         }
       ?>
