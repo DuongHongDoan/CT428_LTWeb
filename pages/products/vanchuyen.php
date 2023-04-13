@@ -1,7 +1,6 @@
 <?php
-  if(isset($_SESSION['id_khachhang']) && $_SESSION['id_khachhang']==-1){
-	echo '<script>alert("Bạn chưa đăng nhập")</script>';
-    echo '<script>location.href = "index.php?quanly=dangnhap";</script>';
+  if(isset($_SESSION['id_khachhang'])){
+
 } 
 ?>
 <h4>Thông tin vận chuyển</h4>
@@ -67,6 +66,10 @@
 	    <label for="email">Ghi chú</label>
 	    <input type="text" name="note" class="form-control" value="<?php echo $note ?>"  placeholder="Chú thích" >
 	  </div>
+		<?php
+	 	if($_SESSION['id_khachhang']==-1){
+		}else{ 
+		?>
 	  <?php
 	  if($name=='' && $phone=='') {
 	  ?>
@@ -77,6 +80,7 @@
 	  <button type="submit" name="capnhatvanchuyen" class="btn btn-success">Cập nhật vận chuyển</button>
 	  <?php
 	  } 
+		}
 	  ?>
 	</form>
 	</div>
