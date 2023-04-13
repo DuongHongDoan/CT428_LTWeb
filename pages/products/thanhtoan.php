@@ -78,7 +78,17 @@
 		  ?>
 		   <tr>
 		    <td colspan="8">
-		    	<p style="float: left;">Tổng tiền: <?php echo number_format($tongtien,0,',','.').'đ' ?></p><br/>
+				<?php
+				if($tongtien < $dk){
+				?>
+		    	<p style="float: left;">Tổng tiền + phí ship: <?php echo number_format($tongtien,0,',','.').'đ' ?></p><br/>
+				<?php
+				}else{
+				?>
+				<p style="float: left;">Tổng tiền và freeship: <?php echo number_format($tongtien,0,',','.').'đ' ?></p><br/>
+				<?php
+				}
+				?>
 		    </td>
 		  </tr>
 		  <?php	
