@@ -203,6 +203,7 @@
                         <div class="dropdown">
                             <span><i class="icon-user fa-regular fa-user ps-2"></i></span>
                             <?php
+                            if(isset($_SESSION['dangky'])){
                             if($_SESSION['id_khachhang']!=-1){
                             $sql_user = "SELECT * FROM account WHERE IDTaikhoan='".$_SESSION['id_khachhang']."' LIMIT 1 ";
                             $row = mysqli_query($conn,$sql_user);
@@ -215,6 +216,8 @@
                                 }
                             }else{
                                 echo '';
+                            }}else{
+                                $_SESSION['id_khachhang']=-1;
                             }
                             ?>
                             <div class="dropdown-content">
