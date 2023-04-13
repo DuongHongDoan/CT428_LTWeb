@@ -228,7 +228,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $conn = new mysqli('localhost','root','','ct428_ltweb');
-        $sql_dangnhap = "SELECT * FROM account WHERE Username='".$username."' AND Password='".$password."' LIMIT 1 ";
+        $sql_dangnhap = "SELECT * FROM account WHERE Username='".$username."' LIMIT 1 ";
         $row = mysqli_query($conn,$sql_dangnhap);
         $count = mysqli_num_rows($row);
         if($count>0){

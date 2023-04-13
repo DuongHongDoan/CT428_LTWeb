@@ -119,7 +119,7 @@
     	<p style="float: left;">Tổng tiền: <?php echo number_format($tongtien,0,',','.').'đ' ?></p><br/>
     	
       <?php
-        if(isset($_SESSION['dangky'])){
+        if(isset($_SESSION['id_khachhang'])!=-1){
           ?>
            <p><a href="index.php?quanly=thanhtoan"><button type="submit" name="thongtinthanhtoan" class="btn btn-success">Thanh Toán</button></a></p>
       <?php
