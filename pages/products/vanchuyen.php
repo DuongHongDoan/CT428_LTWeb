@@ -1,5 +1,7 @@
 <?php
-  if(isset($_SESSION['id_khachhang'])){
+  if(isset($_SESSION['id_khachhang']) && $_SESSION['id_khachhang']==-1){
+	echo '<script>alert("Bạn chưa đăng nhập")</script>';
+    echo '<script>location.href = "index.php?quanly=dangnhap";</script>';
 } 
 ?>
 <h4>Thông tin vận chuyển</h4>
@@ -116,7 +118,6 @@
     <td colspan="8">
     	<p style="float: left;">Tổng tiền: <?php echo number_format($tongtien,0,',','.').'đ' ?></p><br/>
     	
-      <div style="clear: both;"></div>
       <?php
         if(isset($_SESSION['dangky'])){
           ?>

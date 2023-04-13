@@ -1,22 +1,3 @@
-<?php
-    if(isset($_POST['signin'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $conn = new mysqli('localhost','root','','ct428');
-        $sql = "SELECT * FROM account WHERE Username='$username'";
-        $kq = $conn->query($sql)->fetch_assoc();
-        if($kq['Password'] == $password){
-            echo "<h1>Dang nhap thanh cong !</h1>";
-        } else{
-            echo "<h1>Dang nhap khong thanh cong !</h1>";
-        }
-    }
-?>
-<script>
-    function open3(){
-        window.location.href = "./signup.php";
-    }
-</script>
 <style>
   .content1 {
   width: 1280px;
@@ -230,7 +211,44 @@
     text-decoration: none;
     color: #4b4a4a;
   }
+  .signup1{
+    background-color: #007700;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1em;
+    text-transform: capitalize;
+    /* margin-top: 10px; */
+    border-radius: 5px;
+  }
 </style>
+<?php
+
+    if(isset($_POST['signin'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $conn = new mysqli('localhost','root','','ct428_ltweb');
+        $sql_dangnhap = "SELECT * FROM account WHERE Username='".$username."' AND Password='".$password."' LIMIT 1 ";
+        $row = mysqli_query($conn,$sql_dangnhap);
+        $count = mysqli_num_rows($row);
+        if($count>0){
+          $row_data = mysqli_fetch_array($row);
+          if($row_data['Password'] == $password){
+              echo '<script>alert("Đăng nhập thành công")</script>';
+              $_SESSION['id_khachhang'] = $row_data['IDTaikhoan'];
+              echo '<script>location.href = "index.php?quanly=index";</script>';
+          }else{
+              echo '<script>alert("Đăng nhập sai mật khẩu")</script>';
+          }
+        }else{
+          echo '<script>alert("Đăng nhập không thành công")</script>';
+        }
+          
+    }
+    
+?>
+    <header>
+    </header>
     <main>
         <div class="content-wrapper"> 
             <div class="content1">
@@ -244,38 +262,28 @@
                     </div>
                     <div class="signup-form">
                         <div class="wrapper-2">
-                            <div style="text-align:center;">
-                                <A href="/CT428_LTWeb/index.php">
-                                    <img src="./img/logo.png" style="width:50px; border-radius: 30px;"></img>
-                                </A></div>
-                            <div class="form-title" style="text-align:center;">
-                                SIGN IN NOW !
-                            </div>
+                            <div class="form-title">SIGN IN NOW !</div>
                             <div class="form" style="padding-top: 20px;">
-                                <form name="signin" action="./signin.php" method="POST">
-
+                                <form name="signin" action="" method="POST">
                                     <p class="content-item">
                                         <label><a class="form-label lbs">Username:</a>
                                             <input type="text" id="username" name="username" placeholder="Enter username"  required>
                                         </label>
                                     </p>
-
                                     <p class="content-item" style="padding-top: 10px;">
 
                                         <label> <a class="form-label lbs">Password:</a>
                                             <input type="password" id="password" placeholder="*****" name="password" required>
                                         </label>
                                     </p>
-
-                                    <p class="content-item" style="padding-top: 10px;">
-                                        <button type="submit" name="signin" class="signup" style="margin-top: 10px;">SIGN IN </button>
-                                        <button type="reset" class="signup" style="margin-top: 10px;">RESET</a></button>
-                                    </p>
-
+                                    <p class="content-item">
+                                      <button type="submit" name="signin" class="signup" style="margin-top: 10px;">SIGN IN </button>
+                                      <button class="signup" style="margin-top: 10px;">RESET</a></button>
+                                    </p> 
                                 </form>
-                                <p class="content-item" style="margin-top:-40px">
-                                  <a href="index.php?quanly=dangky"><button type="button" class="signup">SIGN UP</button></a>
-                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup">CHANGE</button></a>
+                                <p class="content-item">
+                                  <a href="index.php?quanly=dangky"><button type="button" class="signup1">SIGN UP</button></a>
+                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup1">CHANGE</button></a>
                                 </p>
                             </div>
                         </div>
@@ -285,5 +293,5 @@
                 </div>
             </div>
         </div>
+
     </main>
-   

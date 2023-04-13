@@ -35,6 +35,9 @@
             elseif($tmp=='datlai') {
                 include("./pages/log/repwd.php");
             }
+            elseif($tmp=='dangxuat') {
+                include("./pages/products/dangxuat.php");
+            }
             elseif($tmp=='thanhtoan') {
                 include("./pages/products/thanhtoan.php");
             }
@@ -58,7 +61,7 @@
     else {
         $t = '';
     }
-    if ($t != "categories" && $t != "pro_detail" && $t != "giohang" && $t != "timkiem" && $t != "gioithieu" && $t != "lienhe" && $t != "dangky" && $t != "dangnhap" && $t != "datlai" && $t != "thanhtoan" && $t != "vanchuyen" && $t != "hoadon"){
+    if ($t != "categories" && $t != "pro_detail" && $t != "giohang" && $t != "timkiem" && $t != "gioithieu" && $t != "lienhe" && $t != "dangky" && $t != "dangnhap" && $t != "datlai" && $t != "dangxuat" && $t != "thanhtoan" && $t != "vanchuyen" && $t != "hoadon"){
         include("products/product.php");
     }
 ?>
