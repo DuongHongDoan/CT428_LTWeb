@@ -17,11 +17,8 @@
  		$address = $row_get_vanchuyen['address'];
  		$note = $row_get_vanchuyen['note'];
  	}else{
-
- 		$name = '';
- 		$phone = '';
- 		$address = '';
- 		$note = '';
+		echo '<script>alert("Nhấn thêm thông tin vận chuyển để thanh toán")</script>';
+		echo '<script>location.href = "index.php?quanly=vanchuyen";</script>';
  	}
  	?>
  		
