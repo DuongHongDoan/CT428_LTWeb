@@ -23,6 +23,13 @@
         elseif($tmp == 'quanlysanpham' && $query == 'edit') {
             include("modules/quanlysp/sua.php");
         }
+        elseif($tmp == 'quanlytaikhoan' && $query == 'them') {
+            include("modules/quanlytk/lietke.php");
+            include("modules/quanlytk/them.php");
+        }
+        elseif($tmp == 'quanlysanpham' && $query == 'edit') {
+            include("modules/quanlytk/sua.php");
+        }
         // elseif($tmp == 'quanlydanhmucbaiviet') {
         //     include("");
         // }

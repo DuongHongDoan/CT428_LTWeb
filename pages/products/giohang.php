@@ -1,5 +1,5 @@
 <?php
-  if(isset($_SESSION['cart'])) {
+    if(isset($_SESSION['cart'])) {
 
   }
 ?>
@@ -134,3 +134,4 @@
       ?>
   </div>
 </div>
+
