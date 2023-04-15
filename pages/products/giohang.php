@@ -5,8 +5,8 @@
 ?>
 
 <div class="container-fluid" style="width: 100%; text-align:center">
-  <div class="row px-5">
-    <div class="col-md-7">
+  <div class="row px-5" style="justify-content:center; text-align: center; align-items:center; width: 100%; padding-bottom: 100px">
+    <div class="col-md-7 border">
       <div class="shopping-cart">
         <h6 style="font-size: 30px; padding-top: 15px; text-align: center; letter-spacing: 4px">MY CART</h6>
         <hr>
@@ -46,9 +46,9 @@
             <div class="col-md-3 py-5">
               <div>
                 <td>
-                  <a href="pages/products/add_cart.php?cong=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-plus" style="padding: 7px 0 0 7px"></i></a>
-                    <?php echo $cart_item['soluong']; ?>
                   <a href="pages/products/add_cart.php?tru=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-minus" style="padding: 5px 0 0 5px"></i></a>
+                    <?php echo $cart_item['soluong']; ?>
+                  <a href="pages/products/add_cart.php?cong=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-plus" style="padding: 7px 0 0 7px"></i></a>
                 </td>
               </div>
             </div>
@@ -107,11 +107,10 @@
               ?>
 
               </h6>
-
               <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
           </div>
-          <a href="#">
-            <button type="submit" name="thanhtoan" style="background-color: #059867; color: #fff; border-radius: 5px">Thanh toán</button>
+          <a href="index.php?quanly=vanchuyen">
+            <button type="submit" name="vanchuyen" style="background-color: #059867; color: #fff; border-radius: 5px">Đặt hàng</button>
           </a>
 
       </div>    
@@ -122,7 +121,13 @@
 
       ?>
         <tr>
-            <td><p>Giỏ hàng đang rỗng</p></td>
+        <td>
+              <img src="img/empty_cart.png" alt="">
+              <p style="padding-top: 25px; font-size: 18px; padding-bottom: 15px">Giỏ hàng của bạn đang rỗng </p>
+              <a href="./index.php">
+                <button type="submit" name="themgiohang" value="Thêm giỏ hàng" class="themgiohang btn btn-success btn-lg">Tiếp tục mua sắm</button>
+              </a>
+            </td>
         </tr>
       <?php
         }

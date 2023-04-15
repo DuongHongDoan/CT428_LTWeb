@@ -81,6 +81,9 @@
 </style>
 
 <?php
+    // if (isset($_GET['sort'])) {
+    //     $sort = $_GET['sort'];
+    // }
     if(isset($_GET['trang'])) {
         $page = $_GET['trang'];
     }
@@ -143,10 +146,8 @@ include("pages/main/category.php");
                 <span class="product-filter-label">Sắp xếp theo</span>
             </div>
             <ul class="dropdown-menu drop-hover">
-                <li><a class="dropdown-item" href="#">Phổ biến</a></li>
-                <li><a class="dropdown-item" href="#">Mới nhất</a></li>
-                <li><a class="dropdown-item" href="#">Giá tăng dần</a></li>
-                <li><a class="dropdown-item" href="#">Giá giảm dần</a></li>
+                <li><a class="dropdown-item" href="index.php?quanly=categories&id=1&sort=asc">Giá tăng dần</a></li>
+                <li><a class="dropdown-item" href="index.php?quanly=categories&id=1&sort=desc">Giá giảm dần</a></li>
             </ul>
         </div>
     </div>
