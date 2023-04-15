@@ -1,7 +1,6 @@
 <?php
-  if(isset($_SESSION['id_khachhang']) && $_SESSION['id_khachhang']==-1){
-	echo '<script>alert("Bạn chưa đăng nhập")</script>';
-    echo '<script>location.href = "index.php?quanly=dangnhap";</script>';
+  if(isset($_SESSION['id_khachhang'])){
+
 } 
 ?>
 <h4>Thông tin vận chuyển</h4>
@@ -50,18 +49,18 @@
  	}
  	?>
  	<div class="col-md-12">
-	 <form action="" autocomplete="off" method="POST">
+	 <form action="" autocomplete="off" method="POST" id="thongtinthanhtoan" name="thongtinthanhtoan">
 	  <div class="form-group">
 	    <label for="email">Họ và tên</label>
 	    <input type="text" name="name" class="form-control" value="<?php echo $name ?>" placeholder="Nhập Họ Tên" >
 	  </div>
 		<div class="form-group">
 	    <label for="email">Phone</label>
-	    <input type="number" name="phone" class="form-control" value="<?php echo $phone ?>"  placeholder="Nhập số điện thoại của bạn">
+	    <input type="number" name="phone" class="form-control" value="<?php echo $phone ?>"  placeholder="Nhập số điện thoại của bạn" >
 	  </div>
 	  <div class="form-group">
 	    <label for="email">Địa chỉ</label>
-	    <input type="text" name="address" class="form-control" value="<?php echo $address ?>"  placeholder="Nhập địa chỉ cần giao hàng">
+	    <input type="text" name="address" class="form-control" value="<?php echo $address ?>"  placeholder="Nhập địa chỉ cần giao hàng" >
 	  </div>
 	  <div class="form-group">
 	    <label for="email">Ghi chú</label>
@@ -77,6 +76,19 @@
 	  <button type="submit" name="capnhatvanchuyen" class="btn btn-success">Cập nhật vận chuyển</button>
 	  <?php
 	  } 
+	  ?>
+	  
+	  <?php
+		if(isset($_POST['thongtinthanhtoan'])){
+			$name1=$_POST['name'];
+			$diachi=$_POST['address'];
+			$sdt=$_POST['phone'];
+			if($name1==''|| $diachi=='' || $sdt==''){
+				echo '<script>alert("Hãy nhập thông tin đi!!")</script>';
+			}else{
+				echo '<script>location.href = "index.php?quanly=thanhtoan";</script>';
+			}
+		}
 	  ?>
 	</form>
 	</div>
@@ -119,13 +131,13 @@
     	<p style="float: left;">Tổng tiền: <?php echo number_format($tongtien,0,',','.').'đ' ?></p><br/>
     	
       <?php
-        if(isset($_SESSION['id_khachhang'])!=-1){
+        if($_SESSION['id_khachhang']!=-1){
           ?>
-           <p><a href="index.php?quanly=thanhtoan"><button type="submit" name="thongtinthanhtoan" class="btn btn-success">Thanh Toán</button></a></p>
-      <?php
+           <p><button type="submit" name="thongtinthanhtoan" form="thongtinthanhtoan" class="btn btn-success">Thanh Toán</button></p>
+	  <?php
         }else{
       ?>
-        <p><a href="index.php?quanly=dangnhap">Đăng kí để đặt hàng</a></p>
+        <p><a href="index.php?quanly=dangnhap">Đăng nhập để đặt hàng</a></p>
       <?php
         }
       ?>
