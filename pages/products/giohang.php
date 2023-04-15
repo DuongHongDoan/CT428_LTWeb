@@ -6,7 +6,7 @@
 
 <div class="container-fluid" style="width: 100%; text-align:center">
   <div class="row px-5" style="justify-content:center; text-align: center; align-items:center; width: 100%; padding-bottom: 100px">
-    <div class="col-md-7">
+    <div class="col-md-7 border">
       <div class="shopping-cart">
         <h6 style="font-size: 30px; padding-top: 15px; text-align: center; letter-spacing: 4px">MY CART</h6>
         <hr>
@@ -46,9 +46,9 @@
             <div class="col-md-3 py-5">
               <div>
                 <td>
-                  <a href="pages/products/add_cart.php?cong=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-plus" style="padding: 7px 0 0 7px"></i></a>
-                    <?php echo $cart_item['soluong']; ?>
                   <a href="pages/products/add_cart.php?tru=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-minus" style="padding: 5px 0 0 5px"></i></a>
+                    <?php echo $cart_item['soluong']; ?>
+                  <a href="pages/products/add_cart.php?cong=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-plus" style="padding: 7px 0 0 7px"></i></a>
                 </td>
               </div>
             </div>
