@@ -3,6 +3,9 @@
 
 } 
 ?>
+<head>
+    <title>Vận chuyển</title>
+</head>
 <h4>Thông tin vận chuyển</h4>
 <?php
  	if(isset($_POST['themvanchuyen'])) {

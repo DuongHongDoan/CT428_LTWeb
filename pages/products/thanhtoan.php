@@ -3,6 +3,9 @@
   if(isset($_SESSION['id_khachhang'])){
   } 
   ?>
+<head>
+    <title>Thanh toán</title>
+</head>
   	<form action="pages/products/xulythanhtoan.php" method="POST">
 	<div class="row">
   
