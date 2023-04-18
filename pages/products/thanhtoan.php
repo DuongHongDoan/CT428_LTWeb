@@ -95,7 +95,13 @@
 		  }else{ 
 		  ?>
 		   <tr>
-    			<td><p>Giỏ hàng đang rỗng =))))</p></td>
+    			<td>
+              <img src="img/empty_cart.png" alt="">
+              <p style="padding-top: 25px; font-size: 18px; padding-bottom: 15px">Giỏ hàng của bạn đang rỗng </p>
+              <a href="./index.php">
+                <button type="submit" name="themgiohang" value="Thêm giỏ hàng" class="themgiohang btn btn-success btn-lg">Tiếp tục mua sắm</button>
+              </a>
+			</td>
     		</tr>
 		  <?php
 		  } 
@@ -138,6 +144,3 @@
 		 </div>
 		 </div>
 		</div>
-	
-	
-	

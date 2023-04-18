@@ -193,9 +193,9 @@
 
                                 if (isset($_SESSION['cart'])){
                                     $count = count($_SESSION['cart']);
-                                    echo "<span id=\"#\">$count</span>";
+                                    echo "<span id=\"#\"><sup>$count</sup></span>";
                                 }else{
-                                    echo "<span id=\"#\">0</span>";
+                                    echo "<span id=\"#\"><sup>0</sup></span>";
                                  }
                         ?>
                     </a>
