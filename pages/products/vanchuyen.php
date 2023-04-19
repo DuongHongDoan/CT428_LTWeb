@@ -1,3 +1,6 @@
+<head>
+    <title>Thông tin vận chuyển</title>
+</head>
 <?php
   if(isset($_SESSION['id_khachhang'])){
 

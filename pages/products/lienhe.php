@@ -1,15 +1,7 @@
+<head>
+    <title>Liên hệ</title>
+</head>
 <style>
-
-    
-
-#main{
-    
-}
-
-#concent {
-
-}
-
 .btn-contact{
     color: #fff;
     background-color: #2E8B57;

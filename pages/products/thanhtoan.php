@@ -1,3 +1,6 @@
+<head>
+    <title>Thanh toán</title>
+</head>
 <div class="container">
   <?php
   if(isset($_SESSION['id_khachhang'])){

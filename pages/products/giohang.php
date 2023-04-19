@@ -1,3 +1,6 @@
+<head>
+    <title>Giỏ hàng</title>
+</head>
 <?php
     if(isset($_SESSION['cart'])) {
 

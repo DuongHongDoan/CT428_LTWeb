@@ -141,7 +141,7 @@ include("pages/main/category.php");
                 ?>
             </ul>
         </div>
-        <div class="dropdown">
+        <!-- <div class="dropdown">
             <div class="product-filter dropdown-toggle" data-bs-toggle="dropdown">
                 <span class="product-filter-label">Sắp xếp theo</span>
             </div>
@@ -149,7 +149,7 @@ include("pages/main/category.php");
                 <li><a class="dropdown-item" href="index.php?quanly=categories&id=1&sort=asc">Giá tăng dần</a></li>
                 <li><a class="dropdown-item" href="index.php?quanly=categories&id=1&sort=desc">Giá giảm dần</a></li>
             </ul>
-        </div>
+        </div> -->
     </div>
     <!-- Danh muc cac san pham -->
     <div class="product-item">
