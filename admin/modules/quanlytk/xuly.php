@@ -1,9 +1,9 @@
 <?php
     include("../../config/connect.php");
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
     if(isset($_POST['themtaikhoan'])&& isset($_POST['themtaikhoan'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
         $sql_them = "INSERT INTO account(Username, Password) VALUE('".$username."', '".$password."')";
         //ket noi db, them values vao bang
         mysqli_query($conn, $sql_them);
