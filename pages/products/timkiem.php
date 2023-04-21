@@ -61,6 +61,7 @@
     }
     $sql_products = "SELECT * FROM tbl_products WHERE tbl_products.tensp LIKE '%".$tukhoa."%'";
     $query_products = mysqli_query($conn, $sql_products);
+    $cnt = mysqli_num_rows($query_products);
 ?>
 
 <head>
@@ -72,8 +73,7 @@ include("pages/main/category.php");
 ?>
 
 <div class="col-lg-9">
-    <div class="drop">
-        <!-- drop title, filter -->
+    <!-- <div class="drop">
         <div class="dropdown drop-title">
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Phổ biến</a></li>
@@ -82,8 +82,11 @@ include("pages/main/category.php");
                 <li><a class="dropdown-item" href="#">Giá giảm dần</a></li>
             </ul>
         </div>
-    </div>
+    </div> -->
     <!-- Danh muc cac san pham -->
+    <div class="title">
+        <h2>Có <?php echo "($cnt)" ?> kết quả cho từ khóa: <?php echo "\"$tukhoa\""?></h2>
+    </div>
     <div class="product-item">
         <div class="row row-cols-2">
             <?php

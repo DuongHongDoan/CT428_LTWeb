@@ -94,9 +94,9 @@
         $begin = 0;
     }
     else {
-        $begin = ($page*9)-9;
+        $begin = ($page*6)-6;
     }
-    $sql_products = "SELECT * FROM tbl_products WHERE tbl_products.id_danhmuc='$_GET[id]' LIMIT $begin,9";
+    $sql_products = "SELECT * FROM tbl_products WHERE tbl_products.id_danhmuc='$_GET[id]' LIMIT $begin,6";
     $query_products = mysqli_query($conn, $sql_products);
     $sql_pro = "SELECT * FROM tbl_category WHERE tbl_category.id_danhmuc='$_GET[id]' LIMIT 1";
     $query_pro = mysqli_query($conn, $sql_pro);
@@ -188,7 +188,7 @@ include("pages/main/category.php");
             $query_page = mysqli_query($conn, $sql_page);
             $row_cnt = mysqli_num_rows($query_page);
             $row_page = mysqli_fetch_array($query_page);
-            $trang = ceil($row_cnt/9);
+            $trang = ceil($row_cnt/6);
         ?>
 
         <nav aria-label="Page navigation example">

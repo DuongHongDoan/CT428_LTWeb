@@ -173,13 +173,13 @@
                 <div class="col-8">
                     <form method="POST" class="example" action="index.php?quanly=timkiem" style="margin-top:-58px;max-width:300px">
                         <div class="search-mb mb-3">
-                            <input type="text" placeholder="Search.." name="tukhoa">
+                            <input type="text" id="searchBar" required placeholder="Search.." name="tukhoa">
                             <button name="timkiem" type="submit" style="color: white"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
                     <form method="POST" action="index.php?quanly=timkiem">
                         <div class="search-lg mb-3">
-                            <input type="text" name="tukhoa" class="form-control" placeholder="Search">
+                            <input type="text" id="searchBar" required name="tukhoa" class="form-control" placeholder="Search">
                             <button name="timkiem" value="Tìm kiếm" type="submit">
                                 <i class=" fas fa-search"></i>
                             </button>
