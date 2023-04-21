@@ -268,17 +268,12 @@ input::placeholder {
             $check5=1;
           }
           else{
-              $stmt1 = $conn->prepare("insert into account(Username, Password) values(?, ?)");
-              $stmt1->bind_param("ss",$username,$password);
-              $execval1 = $stmt1->execute();
-              $stmt1->close();
-
-              $stmt2 = $conn->prepare("insert into user(tennguoidung,gioitinh,ngaysinh,email,sdt,diachi) value(?, ?, ?, ?, ?, ?)");
-              $stmt2->bind_param("sissis",$hoten,$gioitinh,$ngaysinh,$mail,$sdt,$dchi);
+              $stmt2 = $conn->prepare("insert into user(tennguoidung,gioitinh,ngaysinh,email,sdt,diachi,Username,Password) value(?, ?, ?, ?, ?, ?, ?, ?)");
+              $stmt2->bind_param("sissssss",$hoten,$gioitinh,$ngaysinh,$mail,$sdt,$dchi,$username,$password);
               $execval2 = $stmt2->execute();
               $stmt2->close();
               //echo $execval;
-              echo '<script>alert("Đăng ký thành công hãy đăng nhập đi")</script>';
+              echo '<script>alert("Đăng ký thành công !")</script>';
               $sql_dangky = "SELECT * FROM account WHERE Username='".$username."' LIMIT 1 ";
               $row = mysqli_query($conn,$sql_dangky);
               $row_data = mysqli_fetch_array($row);
