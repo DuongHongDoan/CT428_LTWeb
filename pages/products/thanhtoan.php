@@ -11,14 +11,14 @@
   
   	<?php
  	$id_dangky = $_SESSION['id_khachhang'];
- 	$sql_get_vanchuyen = mysqli_query($conn,"SELECT * FROM tbl_shipping WHERE id_dangky='$id_dangky' LIMIT 1");
+ 	$sql_get_vanchuyen = mysqli_query($conn,"SELECT * FROM tbl_vanchuyen WHERE id_khachhang='$id_dangky' LIMIT 1");
  	$count = mysqli_num_rows($sql_get_vanchuyen);
  	if($count>0){
  		$row_get_vanchuyen = mysqli_fetch_array($sql_get_vanchuyen);
- 		$name = $row_get_vanchuyen['name'];
- 		$phone = $row_get_vanchuyen['phone'];
- 		$address = $row_get_vanchuyen['address'];
- 		$note = $row_get_vanchuyen['note'];
+ 		$name = $row_get_vanchuyen['ten'];
+ 		$phone = $row_get_vanchuyen['sodienthoai'];
+ 		$address = $row_get_vanchuyen['diachi'];
+ 		$note = $row_get_vanchuyen['chuthich'];
  	}else{
 		echo '<script>alert("Nhấn thêm thông tin vận chuyển để thanh toán")</script>';
 		echo '<script>location.href = "index.php?quanly=vanchuyen";</script>';
