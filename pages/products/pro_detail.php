@@ -26,6 +26,11 @@
         font-weight: 300;
     }
 
+    .content2 {
+        font-weight: 300;
+        margin-left: -26px;
+    }
+
     @media (min-width: 36em) {
         .product-icon {
             margin-left: -12px;
@@ -176,7 +181,8 @@
                         </ul>
                     </div>   -->
                     <div class="content2 col-md-6">
-                        <ul><?php echo $row_detail['mota']?>
+                        <ul>
+                            <?php echo $row_detail['mota']?>
                             <!-- <h5>Mô tả sản phẩm</h5> -->
                             <li></li>
                             <!-- <li>- Kích thước: 5,5 * 8,6cm</li>

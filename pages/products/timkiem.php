@@ -93,7 +93,7 @@ include("pages/main/category.php");
                 <div class="card">
                     <img src="admin/modules/quanlysp/uploads/<?php echo $row_pro['hinhanh']?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="index.php?quanly=pro_detail&id=<?php echo $row_pro['id_sanpham']?>" class="card-text"><?php echo $row_pro['mota']?></a>
+                        <a href="index.php?quanly=pro_detail&id=<?php echo $row_pro['id_sanpham']?>" class="card-text"><?php echo $row_pro['tensp']?></a>
                         <div class="row product-footer">
                             <div class="col-6">
                                 <p class="product-price"><?php echo number_format($row_pro['giasp'],0,',', '.')?><sup>đ</sup></p>

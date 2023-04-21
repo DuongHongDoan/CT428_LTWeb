@@ -1,4 +1,7 @@
 <style>
+    .products {
+        background-color: transparent;
+    }
     .product-icon {
         margin-top: -3px;
         margin-left: 3px;
