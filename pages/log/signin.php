@@ -265,7 +265,7 @@
                         <div class="wrapper-2">
                             <div class="form-title">SIGN IN NOW !</div>
                             <div class="form" style="padding-top: 20px;">
-                                <form name="signin" action="" method="POST">
+                              <form name="signin" action="" method="POST">
                                     <p class="content-item">
                                         <label><a class="form-label lbs">Username:</a>
                                             <input type="text" id="username" name="username" placeholder="Enter username"  required>

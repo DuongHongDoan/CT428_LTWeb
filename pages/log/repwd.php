@@ -265,7 +265,7 @@
               CHANGE PASSWORD NOW !
             </div>
             <div class="form" style="padding-top: 20px;">
-              <form name="change" action="./CT428_LTWeb/pages/log/sign/repwd.php" method="POST">
+              <form name="change" action="" method="POST">
                 <p class="content-item">
                   <label><a class="form-label lbs">Username:</a>
                     <input type="text" id="username" name="username" placeholder="Enter username"  required>
