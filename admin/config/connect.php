@@ -1,6 +1,6 @@
 <?php
 
-    $conn = new mysqli("localhost", "root", "", "productdb");
+    $conn = new mysqli("localhost", "root", "", "test");
 
     // Kiem tra ket noi
     if($conn->connect_errno) {

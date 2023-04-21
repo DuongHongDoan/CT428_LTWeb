@@ -1,12 +1,12 @@
 <?php
-    if(isset($_SESSION['cart'])) {
+  if(isset($_SESSION['cart'])) {
 
   }
 ?>
 
 <div class="container-fluid" style="width: 100%; text-align:center">
   <div class="row px-5" style="justify-content:center; text-align: center; align-items:center; width: 100%; padding-bottom: 100px">
-    <div class="col-md-7 border">
+    <div class="col-md-7">
       <div class="shopping-cart">
         <h6 style="font-size: 30px; padding-top: 15px; text-align: center; letter-spacing: 4px">MY CART</h6>
         <hr>
@@ -17,7 +17,7 @@
           $total = 0;
           $tongtien =0;
           $phivanchuyen=35000;
-          $dk = 500000;
+          $dk = 1000000;
           foreach($_SESSION['cart'] as $cart_item){
             $total = $cart_item['soluong'] * $cart_item['giasp'];
             $tongtien+= $total;
@@ -46,9 +46,9 @@
             <div class="col-md-3 py-5">
               <div>
                 <td>
-                  <a href="pages/products/add_cart.php?tru=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-minus" style="padding: 5px 0 0 5px"></i></a>
-                    <?php echo $cart_item['soluong']; ?>
                   <a href="pages/products/add_cart.php?cong=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-plus" style="padding: 7px 0 0 7px"></i></a>
+                    <?php echo $cart_item['soluong']; ?>
+                  <a href="pages/products/add_cart.php?tru=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-minus" style="padding: 5px 0 0 5px"></i></a>
                 </td>
               </div>
             </div>
@@ -107,10 +107,11 @@
               ?>
 
               </h6>
-              <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
+
+              <h6><i>Freeship với hóa đơn trên 1.000.000Đ</i></h6>
           </div>
-          <a href="index.php?quanly=vanchuyen">
-            <button type="submit" name="vanchuyen" style="background-color: #059867; color: #fff; border-radius: 5px">Đặt hàng</button>
+          <a href="#">
+            <input type="submit" value="Thanh toán" style="padding: 5px; border-radius: 12px ; border:none; background-color: #059867; color: white;  margin-bottom: 7px;">
           </a>
 
       </div>    
@@ -134,4 +135,3 @@
       ?>
   </div>
 </div>
-
