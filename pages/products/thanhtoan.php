@@ -53,8 +53,6 @@
 						<th>Số lượng</th>
 						<th>Giá sản phẩm</th>
 						<th>Thành tiền</th>
-
-
 					</tr>
 					<?php
 					if (isset($_SESSION['cart'])) {
@@ -103,21 +101,8 @@
 							</td>
 						</tr>
 					<?php
-					} else {
-					?>
-						<tr>
-							<td>
-								<img src="img/empty_cart.png" alt="">
-								<p style="padding-top: 25px; font-size: 18px; padding-bottom: 15px">Giỏ hàng của bạn đang rỗng </p>
-								<a href="./index.php">
-									<button type="submit" name="themgiohang" value="Thêm giỏ hàng" class="themgiohang btn btn-success btn-lg">Tiếp tục mua sắm</button>
-								</a>
-							</td>
-						</tr>
-					<?php
 					}
 					?>
-
 				</table>
 			</div>
 			<div class="col-md-4 ">
@@ -125,13 +110,13 @@
 				<div class="form-check">
 					<input class="form-check-input" type="radio" name="payment" id="exampleRadios1" value="tienmat" checked>
 					<label class="form-check-label" for="exampleRadios1">
-						Tiền mặt
+						Thanh toán khi nhận hàng
 					</label>
 				</div>
 				<div class="form-check">
 					<input class="form-check-input" type="radio" name="payment" id="exampleRadios2" value="chuyenkhoan">
 					<label class="form-check-label" for="exampleRadios2">
-						Chuyển khoản
+						Thanh toàn bằng chuyển khoản
 					</label>
 				</div>
 
@@ -154,11 +139,8 @@
 		$thanhtien = $value['soluong'] * $value['giasp'];
 		$tongtien += $thanhtien;
 	}
-	$tongtien_vnd = $tongtien;
-	$tongtien_usd = round($tongtien / 22667);
 	?>
-	<input type="hidden" name="" value="<?php echo $tongtien_usd ?>" id="tongtien">
-	<div id="paypal-button"></div>
+
 
 </div>
 </div>
@@ -196,7 +178,7 @@
 					}
 				}
 				?>
-				<form action="" autocomplete="off" method="POST" id="thongtinthanhtoan" name="thongtinthanhtoan">
+				<form action="" method="POST" id="thongtinthanhtoan" name="thongtinthanhtoan">
 					<div class="form-group">
 						<label for="email">Họ và tên</label>
 						<input type="text" name="name" class="form-control" value="<?php echo $ten ?>" placeholder="Nhập Họ Tên">
@@ -230,8 +212,6 @@
 					</div>
 				</form>
 			</div>
-
-
-
 		</div>
 	</div>
+</div>

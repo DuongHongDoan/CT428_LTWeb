@@ -134,6 +134,7 @@
         }
 
     }
+
     .dropdown {
         position: relative;
         display: inline-block;
@@ -144,7 +145,7 @@
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         padding: 12px 16px;
         z-index: 1;
     }
@@ -191,33 +192,34 @@
                         <i class="icon-cart fa-solid fa-cart-shopping"></i>
                         <?php
 
-                                if (isset($_SESSION['cart'])){
-                                    $count = count($_SESSION['cart']);
-                                    echo "<span id=\"#\"><sup>$count</sup></span>";
-                                }else{
-                                    echo "<span id=\"#\"><sup>0</sup></span>";
-                                 }
+                        if (isset($_SESSION['cart'])) {
+                            $count = count($_SESSION['cart']);
+                            echo "<span id=\"#\"><sup>$count</sup></span>";
+                        } else {
+                            echo "<span id=\"#\"><sup>0</sup></span>";
+                        }
                         ?>
                     </a>
                     <a href="#">
                         <div class="dropdown">
                             <span><i class="icon-user fa-regular fa-user ps-2"></i></span>
                             <?php
-                            if(isset($_SESSION['dangky'])){
-                            if($_SESSION['id_khachhang']!=-1){
-                            $sql_user = "SELECT * FROM account WHERE IDTaikhoan='".$_SESSION['id_khachhang']."' LIMIT 1 ";
-                            $row = mysqli_query($conn,$sql_user);
-                            $count = mysqli_num_rows($row);
-                            if($count>0){
-                                $row_data = mysqli_fetch_array($row);
-                            }
-                                if(isset($_SESSION['id_khachhang'])){
-                                    echo  $row_data['Username'];
+                            if (isset($_SESSION['dangky'])) {
+                                if ($_SESSION['id_khachhang'] != -1) {
+                                    $sql_user = "SELECT * FROM user WHERE IDUser='" . $_SESSION['id_khachhang'] . "' LIMIT 1 ";
+                                    $row = mysqli_query($conn, $sql_user);
+                                    $count = mysqli_num_rows($row);
+                                    if ($count > 0) {
+                                        $row_data = mysqli_fetch_array($row);
+                                    }
+                                    if (isset($_SESSION['id_khachhang'])) {
+                                        echo  $row_data['Tennguoidung'];
+                                    }
+                                } else {
+                                    echo '';
                                 }
-                            }else{
-                                echo '';
-                            }}else{
-                                $_SESSION['id_khachhang']=-1;
+                            } else {
+                                $_SESSION['id_khachhang'] = -1;
                             }
                             ?>
                             <div class="dropdown-content">

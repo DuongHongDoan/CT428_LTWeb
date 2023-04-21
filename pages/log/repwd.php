@@ -4,12 +4,12 @@
         $oldpassword = $_POST['oldpassword'];
         $newpassword = $_POST['newpassword'];
         $conn = new mysqli('localhost','root','','ct428_ltweb');
-        $sql_pwd = "SELECT * FROM account WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
+        $sql_pwd = "SELECT * FROM user WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
         $row = mysqli_query($conn,$sql_pwd);
         $count = mysqli_num_rows($row);
 
         if($count>0){
-          $sql_doipass = "UPDATE account SET Password = ? WHERE Username = ?";
+          $sql_doipass = "UPDATE user SET Password = ? WHERE Username = ?";
           $stmt = $conn->prepare($sql_doipass);
           $stmt->execute([$newpassword,$username]);
           echo '<script>alert("Thay đổi mật khẩu thành công")</script>';

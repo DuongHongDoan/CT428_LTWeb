@@ -228,14 +228,14 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $conn = new mysqli('localhost','root','','ct428_ltweb');
-        $sql_dangnhap = "SELECT * FROM account WHERE Username='".$username."' LIMIT 1 ";
+        $sql_dangnhap = "SELECT * FROM user WHERE Username='".$username."' LIMIT 1 ";
         $row = mysqli_query($conn,$sql_dangnhap);
         $count = mysqli_num_rows($row);
         if($count>0){
           $row_data = mysqli_fetch_array($row);
           if($row_data['Password'] == $password){
               echo '<script>alert("Đăng nhập thành công")</script>';
-              $_SESSION['id_khachhang'] = $row_data['IDTaikhoan'];
+              $_SESSION['id_khachhang'] = $row_data['IDUser'];
               $_SESSION['dangky']=1;
               echo '<script>location.href = "index.php?quanly=index";</script>';
           }else{
