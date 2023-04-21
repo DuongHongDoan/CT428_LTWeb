@@ -25,6 +25,12 @@
             </td>
         </tr>
         <tr>
+            <td>Mã sản phẩm</td>
+            <td>
+                <input type="text" name="masp">
+            </td>
+        </tr>
+        <tr>
             <td>Giá sản phẩm</td>
             <td>
                 <input type="text" name="giasp">
@@ -46,12 +52,6 @@
             <td>Mô tả</td>
             <td>
                 <textarea name="mota" id="" rows="10" style="resize: none;"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>Chi tiết</td>
-            <td>
-                <textarea name="chitiet" rows="10" style="resize: none;"></textarea>
             </td>
         </tr>
         <tr>

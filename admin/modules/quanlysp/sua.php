@@ -39,6 +39,12 @@
             </td>
         </tr>
         <tr>
+            <td>Mã sản phẩm</td>
+            <td>
+                <input value="<?php echo $row['masp'] ?>" type="text" name="masp">
+            </td>
+        </tr>
+        <tr>
             <td>Giá sản phẩm</td>
             <td>
                 <input value="<?php echo $row['giasp'] ?>" type="text" name="giasp">
@@ -61,12 +67,6 @@
             <td>Mô tả</td>
             <td>
                 <textarea name="mota" rows="10" style="resize: none;"> <?php echo $row['mota'] ?></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>Chi tiết</td>
-            <td>
-                <textarea name="chitiet" rows="10" style="resize: none;"> <?php echo $row['chitiet'] ?></textarea>
             </td>
         </tr>
         <tr>

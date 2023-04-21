@@ -167,18 +167,18 @@
                     </div>
                 </div>
                 <div class="row content">
-                    <div class="content1 col-md-6">
+                    <!-- <div class="content1 col-md-6">
                         <ul>
                             <h5>Chi tiết sản phẩm</h5>
                             <li>- Danh Mục: <a href="index.php?quanly=categories&id=<?php echo $row_detail['id_danhmuc']?>">Card bo góc</a></li>
                             <li>- Kiểu thần tượng: K-Pop</li>
                             <li>- Gửi từ: Hà Nội</li>
                         </ul>
-                    </div>  
+                    </div>   -->
                     <div class="content2 col-md-6">
-                        <ul>
-                            <h5>Mô tả sản phẩm</h5>
-                            <li><?php echo $row_detail['mota']?></li>
+                        <ul><?php echo $row_detail['mota']?>
+                            <!-- <h5>Mô tả sản phẩm</h5> -->
+                            <li></li>
                             <!-- <li>- Kích thước: 5,5 * 8,6cm</li>
                             <li>- Chất liệu: Couche 300gsm (cứng)</li>
                             <li>- Cán màng: Nhám ( 2 mặt )</li>
