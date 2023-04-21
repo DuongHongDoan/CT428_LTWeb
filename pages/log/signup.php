@@ -248,7 +248,7 @@ input::placeholder {
           echo "$conn->connect_error";
           die("Connection Failed : ". $conn->connect_error);
       } else {
-          $sql = "SELECT * FROM account WHERE Username='$username'";
+          $sql = "SELECT * FROM user WHERE Username='$username'";
           $kq = $conn->query($sql);
           if(mysqli_num_rows($kq)>0){
               $fail1='<script>alert("Username đã tồn tại vui lòng nhập username khác!!!")</script>';
