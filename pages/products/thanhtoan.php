@@ -129,7 +129,7 @@
 						</button>
 					<?php
 					} else {
-						echo '<h5>Vui lòng đăng rồi mới có thể thanh toán</h5>';
+						echo '<h5>Vui lòng đăng nhập rồi mới có thể thanh toán</h5>';
 					}
 				} else { ?>
 					<input type="submit" value="Thanh toán ngay" name="redirect" class="btn btn-danger">
