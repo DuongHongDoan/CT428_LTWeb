@@ -11,6 +11,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?quanly=lienhe">Liên hệ</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?quanly=hoadon">Đơn hàng</a>
+                </li>
             </ul>
             <!-- nut gom menu -->
             <div class="navbar-icons">
