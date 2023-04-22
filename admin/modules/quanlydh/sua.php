@@ -2,7 +2,7 @@
 $id_dangky = $_SESSION['id_khachhang'];
 $sql_get_donhang = mysqli_query($conn, "SELECT * FROM tbl_donhang WHERE id_khachhang='$id_dangky'");
 ?>
-<p>Sửa sản phẩm</p>
+<p>Xác nhận đơn hàng</p>
 <table border="1" width="50%" style="border-collapse: collapse">
     <?php
     while ($row = mysqli_fetch_array($sql_get_donhang)) {
@@ -19,6 +19,12 @@ $sql_get_donhang = mysqli_query($conn, "SELECT * FROM tbl_donhang WHERE id_khach
                 <td>Trạng thái</td>
                 <td>
                     <input value="<?php echo $row['trangthai_donhang'] ?>" type="text" name="tt">
+                </td>
+            </tr>
+            <tr>
+                <td>Ngày lập đơn hàng</td>
+                <td>
+                    <input value="<?php echo $row['ngaylap_donhang'] ?>" type="text" name="ngaylap">
                 </td>
             </tr>
             <tr>
