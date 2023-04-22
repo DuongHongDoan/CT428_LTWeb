@@ -3,6 +3,7 @@ $id_dangky = $_SESSION['id_khachhang'];
 $sql_get_donhang = mysqli_query($conn, "SELECT * FROM tbl_donhang WHERE id_khachhang='$id_dangky'");
 ?>
 <p>Xác nhận đơn hàng</p>
+<a href="?action=quanlydonhang&query=lietke">Liệt kê</a>
 <table border="1" width="50%" style="border-collapse: collapse">
     <?php
     while ($row = mysqli_fetch_array($sql_get_donhang)) {
