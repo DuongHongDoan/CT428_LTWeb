@@ -107,7 +107,7 @@
             </h6>
             <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
         </div>
-        <a href="index.php?quanly=vanchuyen">
+        <a href="index.php?quanly=thanhtoan">
           <button type="submit" name="vanchuyen" style="background-color: #059867; color: #fff; border-radius: 5px">Đặt hàng</button>
         </a>
       </div>    

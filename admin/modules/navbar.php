@@ -8,4 +8,7 @@
     <li>
         <a href="index.php?action=quanlytaikhoan&query=them">Quản lý tài khoản</a>
     </li>
+    <li>
+        <a href="index.php?action=quanlydonhang&query=sua">Quản lý đơn hàng</a>
+    </li>
 </ul>
