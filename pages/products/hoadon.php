@@ -51,7 +51,7 @@ echo '<script>alert("Cảm ơn vì đã đặt hàng")</script>'
             $nl = $row_get_donhang['ngaylap_donhang'];
             $pt = $row_get_donhang['pt_thanhtoan'];
             $dcgh = $row_get_donhang['vanchuyen_donhang'];
-            (float)$tongtien = $row_get_donhang['tongtien'];
+            $tongtien = $row_get_donhang['tongtien'];
         }
     ?>
         <tbody class="table-light">
