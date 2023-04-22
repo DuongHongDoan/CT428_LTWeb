@@ -1,7 +1,5 @@
-<head>
-    <title>Hóa đơn</title>
-</head>
 <h1 style="text-align: center;">Đơn Hàng</h1>
+<a href="?action=quanlydonhang&query=sua">quay lại</a>
 <table style="width:100%;text-align: center;border-collapse: collapse;" border="1" class="table table-hover">
     <thead class="table-info">
         <tr>
@@ -27,6 +25,12 @@
                 Địa chỉ
             </th>
             <th>
+                Tên khách hàng
+            </th>
+            <th>
+                số điện thoại
+            </th>
+            <th>
                 Tổng tiền
             </th>
         </tr>
@@ -37,17 +41,19 @@
 
     $sql_get_vanchuyen = mysqli_query($conn, "SELECT * FROM tbl_vanchuyen WHERE id_khachhang='$id_dangky' LIMIT 1");
     $row_get_vanchuyen = mysqli_fetch_array($sql_get_vanchuyen);
-    $count1 = mysqli_num_rows($sql_get_vanchuyen);
-
+    $dc = $row_get_vanchuyen['diachi'];
+    $count = mysqli_num_rows($sql_get_donhang);
     for ($x = 1; $x <= $count; $x++) {
 
-        $count = mysqli_num_rows($sql_get_donhang);
+
         if ($count > 0) {
             $row_get_donhang = mysqli_fetch_array($sql_get_donhang);
             $madh = $row_get_donhang['ma_donhang'];
             $tt = $row_get_donhang['trangthai_donhang'];
             $nl = $row_get_donhang['ngaylap_donhang'];
             $pt = $row_get_donhang['pt_thanhtoan'];
+            $ten = $row_get_vanchuyen['ten'];
+            $sdt = $row_get_vanchuyen['sodienthoai'];
             if ($pt == 'tienmat') {
                 $pt = 'Thanh toán khi nhận hàng';
             } else {
@@ -55,12 +61,6 @@
             }
             $dcgh = $row_get_donhang['vanchuyen_donhang'];
             $tongtien = $row_get_donhang['tongtien'];
-        } else {
-            $madh = '';
-            $tt = '';
-            $nl = '';
-            $tongtien = '';
-            $pt = '';
         }
     ?>
         <tbody class="table-light">
@@ -106,20 +106,16 @@
                     <?php echo $pt; ?>
                 </td>
                 <td>
-                    <?php $dc = ($count1 > 0) ? $row_get_vanchuyen['diachi'] : '';
-                    if ($dc == '') {
-                    } else {
-                        echo $dc;
-                    }
-                    ?>
+                    <?php echo $dc; ?>
                 </td>
                 <td>
-                    <?php
-                    if ($tongtien == '') {
-                    } else {
-                        echo $tongtien . 'đ';
-                    }
-                    ?>
+                    <?php echo $ten; ?>
+                </td>
+                <td>
+                    <?php echo $sdt; ?>
+                </td>
+                <td>
+                    <?php echo $tongtien . 'đ' ?>
                 </td>
             </tr>
         </tbody>
