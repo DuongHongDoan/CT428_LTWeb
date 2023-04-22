@@ -2,7 +2,7 @@
     <title>Giỏ hàng</title>
 </head>
 <?php
-  if(isset($_SESSION['cart'])) {
+    if(isset($_SESSION['cart'])) {
 
   }
 ?>
@@ -114,6 +114,7 @@
     </div>
     <?php
       }else{
+
     ?>
     <tr>
       <td>

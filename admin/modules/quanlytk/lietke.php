@@ -18,7 +18,6 @@
         <td><?php echo $row['IDTaikhoan'] ?></td>
         <td><?php echo $row['Username'] ?></td>
         <td><?php echo $row['Password'] ?></td>
-        <td><?php echo $row['IDUser'] ?></td>
         <td>
             <a href="modules/quanlytk/xuly.php?idtk=<?php echo $row['IDTaikhoan'] ?>">Xóa</a>
         </td>
