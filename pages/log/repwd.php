@@ -4,17 +4,17 @@
     $oldpassword = $_POST['oldpassword'];
     $newpassword = $_POST['newpassword'];
     $conn = new mysqli('localhost','root','','ct428_ltweb');
-    $sql_pwd = "SELECT * FROM account WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
+    $sql_pwd = "SELECT * FROM user WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
     $row = mysqli_query($conn,$sql_pwd);
     $count = mysqli_num_rows($row);
 
     if($count>0){
-      $sql_doipass = "UPDATE account SET Password = ? WHERE Username = ?";
+      $sql_doipass = "UPDATE user SET Password = ? WHERE Username = ?";
       $stmt = $conn->prepare($sql_doipass);
       $stmt->execute([$newpassword,$username]);
       echo '<script>alert("Thay đổi mật khẩu thành công")</script>';
     }else{
-      echo '<script>alert("Tài khoản không tồn tại hoặc sai mật khẩu hay username")</script>';
+        echo '<script>alert("Tài khoản không tồn tại hoặc sai mật khẩu hay username")</script>';
     }
   }
 ?>
@@ -230,9 +230,123 @@ input::placeholder {
   .signup-wrapper .signup-form .form input[type="password"] {
     text-align: initial;
   }
-  .signup-wrapper .signup-form .form-title {
-    text-align: initial;
-    padding: 0;
+  .signup-wrapper .signup-form .signup {
+    background-color: #007700;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1em;
+    text-transform: capitalize;
+    margin-top: 49px;
+    border-radius: 5px;
+  }
+  .signup1{
+    background-color: #007700;
+    width: 180px;
+    height: 45px;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    font-size: 1em;
+    text-transform: capitalize;
+    border-radius: 5px;
+  }
+  .signup-wrapper .signup-form .login {
+    color: #007700;
+    padding: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9em;
+    width: 95%;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+  }
+  input::placeholder {
+    color: #575757;
+  }
+  
+  @media (min-width: 200px) {
+    .signup-wrapper .signup-form .wrapper-2 {
+      margin: 30px 23px;
+    }
+  
+    .signup-wrapper .company-details .title {
+      width: 90%;
+      font-size: 1.5em;
+    }
+  }
+  @media (min-width: 300px) {
+    .signup-wrapper .signup-form .login {
+      display: inline-block;
+    }
+    .signup-wrapper .signup-form .wrapper-2 {
+      margin: 30px 60px;
+    }
+  
+    .signup-wrapper .company-details .title {
+      width: 80%;
+      font-size: 2em;
+    }
+  }
+  @media (min-width: 500px) {
+    .signup-wrapper .signup-form .login {
+      display: inline;
+    }
+  }
+  
+  @media (min-width: 700px) {
+    .signup-wrapper .company-details,
+    .signup-wrapper .signup-form {
+      width: 50%;
+    }
+    .signup-wrapper {
+      display: flex;
+      max-width: 700px;
+      margin: 0 auto;
+      margin-top: 5%;
+    }
+    .signup-wrapper .company-details .wrapper-1 {
+      padding-bottom: 150px;
+      padding-top: 160px;
+    }
+    .signup-wrapper .company-details .slogan {
+      padding: 0 20px;
+      width: 70%;
+      margin: 0 auto;
+      color: #fff;
+      font-size: 1.2em;
+      text-align: center;
+      text-shadow: 1px 1px #4b4a4a;
+      display: block;
+    }
+    .signup-wrapper .company-details .title {
+      width: 76%;
+    }
+    .signup-wrapper .signup-form .wrapper-2 {
+      padding: 50px 40px;
+      margin: 0;
+    }
+  
+    .signup-wrapper .signup-form .login {
+      display: inline;
+    }
+    .signup-wrapper .signup-form .form .content-item {
+      text-align: initial;
+    }
+    .signup-wrapper .signup-form .form input[type="text"],
+    .signup-wrapper .signup-form .form input[type="password"] {
+      text-align: initial;
+    }
+    .signup-wrapper .signup-form .form-title {
+      text-align: initial;
+      padding: 0;
+    }
+  }
+  .lbs{
+    font-weight: bolder;
+    text-decoration: none;
+    color: #4b4a4a;
   }
 }
 .lbs{
@@ -263,7 +377,7 @@ input::placeholder {
               CHANGE PASSWORD NOW !
             </div>
             <div class="form" style="padding-top: 20px;">
-              <form name="change" action="./CT428_LTWeb/pages/log/sign/repwd.php" method="POST">
+              <form name="change" action="" method="POST">
                 <p class="content-item">
                   <label><a class="form-label lbs">Username:</a>
                     <input type="text" id="username" name="username" placeholder="Enter username"  required>
@@ -289,8 +403,8 @@ input::placeholder {
 
               </form>
               <p class="content-item">
-                <a href="index.php?quanly=dangnhap"><button type="button" class="signup1">SIGN IN</button></a>
-                <a href="index.php?quanly=dangky" ><button type="button" class="signup1">SIGN UP</button></a>
+                <a href="index.php?quanly=dangnhap"><button type="button" style="margin-top: 5px;" class="signup1">SIGN IN</button></a>
+                <a href="index.php?quanly=thongtin" ><button type="button" style="margin-top: 5px;" class="signup1">SIGN UP</button></a>
               </p>
             </div>
           </div>
