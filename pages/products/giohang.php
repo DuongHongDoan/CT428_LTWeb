@@ -1,6 +1,20 @@
 <head>
     <title>Giỏ hàng</title>
 </head>
+<style>
+  .dathang {
+    padding: 5px; 
+    border-radius: 12px ; 
+    border:none; 
+    background-color: #059867; 
+    color: white;  
+    margin-bottom: 7px;
+  }
+  .dathang:hover{
+    color: var(--orange);
+    transition: var(--smooth);
+  }
+</style>
 <?php
     if(isset($_SESSION['cart'])) {
 
@@ -9,7 +23,7 @@
 
 <div class="container-fluid" style="width: 100%; text-align:center">
   <div class="row px-5" style="justify-content:center; text-align: center; align-items:center; width: 100%; padding-bottom: 100px">
-    <div class="col-md-7 border">
+    <div class="col-md-7 border rounded" style="margin-top: 20px;">
       <div class="shopping-cart">
         <h6 style="font-size: 30px; padding-top: 15px; text-align: center; letter-spacing: 4px">MY CART</h6>
         <hr>
@@ -27,7 +41,7 @@
             $i++;
       ?>
       <form action="" method="post" class="cart-items">
-        <div class="border rounded">
+        <div class="rounded">
           <div class="row bg-while">
             <div class="col-md-3 pl-0">
               <img src="admin/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh']; ?>" style="width: 150px" alt="">
@@ -62,8 +76,10 @@
       <h4 style ="padding-top: 30px"><a href="pages/products/add_cart.php?xoatatca=1" style="color: red; font-size: 20px">Xóa tất cả</a></h4>
     </div>
     <div class="col-md-4 offset-md-1 border rounded mt-5-bg-while h-25">
-      <h6 style="font-size: 30px; padding-top: 15px; text-align: center; letter-spacing: 4px">DETAILS</h6>
-      <hr>
+      <div class="shopping-cart">
+        <h6 style="font-size: 30px; padding-top: 15px; text-align: center; letter-spacing: 4px">DETAILS</h6>
+        <hr>
+      </div>
       <div class="row price-details">
         <div class="col-md-6">
           <?php
@@ -82,6 +98,7 @@
           <h6>
             <?php echo number_format($tongtien, 0, ',', '.').'Đ'; ?>
           </h6>
+          <h6>
           <?php
               if ($tongtien < $dk){
                 echo number_format($phivanchuyen, 0, ',', ".").'Đ';
@@ -108,7 +125,7 @@
             <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
         </div>
         <a href="index.php?quanly=thanhtoan">
-          <button type="submit" name="vanchuyen" style="background-color: #059867; color: #fff; border-radius: 5px">Đặt hàng</button>
+          <button class="dathang" type="submit" name="vanchuyen">Đặt hàng</button>
         </a>
       </div>    
     </div>

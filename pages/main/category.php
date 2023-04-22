@@ -4,8 +4,9 @@
 ?>
 
 <div class="col-lg-3">
-    <div class="category" style="height: 392px;">
-        <h4 class="category-heading"><i class="category-heading-icon fa-solid fa-list"></i>Danh mục</h4>
+    <div class="category">
+        <h4 class="category-heading" style="    display: flex;
+    padding-top: 16px;"><i class="category-heading-icon fa-solid fa-list"></i><p style="padding-top: 2px;">Danh mục</p></h4>
         
         <?php
         while ($row_danhmuc=mysqli_fetch_array($query_danhmuc)){

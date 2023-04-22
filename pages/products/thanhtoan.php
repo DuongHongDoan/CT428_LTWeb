@@ -1,3 +1,9 @@
+<style>
+	.giaohang:hover {
+		color: var(--orange);
+		transition: var(--smooth);
+	}
+</style>
 <div class="container">
 	<?php
 	if (isset($_SESSION['id_khachhang'])) {
@@ -132,8 +138,8 @@
 						echo '<h5>Vui lòng đăng nhập rồi mới có thể thanh toán</h5>';
 					}
 				} else { ?>
-					<input type="submit" value="Thanh toán ngay" name="redirect" class="btn btn-danger">
-					<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+					<input type="submit" value="Thanh toán ngay" name="redirect" class="btn btn-danger giaohang">
+					<button type="button" class="btn btn-success giaohang" data-bs-toggle="modal" data-bs-target="#myModal">
 						Thêm địa chỉ giao hàng
 					</button>
 				<?php
