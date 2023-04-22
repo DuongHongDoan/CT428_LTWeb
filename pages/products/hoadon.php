@@ -5,32 +5,34 @@
 echo '<script>alert("Cảm ơn vì đã đặt hàng")</script>'
 ?>
 <table style="width:100%;text-align: center;border-collapse: collapse;" border="1" class="table table-hover">
-    <tr>
-        <th>
-            Mã Đơn hàng
-        </th>
-        <th>
-            Trạng thái
-        </th>
-        <th>
-            Sản phẩm
-        </th>
-        <th>
-            Số lượng
-        </th>
-        <th>
-            Ngày lập
-        </th>
-        <th>
-            Thanh toán
-        </th>
-        <th>
-            Địa chỉ
-        </th>
-        <th>
-            Tổng tiền
-        </th>
-    </tr>
+    <thead class="table-info">
+        <tr>
+            <th>
+                Mã Đơn hàng
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th>
+                Sản phẩm
+            </th>
+            <th>
+                Số lượng
+            </th>
+            <th>
+                Ngày lập
+            </th>
+            <th>
+                Thanh toán
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Tổng tiền
+            </th>
+        </tr>
+    </thead>
     <?php
     $id_dangky = $_SESSION['id_khachhang'];
     $sql_get_donhang = mysqli_query($conn, "SELECT * FROM tbl_donhang WHERE id_khachhang='$id_dangky'");
@@ -51,55 +53,56 @@ echo '<script>alert("Cảm ơn vì đã đặt hàng")</script>'
             (float)$tongtien = $row_get_donhang['tongtien'];
         }
     ?>
+        <tbody>
+            <tr>
+                <td>
+                    <?php echo $madh; ?>
 
-        <tr>
-            <td>
-                <?php echo $madh; ?>
-
-            </td>
-            <td>
-                <?php echo $tt; ?>
-            </td>
-            <td>
+                </td>
+                <td>
+                    <?php echo $tt; ?>
+                </td>
+                <td>
+                    <?php
+                    $sql_get_donhang_ct = mysqli_query($conn, "SELECT * FROM tbl_donhang_chitiet WHERE ma_donhang='$madh'");
+                    $count1 = mysqli_num_rows($sql_get_donhang_ct);
+                    if ($count1 > 0) {
+                        for ($i = 1; $i <= $count1; $i++) {
+                            $row_get_donhang_ct = mysqli_fetch_array($sql_get_donhang_ct);
+                            $sp = $row_get_donhang_ct['id_sanpham'];
+                            $sql_get_sanpham = mysqli_query($conn, "SELECT * FROM tbl_products WHERE id_sanpham='$sp'");
+                            $row_get_sanpham = mysqli_fetch_array($sql_get_sanpham);
+                            $tensp = $row_get_sanpham['tensp'];
+                            echo $tensp . '</br>';
+                        }
+                    ?>
+                </td>
+                <td>
                 <?php
-                $sql_get_donhang_ct = mysqli_query($conn, "SELECT * FROM tbl_donhang_chitiet WHERE ma_donhang='$madh'");
-                $count1 = mysqli_num_rows($sql_get_donhang_ct);
-                if ($count1 > 0) {
-                    for ($i = 1; $i <= $count1; $i++) {
-                        $row_get_donhang_ct = mysqli_fetch_array($sql_get_donhang_ct);
-                        $sp = $row_get_donhang_ct['id_sanpham'];
-                        $sql_get_sanpham = mysqli_query($conn, "SELECT * FROM tbl_products WHERE id_sanpham='$sp'");
-                        $row_get_sanpham = mysqli_fetch_array($sql_get_sanpham);
-                        $tensp = $row_get_sanpham['tensp'];
-                        echo $tensp . '</br>';
+                        $sql_get_donhang_sl = mysqli_query($conn, "SELECT soluongmua FROM tbl_donhang_chitiet WHERE ma_donhang='$madh'");
+                        $count2 = mysqli_num_rows($sql_get_donhang_sl);
+                        for ($a = 1; $a <= $count2; $a++) {
+                            $row_get_donhang_sl = mysqli_fetch_array($sql_get_donhang_sl);
+                            $sl = $row_get_donhang_sl['soluongmua'];
+                            echo $sl . '</br>';
+                        }
                     }
                 ?>
-            </td>
-            <td>
-            <?php
-                    $sql_get_donhang_sl = mysqli_query($conn, "SELECT soluongmua FROM tbl_donhang_chitiet WHERE ma_donhang='$madh'");
-                    $count2 = mysqli_num_rows($sql_get_donhang_sl);
-                    for ($a = 1; $a <= $count2; $a++) {
-                        $row_get_donhang_sl = mysqli_fetch_array($sql_get_donhang_sl);
-                        $sl = $row_get_donhang_sl['soluongmua'];
-                        echo $sl . '</br>';
-                    }
-                }
-            ?>
-            </td>
-            <td>
-                <?php echo $nl; ?>
-            </td>
-            <td>
-                <?php echo $pt; ?>
-            </td>
-            <td>
-                <?php echo $dc; ?>
-            </td>
-            <td>
-                <?php echo $tongtien . 'đ' ?>
-            </td>
-        </tr>
+                </td>
+                <td>
+                    <?php echo $nl; ?>
+                </td>
+                <td>
+                    <?php echo $pt; ?>
+                </td>
+                <td>
+                    <?php echo $dc; ?>
+                </td>
+                <td>
+                    <?php echo $tongtien . 'đ' ?>
+                </td>
+            </tr>
+        </tbody>
     <?php
     }
     ?>
