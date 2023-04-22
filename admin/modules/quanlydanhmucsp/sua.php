@@ -1,6 +1,7 @@
 <?php
     $sql_sua_danhmuc = "SELECT * FROM tbl_category WHERE id_danhmuc='$_GET[id_danhmuc]' LIMIT 1";
     $query_sua_danhmuc = mysqli_query($conn, $sql_sua_danhmuc);
+
 ?>
 <p>Sửa danh mục sản phẩm</p>
 <table border="1" width="50%" style="border-collapse: collapse">

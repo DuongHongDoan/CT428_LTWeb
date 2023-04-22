@@ -119,3 +119,21 @@ Validator.isEmail = function(selector) {
         }
     };
 }
+
+
+
+
+
+
+                //     var enableInputs  = formElement.querySelectorAll('[name]');
+                //     var formValues = Array.from(enableInputs).reduce(function(values, input) {
+                //         return (values[input.name] = input.value) && values;
+                //     }, {});
+                    
+                //options.onsubmit(formValues);
+                //     alert('Thành công!!!');
+                //     location.replace('index.html');
+                // }else{
+                //     formElement.submit();
+                //     alert('Thất bại =(((')
+                // }

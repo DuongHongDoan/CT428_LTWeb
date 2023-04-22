@@ -4,7 +4,7 @@
 ?>
 
 <div class="col-lg-3">
-    <div class="category" style="height: 392px;">
+    <div class="category">
         <h4 class="category-heading"><i class="category-heading-icon fa-solid fa-list"></i>Danh mục</h4>
         
         <?php

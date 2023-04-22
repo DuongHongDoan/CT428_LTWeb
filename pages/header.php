@@ -134,7 +134,6 @@
         }
 
     }
-
     .dropdown {
         position: relative;
         display: inline-block;
@@ -145,7 +144,7 @@
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         padding: 12px 16px;
         z-index: 1;
     }
@@ -174,13 +173,13 @@
                 <div class="col-8">
                     <form method="POST" class="example" action="index.php?quanly=timkiem" style="margin-top:-58px;max-width:300px">
                         <div class="search-mb mb-3">
-                            <input type="text" id="searchBar" required placeholder="Search.." name="tukhoa">
+                            <input type="text" placeholder="Search.." name="tukhoa">
                             <button name="timkiem" type="submit" style="color: white"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
                     <form method="POST" action="index.php?quanly=timkiem">
                         <div class="search-lg mb-3">
-                            <input type="text" id="searchBar" required name="tukhoa" class="form-control" placeholder="Search">
+                            <input type="text" name="tukhoa" class="form-control" placeholder="Search">
                             <button name="timkiem" value="Tìm kiếm" type="submit">
                                 <i class=" fas fa-search"></i>
                             </button>
@@ -192,41 +191,40 @@
                         <i class="icon-cart fa-solid fa-cart-shopping"></i>
                         <?php
 
-                        if (isset($_SESSION['cart'])) {
-                            $count = count($_SESSION['cart']);
-                            echo "<span id=\"#\"><sup>$count</sup></span>";
-                        } else {
-                            echo "<span id=\"#\"><sup>0</sup></span>";
-                        }
+                                if (isset($_SESSION['cart'])){
+                                    $count = count($_SESSION['cart']);
+                                    echo "<span id=\"#\"><sup>$count</sup></span>";
+                                }else{
+                                    echo "<span id=\"#\"><sup>0</sup></span>";
+                                 }
                         ?>
                     </a>
                     <a href="#">
                         <div class="dropdown">
                             <span><i class="icon-user fa-regular fa-user ps-2"></i></span>
                             <?php
-                            if (isset($_SESSION['dangky'])) {
-                                if ($_SESSION['id_khachhang'] != -1) {
-                                    $sql_user = "SELECT * FROM user WHERE IDUser='" . $_SESSION['id_khachhang'] . "' LIMIT 1 ";
-                                    $row = mysqli_query($conn, $sql_user);
-                                    $count = mysqli_num_rows($row);
-                                    if ($count > 0) {
-                                        $row_data = mysqli_fetch_array($row);
-                                    }
-                                    if (isset($_SESSION['id_khachhang'])) {
-                                        echo  $row_data['Tennguoidung'];
-                                    }
-                                } else {
-                                    echo '';
+                            if(isset($_SESSION['dangky'])){
+                            if($_SESSION['id_khachhang']!=-1){
+                            $sql_user = "SELECT * FROM user WHERE IDUser='".$_SESSION['id_khachhang']."' LIMIT 1 ";
+                            $row = mysqli_query($conn,$sql_user);
+                            $count = mysqli_num_rows($row);
+                            if($count>0){
+                                $row_data = mysqli_fetch_array($row);
+                            }
+                                if(isset($_SESSION['id_khachhang'])){
+                                    echo  $row_data['Tennguoidung'];
                                 }
-                            } else {
-                                $_SESSION['id_khachhang'] = -1;
+                            }else{
+                                echo '';
+                            }}else{
+                                $_SESSION['id_khachhang']=-1;
                             }
                             ?>
                             <div class="dropdown-content">
-                                <p><a href="index.php?quanly=dangky">Sign Up</a></p>
-                                <p><a href="index.php?quanly=dangnhap">Sign In</a></p>
-                                <p><a href="index.php?quanly=datlai">Re Pass</a></p>
-                                <p><a href="index.php?quanly=dangxuat">Sign Out</a></p>
+                                <p><a href="index.php?quanly=thongtin">Đăng ký</a></p>
+                                <p><a href="index.php?quanly=dangnhap">Đăng nhập</a></p>
+                                <p><a href="index.php?quanly=datlai">Đổi mật khẩu</a></p>
+                                <p><a href="index.php?quanly=dangxuat">Đăng xuất</a></p>
                             </div>
                         </div>
                     </a>

@@ -1,6 +1,7 @@
 <?php
     $sql_lietke_sanpham = "SELECT * FROM account";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
+
 ?>
 <p>Danh sách tài khoản</p>
 <table border="1" width="50%" style="border-collapse: collapse">
@@ -18,6 +19,7 @@
         <td><?php echo $row['IDTaikhoan'] ?></td>
         <td><?php echo $row['Username'] ?></td>
         <td><?php echo $row['Password'] ?></td>
+        <td><?php echo $row['IDUser'] ?></td>
         <td>
             <a href="modules/quanlytk/xuly.php?idtk=<?php echo $row['IDTaikhoan'] ?>">Xóa</a>
         </td>

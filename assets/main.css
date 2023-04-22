@@ -84,6 +84,108 @@ img {
     font-size: 1rem;
     border-radius: .25rem;
 }
+
+/* .input-group {
+    justify-content: end;
+    align-items: end;
+} */
+
+/* .input-group input{
+    display: none;
+} */
+
+/* .search-btn{
+    background-color: transparent;
+    color: #387bf8;
+    border: none;
+    height: 18px;
+}
+
+.search-btn:hover {
+    background-color: transparent;
+    color: var(--orange);
+    transition: var(--smooth);
+    border: none;
+}
+
+.cancle-btn .search-btn {
+    position: fixed;
+    top: 16px;
+    right: 40%;
+    cursor: pointer;
+    transform: translateX(-50px);
+    background: transparent;
+} */
+/* Ket thuc thanh search */
+
+/* xu ly thanh search xo ra khi bam icon search */
+/* .input-group-collap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--light-green);
+    z-index: 8;
+    transition: var(--smooth);
+    transform: translateY(-100%);
+    opacity: 0;
+} */
+
+/* .input-group-collap.search-open {
+    transform: translateY(0);
+    opacity: 1;
+    transition: var(--smooth);
+} */
+
+/* .collap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25%;
+} */
+
+/* .collap input {
+   border-top-left-radius: 3px;
+   border-bottom-left-radius: 3px;
+   border-color: var(--light-green);
+   border: 1rem;
+   height: 35px;
+   padding: 0 8px;
+} */
+
+/* .collap button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding: 0 16px;
+    margin: -8px;
+    font-size: 1rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: var(--light-blue);
+    border: 1rem;
+    height: 40px;
+}
+.collap button i {
+    color: var(--white);
+} */
+
+/* .close-btn {
+    color: var(--light-gray);
+    font-size: 25px;
+    display: flex;
+    justify-content: end;
+    padding: 4px 12px;
+    cursor: pointer;
+} */
+/* ket thuc xu ly */
 .icons a:hover {
     color: var(--orange);
     transition: var(--smooth);
@@ -332,6 +434,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
 }
 .title-deco, .product-filter{
     border-bottom: none;

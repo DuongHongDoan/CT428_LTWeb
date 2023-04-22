@@ -1,8 +1,5 @@
-<head>
-    <title>Giỏ hàng</title>
-</head>
 <?php
-    if(isset($_SESSION['cart'])) {
+  if(isset($_SESSION['cart'])) {
 
   }
 ?>
@@ -32,6 +29,7 @@
             <div class="col-md-3 pl-0">
               <img src="admin/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh']; ?>" style="width: 150px" alt="">
             </div>
+
             <div class="col-md-6">
               <h5 class="pt-2">
                 <?php echo $cart_item['tensp']?>
@@ -41,6 +39,7 @@
                 <?php echo number_format( $cart_item['giasp'], 0, ',', '.').'Đ'; ?>
               </h5>
               <a href="pages/products/add_cart.php?xoa=<?php echo $cart_item['id'] ?>">
+                <!-- <button type="#" class="btn-danger mx-2" name="remove">Remove</button> -->
                 <h5 class="pt-2" style="color:red; font-size: 18px;">Xóa</h5>
               </a>
             </div>
@@ -59,74 +58,73 @@
       <?php
         }
       ?>
-      <h4 style ="padding-top: 30px"><a href="pages/products/add_cart.php?xoatatca=1" style="color: red; font-size: 20px">Xóa tất cả</a></h4>
+
+
+    <h4 style ="padding-top: 30px"><a href="pages/products/add_cart.php?xoatatca=1" style="color: red; font-size: 20px">Xóa tất cả</a></h4>
     </div>
     <div class="col-md-4 offset-md-1 border rounded mt-5-bg-while h-25">
       <h6 style="font-size: 30px; padding-top: 15px; text-align: center; letter-spacing: 4px">DETAILS</h6>
       <hr>
       <div class="row price-details">
-        <div class="col-md-6">
-          <?php
-          if(isset($_SESSION['cart'])) {
-            $count = count($_SESSION['cart']);
-            echo "<h6>Tạm tính ($count )</h6>";
-          }else{
-            echo "<h6>Giá(0 items)</h6>";
-          }
-          ?>
-          <h6>Phí vận chuyển</h6>
-          <hr>
-          <h6>Tổng số tiền </h6>
-        </div>
-        <div class="col-md-6">
-          <h6>
-            <?php echo number_format($tongtien, 0, ',', '.').'Đ'; ?>
-          </h6>
-          <?php
-              if ($tongtien < $dk){
-                echo number_format($phivanchuyen, 0, ',', ".").'Đ';
-                $tongtien1 = $tongtien + $phivanchuyen;
+          <div class="col-md-6">
+              <?php
+              if(isset($_SESSION['cart'])) {
+                  $count = count($_SESSION['cart']);
+                  echo "<h6>Tạm tính ($count )</h6>";
               }else{
-                $str = "FREE";
-                $phivanchuyen = $str;
-                echo $phivanchuyen;
+                  echo "<h6>Giá(0 items)</h6>";
               }
-          ?>
-            </h6>
-            <hr>
-            <h6>
-            <?php 
-            if ($tongtien < $dk) {
-              echo number_format( $tongtien1, 0, ',', '.').'Đ';
-            }else{
+              ?>
+              <h6>Phí vận chuyển</h6>
+              <hr>
+              <h6>Tổng số tiền </h6>
+          </div>
 
-              echo number_format( $tongtien, 0, ',', '.').'Đ'; 
-            }
-            ?>
+          <div class="col-md-6">
+              <h6>
+              <?php echo number_format($tongtien, 0, ',', '.').'Đ'; ?>
+              </h6>
+                <?php
+                    if ($tongtien < $dk){
+                      echo number_format($phivanchuyen, 0, ',', ".").'Đ';
+                      $tongtien1 = $tongtien + $phivanchuyen;
+                    }else{
+                      $str = "FREE";
+                      $phivanchuyen = $str;
+                      echo $phivanchuyen;
+                    }
+                ?>
+              </h6>
+              <hr>
+              <h6>
+              <?php 
+              if ($tongtien < $dk) {
+                echo number_format( $tongtien1, 0, ',', '.').'Đ';
+              }else{
 
-            </h6>
-            <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
-        </div>
-        <a href="index.php?quanly=thanhtoan">
-          <button type="submit" name="vanchuyen" style="background-color: #059867; color: #fff; border-radius: 5px">Đặt hàng</button>
-        </a>
+                echo number_format( $tongtien, 0, ',', '.').'Đ'; 
+              }
+              ?>
+
+              </h6>
+              <h6><i>Freeship với hóa đơn trên 500.000Đ</i></h6>
+          </div>
+          <a href="index.php?quanly=vanchuyen">
+            <button type="submit" name="vanchuyen" style="background-color: #059867; color: #fff; border-radius: 5px">Đặt hàng</button>
+          </a>
+
       </div>    
     </div>
-    <?php
-      }else{
 
-    ?>
-    <tr>
-      <td>
-        <img src="img/empty_cart.png" alt="">
-        <p style="padding-top: 25px; font-size: 18px; padding-bottom: 15px">Giỏ hàng của bạn đang rỗng </p>
-        <a href="./index.php">
-          <button type="submit" name="themgiohang" value="Thêm giỏ hàng" class="themgiohang btn btn-success btn-lg">Tiếp tục mua sắm</button>
-        </a>
-      </td>
-    </tr>
-    <?php
-      }
-    ?>
+      <?php
+        }else{
+
+      ?>
+        <tr>
+            <td><p>Giỏ hàng đang rỗng =</p></td>
+        </tr>
+      <?php
+        }
+      ?>
   </div>
 </div>

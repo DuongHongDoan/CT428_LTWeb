@@ -109,11 +109,7 @@
                 $_SESSION['cart'] = $new_product;
             }
         }
-        $url = '../../index.php?quanly=pro_detail&id=' . urlencode($id);
-        echo '<script>';
-        echo 'if (confirm("Đã thêm sản phẩm vào giỏ hàng!")) {';
-        echo 'window.location.href = "' . $url . '";';
-        echo '}';
-        echo '</script>';
+        header('Location: ../../index.php?quanly=giohang');
+        // print_r($_SESSION['cart']);
     }
 ?>

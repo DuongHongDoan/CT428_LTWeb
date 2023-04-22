@@ -22,7 +22,7 @@
             include("modules/header.php");
             include("modules/navbar.php");
             include("modules/body.php");
-            // include("modules/footer.php");
+            include("modules/footer.php");
         ?>
     </div>
 </body>
