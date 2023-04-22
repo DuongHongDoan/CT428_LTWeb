@@ -10,5 +10,7 @@
     </li>
     <li>
         <a href="index.php?action=quanlybaiviet&query=them">Quản lý bài viết</a>
+    </li><li>
+        <a href="index.php?action=quanlydonhang&query=sua">Quản lý đơn hàng</a>
     </li>
 </ul>

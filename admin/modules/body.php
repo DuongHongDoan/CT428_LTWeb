@@ -29,6 +29,9 @@
         // elseif($tmp == 'quanlybaiviet') {
         //     include("");
         // }
+        elseif($tmp == 'quanlydonhang' && $query == 'sua') {
+            include("modules/quanlydh/sua.php");
+        }
         else {
             include("modules/dashboard.php");
         }
