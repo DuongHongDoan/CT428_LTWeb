@@ -115,8 +115,5 @@
         echo 'window.location.href = "' . $url . '";';
         echo '}';
         echo '</script>';
-        // header('Location: ' . $url);
-        // exit();
-        // print_r($_SESSION['cart']);
     }
 ?>

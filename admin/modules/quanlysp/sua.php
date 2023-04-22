@@ -1,7 +1,6 @@
 <?php
     $sql_sua_sanpham = "SELECT * FROM tbl_products WHERE id_sanpham='$_GET[id_sanpham]' LIMIT 1";
     $query_sua_sanpham = mysqli_query($conn, $sql_sua_sanpham);
-
 ?>
 <p>Sửa sản phẩm</p>
 <table border="1" width="50%" style="border-collapse: collapse">

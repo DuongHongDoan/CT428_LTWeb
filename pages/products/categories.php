@@ -81,9 +81,6 @@
 </style>
 
 <?php
-    // if (isset($_GET['sort'])) {
-    //     $sort = $_GET['sort'];
-    // }
     if(isset($_GET['trang'])) {
         $page = $_GET['trang'];
     }
@@ -141,15 +138,6 @@ include("pages/main/category.php");
                 ?>
             </ul>
         </div>
-        <!-- <div class="dropdown">
-            <div class="product-filter dropdown-toggle" data-bs-toggle="dropdown">
-                <span class="product-filter-label">Sắp xếp theo</span>
-            </div>
-            <ul class="dropdown-menu drop-hover">
-                <li><a class="dropdown-item" href="index.php?quanly=categories&id=1&sort=asc">Giá tăng dần</a></li>
-                <li><a class="dropdown-item" href="index.php?quanly=categories&id=1&sort=desc">Giá giảm dần</a></li>
-            </ul>
-        </div> -->
     </div>
     <!-- Danh muc cac san pham -->
     <div class="product-item">
@@ -159,7 +147,9 @@ include("pages/main/category.php");
             ?>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="admin/modules/quanlysp/uploads/<?php echo $row_pro['hinhanh']?>" class="card-img-top" alt="...">
+                    <a href="index.php?quanly=pro_detail&id=<?php echo $row_pro['id_sanpham']?>">
+                        <img src="admin/modules/quanlysp/uploads/<?php echo $row_pro['hinhanh']?>" class="card-img-top" alt="...">
+                    </a>
                     <div class="card-body">
                         <a href="index.php?quanly=pro_detail&id=<?php echo $row_pro['id_sanpham']?>" class="card-text"><?php echo $row_pro['tensp']?></a>
                         <div class="row product-footer">
@@ -168,11 +158,11 @@ include("pages/main/category.php");
                             </div>
                             <div class="col product-icon">
                                 <form method="POST" action="pages/products/add_cart.php?id_sanpham=<?php echo $row_pro['id_sanpham']?>">
-                                            <a href="index.php?quanly=pro_detail&id=<?php echo $row_pro['id_sanpham']?>">
+                                    <a href="index.php?quanly=pro_detail&id=<?php echo $row_pro['id_sanpham']?>">
                                         <i class="lookat-product fa-solid fa-eye"></i>
                                     </a>
-                                            <button class="icon-cart" type="submit" name="themgiohang" value="Thêm giỏ hàng" ><i class="add-product fa-solid fa-cart-plus"></i></button>
-                                        </form>
+                                    <button class="icon-cart" type="submit" name="themgiohang" value="Thêm giỏ hàng" ><i class="add-product fa-solid fa-cart-plus"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -192,25 +182,25 @@ include("pages/main/category.php");
         ?>
 
         <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item">
-                <a class="page-link" href="index.php?quanly=categories&id=<?php echo $row_page['id_danhmuc']?>&trang=<?php if($page>1 && $page<=$trang){echo $page-1;}else{echo $page;}?>" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <?php
-                for($i=1; $i<=$trang; $i++){
-            ?>
-            <li class="page-item"><a <?php if($i==$page) {echo 'style="color: #FF9933"';}else {echo 'style="color: #000;font-weight: 300"';}?> class="page-link" href="index.php?quanly=categories&id=<?php echo $row_page['id_danhmuc']?>&trang=<?php echo $i?>"><?php echo $i?></a></li>
-            <?php
-                }
-            ?>
-            <li class="page-item">
-                <a class="page-link" href="index.php?quanly=categories&id=<?php echo $row_page['id_danhmuc']?>&trang=<?php if($page<$trang){echo $page+1;}else{echo $page;}?>" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-</nav>
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="index.php?quanly=categories&id=<?php echo $row_page['id_danhmuc']?>&trang=<?php if($page>1 && $page<=$trang){echo $page-1;}else{echo $page;}?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <?php
+                    for($i=1; $i<=$trang; $i++){
+                ?>
+                <li class="page-item"><a <?php if($i==$page) {echo 'style="color: #FF9933"';}else {echo 'style="color: #000;font-weight: 300"';}?> class="page-link" href="index.php?quanly=categories&id=<?php echo $row_page['id_danhmuc']?>&trang=<?php echo $i?>"><?php echo $i?></a></li>
+                <?php
+                    }
+                ?>
+                <li class="page-item">
+                    <a class="page-link" href="index.php?quanly=categories&id=<?php echo $row_page['id_danhmuc']?>&trang=<?php if($page<$trang){echo $page+1;}else{echo $page;}?>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>

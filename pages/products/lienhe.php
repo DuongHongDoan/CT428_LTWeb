@@ -19,7 +19,8 @@
 
 .btn-contact:hover{
     cursor: pointer;
-    color: orange;
+    color: var(--orange);
+    transition: var(--smooth);
     background-color:#2E8B57;
 }
 
@@ -116,7 +117,7 @@
     ?>
     <section id="overlay"></section>
   <!-- contact -->
-  <div id="main">
+    <div id="main">
         <div id="content">
             <div class="content-section">
                 <h2 class="section-heading">CONTACT US</h2>
@@ -167,27 +168,7 @@
     <!-- Nhung cac script -->
     <script src="./assets/main.js"></script>
     <script src="./assets/validator.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
-
-    
     <script>
-        var owl = $('.owl-carousel');
-        owl.owlCarousel({
-            items:4,
-            loop:true,
-            margin:10,
-            autoplay:true,
-            autoplayTimeout:2000,
-            autoplayHoverPause:true
-        });
-    </script>
-
-
-<script>
         Validator({
             form: '#form-1',
             ErrorSelector: '.form-message',

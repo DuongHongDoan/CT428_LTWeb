@@ -30,12 +30,6 @@
         elseif($tmp == 'quanlysanpham' && $query == 'edit') {
             include("modules/quanlytk/sua.php");
         }
-        // elseif($tmp == 'quanlydanhmucbaiviet') {
-        //     include("");
-        // }
-        // elseif($tmp == 'quanlybaiviet') {
-        //     include("");
-        // }
         else {
             include("modules/dashboard.php");
         }

@@ -1,7 +1,6 @@
 <?php
     $sql_lietke_sanpham = "SELECT * FROM tbl_products, tbl_category WHERE tbl_products.id_danhmuc=tbl_category.id_danhmuc";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
-
 ?>
 <p>Liệt kê sản phẩm</p>
 <table border="1" width="50%" style="border-collapse: collapse">

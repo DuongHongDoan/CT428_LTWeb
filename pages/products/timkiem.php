@@ -73,16 +73,6 @@ include("pages/main/category.php");
 ?>
 
 <div class="col-lg-9">
-    <!-- <div class="drop">
-        <div class="dropdown drop-title">
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Phổ biến</a></li>
-                <li><a class="dropdown-item" href="#">Mới nhất</a></li>
-                <li><a class="dropdown-item" href="#">Giá tăng dần</a></li>
-                <li><a class="dropdown-item" href="#">Giá giảm dần</a></li>
-            </ul>
-        </div>
-    </div> -->
     <!-- Danh muc cac san pham -->
     <div class="title">
         <h2>Có <?php echo "($cnt)" ?> kết quả cho từ khóa: <?php echo "\"$tukhoa\""?></h2>
