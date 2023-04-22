@@ -137,12 +137,13 @@
   }
   .signup1{
     background-color: #007700;
+    width: 180px;
+    height: 45px;
     border: none;
     color: white;
-    padding: 15px 25px;
+    padding: 5px 5px;
     font-size: 1em;
     text-transform: capitalize;
-    margin-top: 5px;
     border-radius: 5px;
   }
   .signup-wrapper .signup-form .login {
@@ -291,8 +292,8 @@
 
               </form>
               <p class="content-item">
-                <a href="index.php?quanly=dangnhap"><button type="button" class="signup1">SIGN IN</button></a>
-                <a href="index.php?quanly=dangky" ><button type="button" class="signup1">SIGN UP</button></a>
+                <a href="index.php?quanly=dangnhap"><button type="button" style="margin-top: 5px;" class="signup1">SIGN IN</button></a>
+                <a href="index.php?quanly=thongtin" ><button type="button" style="margin-top: 5px;" class="signup1">SIGN UP</button></a>
               </p>
                 
               <!--  -->

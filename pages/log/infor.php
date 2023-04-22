@@ -213,7 +213,7 @@ input::placeholder {
 }
 .signup1{
     background-color: #007700;
-    width: 180px;
+    width: 170px;
     height: 45px;
     border: none;
     color: white;
@@ -223,21 +223,22 @@ input::placeholder {
     border-radius: 5px;
   }
 
+
 </style>
 <?php
   if(isset($_POST['signup'])){
-      $username = $_POST['username'];
-      $password = $_POST['password'];
-      $confirmpwd = $_POST['confirmpassword'];
-      // $hoten = $_POST['fullname'];
-      // $gioitinh = $_POST['gender'];
-      // $ngaysinh = $_POST['ngaysinh'];
-      // $mail = $_POST['email'];
-      // $sdt = $_POST['phonenumber'];
-      // $dchi = $_POST['diachi'];
-      // $date=strtotime(date('Y-m-d'));
-      // $date1 = strtotime($ngaysinh);
-      // $kqne =  $date - $date1;                                     
+      // $username = $_POST['username'];
+      // $password = $_POST['password'];
+      // $confirmpwd = $_POST['confirmpassword'];
+      $hoten = $_POST['fullname'];
+      $gioitinh = $_POST['gender'];
+      $ngaysinh = $_POST['ngaysinh'];
+      $mail = $_POST['email'];
+      $sdt = $_POST['phonenumber'];
+      $dchi = $_POST['diachi'];
+      $date=strtotime(date('Y-m-d'));
+      $date1 = strtotime($ngaysinh);
+      $kqne =  $date - $date1;                                     
       $check1=0;
       $check2=0;
       $check3=0;
@@ -249,45 +250,27 @@ input::placeholder {
           echo "$conn->connect_error";
           die("Connection Failed : ". $conn->connect_error);
       } else {
-          $sql = "SELECT * FROM account WHERE Username='$username'";
-          $kq = $conn->query($sql);
-          if(mysqli_num_rows($kq)>0){
-              $fail1='<script>alert("Username đã tồn tại vui lòng nhập username khác!!!")</script>';
-              $check1 = 1;
-          }elseif(strlen($password) < 8){
-            $fail3='<script>alert("Mật khẩu không hợp lệ ( ít hơn 8 ký tự) !!!")</script>';
-            $check3 = 1;
-          }elseif($password != $confirmpwd){
-            $fail2='<script>alert("Mật khẩu không trùng nhau vui lòng nhập lại!!!")</script>';
-            $check2 = 1;
-          } 
-          
-          // }elseif(strlen($sdt) != 10){
-          //   $fail4='<script>alert("Số điện thoại nhập không hợp lệ")</script>';
-          //   $check4 = 1;
-          // }elseif($kqne < 473353920){
-          //   $fail5='<script>alert("Hãy trở lại khi đã 16 tuổi nhé !!!")</script>';
-          //   $check5=1;
-          // }
+          if(strlen($sdt) != 10){
+            $fail4='<script>alert("Số điện thoại nhập không hợp lệ")</script>';
+            $check4 = 1;
+          }elseif($kqne < 473353920){
+            $fail5='<script>alert("Hãy trở lại khi đã 16 tuổi nhé !!!")</script>';
+            $check5=1;
+          }
           else{
-              $sql1= "SELECT MAX(IDUser) maxid FROM user";
-              $kq1 = mysqli_query($conn,$sql1);
-              $kq1_data = mysqli_fetch_array($kq1);
-              $iduser = (int)$kq1_data["maxid"];
-              $password1 = md5($password);
-              $stmt2 = $conn->prepare("insert into account(Username,Password,IDUser) value(?, ?, ?)");
-              $stmt2->bind_param("ssi",$username,$password1,$iduser);
+              $stmt2 = $conn->prepare("insert into user(tennguoidung,gioitinh,ngaysinh,email,sdt,diachi) value(?, ?, ?, ?, ?, ?)");
+              $stmt2->bind_param("sissss",$hoten,$gioitinh,$ngaysinh,$mail,$sdt,$dchi);
               $execval2 = $stmt2->execute();
-              // echo $iduser;
               $stmt2->close();
               //echo $execval;
-              echo '<script>alert("Đăng ký thành công !")</script>';
-              $sql_dangky = "SELECT * FROM account WHERE Username='".$username."' LIMIT 1 ";
-              $row = mysqli_query($conn,$sql_dangky);
-              $row_data = mysqli_fetch_array($row);
-                $_SESSION['id_khachhang'] = $row_data['IDTaikhoan'];
-                echo '<script>location.href = "index.php?quanly=dangnhap";</script>';
-              $conn->close();
+              echo '<script>alert("Nhập thông tin thành công !")</script>';
+              
+              // $sql_dangky = "SELECT * FROM account WHERE Username='".$username."' LIMIT 1 ";
+              // $row = mysqli_query($conn,$sql_dangky);
+              // $row_data = mysqli_fetch_array($row);
+              //   $_SESSION['id_khachhang'] = $row_data['IDTaikhoan'];
+              echo '<script>location.href = "index.php?quanly=dangky";</script>';
+              // $conn->close();
            }
       }
   }
@@ -313,45 +296,11 @@ input::placeholder {
                                 </a>
                         </div>
                             <div class="form-title" style="text-align:center;">
-                                SIGN UP NOW !
+                                ENTER YOUR INFORMATION !
                             </div>
                             <div class="form">
                                 <form action="" method="POST">
                                     <p class="content-item">
-                                        <label for="username"><a class="form-label lbs">Username: </a>
-                                            <input type="text" id="username" name="username"  placeholder="At least 8 chars"  required>
-                                            <?php
-                                              if(isset($_POST['signup']) && $check1==1){
-                                                echo $fail1;
-                                              } 
-                                            ?>
-                                        </label>
-                                    </p>
-
-                                    <p class="content-item">
-                                        <label for="password"> <a class="form-label lbs">Password:</a>
-                                            <input type="password" id="password" name="password" placeholder="*****" name="password" required>
-                                            <?php
-                                              if(isset($_POST['signup']) && $check3==1){
-                                                echo $fail3;
-                                              }
-                                                
-                                            ?>
-                                        </label>
-                                    </p>
-                                    
-                                    <p class="content-item">
-                                        <label for="confirmpassword"><a class="form-label lbs">Confirm password:</a>
-                                            <input type="password" placeholder="*****" id="confirmpassword" name="confirmpassword" required>
-                                            <?php
-                                              if(isset($_POST['signup']) && $check2==1){
-                                                echo $fail2;
-                                              }  
-                                            ?>
-                                        </label>
-                                    </p>
-
-                                    <!-- <p class="content-item">
                                         <label for="fullname"><a class="form-label lbs">Fullname: </a>
                                             <input type="text" placeholder="Enter fullname" id="fullname" name="fullname"  required>
                                         </label>
@@ -397,20 +346,19 @@ input::placeholder {
                                         <label for="diachi"><a class="form-label lbs">Address: </a>
                                             <input type="text" placeholder="Enter your address" id="diachi" name="diachi"  required>
                                         </label>
-                                    </p> -->
+                                    </p>
                                     <p class="content-item" style="padding-top: 10px;">
-                                        <button type="submit" name="signup" class="signup" style="margin-top: 10px;">SIGN UP </button>
+                                        <button type="submit" name="signup" class="signup" style="margin-top: 10px;">ENTER </button>
                                         <button type="reset" class="signup" style="margin-top: 10px;">RESET</a></button>
                                     </p>
                                     
                                 </form>
                                 <p class="content-item">
                                   <a href="index.php?quanly=dangnhap"><button type="button" class="signup1">SIGN IN</button></a>
-                                  <a href="index.php?quanly=datlai" ><button type="button" style="margin-top: 5px;" class="signup1">CHANGE PASSWORD</button></a>
+                                  <a href="index.php?quanly=datlai"><button type="button" class="signup1" style="margin-top: 5px;">CHANGE PASSWORD</button></a>
                                 </p>                              
                             </div>
                         </div>
-
                     </div>
 
                 </div>

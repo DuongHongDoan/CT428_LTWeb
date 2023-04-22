@@ -213,21 +213,22 @@
   }
   .signup1{
     background-color: #007700;
+    width: 175px;
+    height: 45px;
     border: none;
     color: white;
-    padding: 15px 25px;
+    padding: 5px 5px;
     font-size: 1em;
     text-transform: capitalize;
-    /* margin-top: 10px; */
     border-radius: 5px;
   }
 </style>
 <?php
     if(isset($_POST['signin'])){
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
         $conn = new mysqli('localhost','root','','ct428_ltweb');
-        $sql_dangnhap = "SELECT * FROM user WHERE Username='".$username."' LIMIT 1 ";
+        $sql_dangnhap = "SELECT * FROM account WHERE Username='".$username."' LIMIT 1 ";
         $row = mysqli_query($conn,$sql_dangnhap);
         $count = mysqli_num_rows($row);
         if($count>0){
@@ -283,8 +284,8 @@
                                     </p> 
                                 </form>
                                 <p class="content-item">
-                                  <a href="index.php?quanly=dangky"><button type="button" class="signup1">SIGN UP</button></a>
-                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup1">CHANGE</button></a>
+                                  <a href="index.php?quanly=thongtin"><button type="button" class="signup1">SIGN UP</button></a>
+                                  <a href="index.php?quanly=datlai" ><button type="button" style="margin-top: 5px;" class="signup1">CHANGE PASSWORD</button></a>
                                 </p>
                             </div>
                         </div>

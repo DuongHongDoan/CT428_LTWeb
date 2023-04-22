@@ -221,10 +221,10 @@
                             }
                             ?>
                             <div class="dropdown-content">
-                                <p><a href="index.php?quanly=dangky">Sign Up</a></p>
-                                <p><a href="index.php?quanly=dangnhap">Sign In</a></p>
-                                <p><a href="index.php?quanly=datlai">Re Pass</a></p>
-                                <p><a href="index.php?quanly=dangxuat">Sign Out</a></p>
+                                <p><a href="index.php?quanly=thongtin">Đăng ký</a></p>
+                                <p><a href="index.php?quanly=dangnhap">Đăng nhập</a></p>
+                                <p><a href="index.php?quanly=datlai">Đổi mật khẩu</a></p>
+                                <p><a href="index.php?quanly=dangxuat">Đăng xuất</a></p>
                             </div>
                         </div>
                     </a>
