@@ -122,15 +122,26 @@
 
 				<?php
 				if ($ten == '' || $diachi == '' || $sdt == '') {
+					if ($_SESSION['id_khachhang'] != -1) {
+				?>
+
+						<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+							Thêm địa chỉ giao hàng
+						</button>
+					<?php
+					} else {
+						echo '<h5>Vui lòng đăng nhập rồi hãy thanh toán</h5>';
+					}
 				} else { ?>
 					<input type="submit" value="Thanh toán ngay" name="redirect" class="btn btn-danger">
+					<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+						Cập nhật địa chỉ giao hàng
+					</button>
 				<?php
 				}
 				?>
 
-				<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
-					Thêm địa chỉ giao hàng
-				</button>
+
 	</form>
 
 	<?php

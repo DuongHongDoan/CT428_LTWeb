@@ -1,9 +1,6 @@
 <head>
-    <title>Hóa đơn</title>
+    <title>Đơn hàng</title>
 </head>
-<?php
-echo '<script>alert("Cảm ơn vì đã đặt hàng")</script>'
-?>
 <h1 style="text-align: center;">Đơn Hàng</h1>
 <table style="width:100%;text-align: center;border-collapse: collapse;" border="1" class="table table-hover">
     <thead class="table-info">
