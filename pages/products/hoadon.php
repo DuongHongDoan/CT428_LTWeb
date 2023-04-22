@@ -37,7 +37,8 @@
 
     $sql_get_vanchuyen = mysqli_query($conn, "SELECT * FROM tbl_vanchuyen WHERE id_khachhang='$id_dangky' LIMIT 1");
     $row_get_vanchuyen = mysqli_fetch_array($sql_get_vanchuyen);
-    $dc = $row_get_vanchuyen['diachi'];
+    $count1 = mysqli_num_rows($sql_get_vanchuyen);
+
     for ($x = 1; $x <= $count; $x++) {
 
         $count = mysqli_num_rows($sql_get_donhang);
@@ -54,6 +55,12 @@
             }
             $dcgh = $row_get_donhang['vanchuyen_donhang'];
             $tongtien = $row_get_donhang['tongtien'];
+        } else {
+            $madh = '';
+            $tt = '';
+            $nl = '';
+            $tongtien = '';
+            $pt = '';
         }
     ?>
         <tbody class="table-light">
@@ -99,10 +106,20 @@
                     <?php echo $pt; ?>
                 </td>
                 <td>
-                    <?php echo $dc; ?>
+                    <?php $dc = ($count1 > 0) ? $row_get_vanchuyen['diachi'] : '';
+                    if ($dc == '') {
+                    } else {
+                        echo $dc;
+                    }
+                    ?>
                 </td>
                 <td>
-                    <?php echo $tongtien . 'đ' ?>
+                    <?php
+                    if ($tongtien == '') {
+                    } else {
+                        echo $tongtien . 'đ';
+                    }
+                    ?>
                 </td>
             </tr>
         </tbody>
