@@ -64,7 +64,7 @@
     else {
         $t = '';
     }
-    if ($t != "categories" && $t != "pro_detail" && $t != "giohang" && $t != "timkiem" && $t != "gioithieu" && $t != "lienhe" && $t != "dangky" && $t != "dangnhap" && $t != "thongtin" && $t != "datlai" && $t != "dangxuat" && $t != "thanhtoan" && $t != "vanchuyen" && $t != "hoadon"){
+    if ($t != "categories" && $t != "pro_detail" && $t != "giohang" && $t != "timkiem" && $t != "gioithieu" && $t != "lienhe" && $t != "dangky" && $t != "dangnhap" && $t != "datlai" && $t != "thongtin" && $t != "dangxuat" && $t != "thanhtoan" && $t != "vanchuyen" && $t != "hoadon"){
         include("products/product.php");
     }
 ?>

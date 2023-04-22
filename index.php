@@ -1,8 +1,6 @@
 <?php
     session_start();
     if(isset($_POST['themgiohang'])){
-    //     if(isset($_SESSION['cart'])){
-    //     }
     }
 ?> 
 

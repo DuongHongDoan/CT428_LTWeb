@@ -1,7 +1,6 @@
 <?php
     $sql_lietke_sanpham = "SELECT * FROM tbl_products, tbl_category WHERE tbl_products.id_danhmuc=tbl_category.id_danhmuc";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
-
 ?>
 <p>Liệt kê sản phẩm</p>
 <table border="1" width="50%" style="border-collapse: collapse">
@@ -9,6 +8,7 @@
         <td>ID</td>
         <td>Tên sản phẩm</td>
         <td>Tên danh mục</td>
+        <td>Mã sản phẩm</td>
         <td>Hình ảnh</td>
         <td>Giá</td>
         <td>Số lượng</td>
@@ -25,6 +25,7 @@
         <td><?php echo $i ?></td>
         <td><?php echo $row['tensp'] ?></td>
         <td><?php echo $row['tendanhmuc'] ?></td>
+        <td><?php echo $row['masp'] ?></td>
         <td><img width="100px" src="modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>"></td>
         <td><?php echo $row['giasp'] ?></td>
         <td><?php echo $row['soluong'] ?></td>
