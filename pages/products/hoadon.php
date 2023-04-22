@@ -50,6 +50,11 @@ echo '<script>alert("Cảm ơn vì đã đặt hàng")</script>'
             $tt = $row_get_donhang['trangthai_donhang'];
             $nl = $row_get_donhang['ngaylap_donhang'];
             $pt = $row_get_donhang['pt_thanhtoan'];
+            if ($pt == 'tienmat') {
+                $pt = 'Thanh toán khi nhận hàng';
+            } else {
+                $pt = 'Thanh toán chuyển khoản';
+            }
             $dcgh = $row_get_donhang['vanchuyen_donhang'];
             $tongtien = $row_get_donhang['tongtien'];
         }
