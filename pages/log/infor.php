@@ -331,7 +331,7 @@ input::placeholder {
                                     </p>
 
                                     <p class="content-item" style="padding-top: 10px;">
-                                        <label for="ngaysinh"> <a class="form-label lbs">Birth of date: </a>
+                                        <label for="ngaysinh"> <a class="form-label lbs">Date of Birth: </a>
                                             <input type="date" id="ngaysinh" name="ngaysinh" style="border:none" required>
                                             <?php
                                               if(isset($_POST['signup']) && $check5==1){
