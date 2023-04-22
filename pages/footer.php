@@ -16,6 +16,13 @@
         color: var(--orange);
         transition: var(--smooth);
     }
+    .icon-footer {
+        padding-left: 8px;
+    }
+    .icon-footer:hover {
+        color: var(--orange);
+        transition: var(--smooth);
+    }
 </style>
 
 <footer class="text-center text-lg-start bg-opacity-100 text-muted" style="margin-top: 50px;">
@@ -62,22 +69,22 @@
                     </h6>
                     <div class="icon">
                         <a class="footertext" href="" class="me-4 link-secondary">
-                        <i style="padding-left: 0px;" class="fab fa-facebook-f"></i>
+                        <i style="padding-left: 0px;" class="icon-footer fab fa-facebook-f"></i>
                         </a>
                         <a class="footertext" href="" class="me-4 link-secondary">
-                        <i class="fab fa-twitter"></i>
+                        <i class="icon-footer fab fa-twitter"></i>
                         </a>
                         <a class="footertext" href="" class="me-4 link-secondary">
-                        <i class="fab fa-google"></i>
+                        <i class="icon-footer fab fa-google"></i>
                         </a>
                         <a class="footertext" href="" class="me-4 link-secondary">
-                        <i class="fab fa-instagram"></i>
+                        <i class="icon-footer fab fa-instagram"></i>
                         </a>
                         <a class="footertext" href="" class="me-4 link-secondary">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="icon-footer fab fa-linkedin"></i>
                         </a>
                         <a class="footertext" href="" class="me-4 link-secondary">
-                        <i class="fab fa-github"></i>
+                        <i class="icon-footer fab fa-github"></i>
                         </a>
                     </div>
                     <BR>
