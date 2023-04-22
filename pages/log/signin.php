@@ -235,7 +235,7 @@
           $row_data = mysqli_fetch_array($row);
           if($row_data['Password'] == $password){
               echo '<script>alert("Đăng nhập thành công")</script>';
-              $_SESSION['id_khachhang'] = $row_data['IDTaikhoan'];
+              $_SESSION['id_khachhang'] = $row_data['IDUser'];
               $_SESSION['dangky']=1;
               echo '<script>location.href = "index.php?quanly=index";</script>';
           }else{

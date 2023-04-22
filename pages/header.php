@@ -205,14 +205,14 @@
                             <?php
                             if(isset($_SESSION['dangky'])){
                             if($_SESSION['id_khachhang']!=-1){
-                            $sql_user = "SELECT * FROM account WHERE IDTaikhoan='".$_SESSION['id_khachhang']."' LIMIT 1 ";
+                            $sql_user = "SELECT * FROM user WHERE IDUser='".$_SESSION['id_khachhang']."' LIMIT 1 ";
                             $row = mysqli_query($conn,$sql_user);
                             $count = mysqli_num_rows($row);
                             if($count>0){
                                 $row_data = mysqli_fetch_array($row);
                             }
                                 if(isset($_SESSION['id_khachhang'])){
-                                    echo  $row_data['Username'];
+                                    echo  $row_data['Tennguoidung'];
                                 }
                             }else{
                                 echo '';
