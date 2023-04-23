@@ -131,8 +131,6 @@ if (isset($_POST['muangay'])) {
             $_SESSION['cart'] = $new_product;
         }
     }
-    $url = '../../index.php?quanly=giohang';
-    echo '<script>';
-    echo 'window.location.href = "' . $url . '";';
-    echo '</script>';
+    $url = '../../index.php?quanly=thanhtoan';
+    echo '<script>window.location.href = "' . $url . '";</script>';
 }

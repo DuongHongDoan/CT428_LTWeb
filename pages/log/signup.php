@@ -252,13 +252,13 @@ input::placeholder {
           $sql = "SELECT * FROM account WHERE Username='$username'";
           $kq = $conn->query($sql);
           if(mysqli_num_rows($kq)>0){
-              $fail1='<script>alert("Username đã tồn tại vui lòng nhập username khác!!!")</script>';
+              $fail1="Username đã tồn tại vui lòng nhập username khác !";
               $check1 = 1;
           }elseif(strlen($password) < 8){
-            $fail3='<script>alert("Mật khẩu không hợp lệ ( ít hơn 8 ký tự) !!!")</script>';
+            $fail3="Mật khẩu không hợp lệ ( ít hơn 8 ký tự)";
             $check3 = 1;
           }elseif($password != $confirmpwd){
-            $fail2='<script>alert("Mật khẩu không trùng nhau vui lòng nhập lại!!!")</script>';
+            $fail2="Mật khẩu xác nhận không khớp !";
             $check2 = 1;
           } 
           

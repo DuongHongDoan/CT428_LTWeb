@@ -1,3 +1,6 @@
+<head>
+    <title>Đăng nhập</title>
+</head>
 <style>
   .content1 {
   width: 1280px;
