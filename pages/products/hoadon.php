@@ -2,7 +2,7 @@
     <title>Hóa đơn</title>
 </head>
 <h1 style="text-align: center;">Đơn Hàng</h1>
-<table style="width:100%;text-align: center;border-collapse: collapse;" border="1" class="table table-hover table-responsive">
+<table style="width:100%;text-align: center;border-collapse: collapse;" border="1" class="table table-bordered table-hover table-responsive">
     <thead class="table-success">
         <tr>
             <th>
