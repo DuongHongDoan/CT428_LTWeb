@@ -2,8 +2,8 @@
     <title>Hóa đơn</title>
 </head>
 <h1 style="text-align: center;">Đơn Hàng</h1>
-<table style="width:100%;text-align: center;border-collapse: collapse;" border="1" class="table table-hover">
-    <thead class="table-info">
+<table style="width:100%;text-align: center;border-collapse: collapse;" border="1" class="table table-hover table-responsive">
+    <thead class="table-success">
         <tr>
             <th>
                 Mã Đơn hàng
@@ -63,7 +63,7 @@
             $pt = '';
         }
     ?>
-        <tbody class="table-light">
+        <tbody class="">
             <tr>
                 <td>
                     <?php echo $madh; ?>
