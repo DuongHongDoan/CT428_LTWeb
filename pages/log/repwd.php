@@ -2,12 +2,13 @@
     <title>Đổi mật khẩu</title>
 </head>
 <?php
+    $check3=0;
     if(isset($_POST['change']) && isset($_POST['change'])){
         $username = $_POST['username'];
         $oldpassword = $_POST['oldpassword'];
         $newpassword = $_POST['newpassword'];
         $conn = new mysqli('localhost','root','','ct428_ltweb');
-        $sql_pwd = "SELECT * FROM user WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
+        $sql_pwd = "SELECT * FROM account WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
         $row = mysqli_query($conn,$sql_pwd);
         $count = mysqli_num_rows($row);
         if(strlen($newpassword) < 8){
