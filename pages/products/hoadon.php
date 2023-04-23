@@ -39,9 +39,9 @@
     $row_get_vanchuyen = mysqli_fetch_array($sql_get_vanchuyen);
     $count1 = mysqli_num_rows($sql_get_vanchuyen);
 
-    for ($x = 1; $x <= $count; $x++) {
 
-        $count = mysqli_num_rows($sql_get_donhang);
+    $count = mysqli_num_rows($sql_get_donhang);
+    for ($x = 1; $x <= $count; $x++) {
         if ($count > 0) {
             $row_get_donhang = mysqli_fetch_array($sql_get_donhang);
             $madh = $row_get_donhang['ma_donhang'];
