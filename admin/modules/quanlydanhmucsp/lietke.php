@@ -1,7 +1,6 @@
 <?php
     $sql_lietke_danhmuc = "SELECT * FROM tbl_category";
     $query_lietke_danhmuc = mysqli_query($conn, $sql_lietke_danhmuc);
-
 ?>
 <p>Liệt kê danh mục sản phẩm</p>
 <table border="1" width="50%" style="border-collapse: collapse">

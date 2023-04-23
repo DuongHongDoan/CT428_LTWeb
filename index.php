@@ -1,8 +1,6 @@
 <?php
     session_start();
     if(isset($_POST['themgiohang'])){
-    //     if(isset($_SESSION['cart'])){
-    //     }
     }
 ?> 
 
@@ -15,6 +13,7 @@
     <!-- Nhung gg font -> Start -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" type="image/png" href="./img/logo.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <!-- Nhung gg font -> End -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>

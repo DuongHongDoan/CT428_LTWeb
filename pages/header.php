@@ -193,19 +193,38 @@
 
                                 if (isset($_SESSION['cart'])){
                                     $count = count($_SESSION['cart']);
-                                    echo "<span id=\"#\">$count</span>";
+                                    echo "<span id=\"#\"><sup>$count</sup></span>";
                                 }else{
-                                    echo "<span id=\"#\">0</span>";
+                                    echo "<span id=\"#\"><sup>0</sup></span>";
                                  }
                         ?>
                     </a>
                     <a href="#">
                         <div class="dropdown">
                             <span><i class="icon-user fa-regular fa-user ps-2"></i></span>
+                            <?php
+                            if(isset($_SESSION['dangky'])){
+                            if($_SESSION['id_khachhang']!=-1){
+                            $sql_user = "SELECT * FROM user WHERE IDUser='".$_SESSION['id_khachhang']."' LIMIT 1 ";
+                            $row = mysqli_query($conn,$sql_user);
+                            $count = mysqli_num_rows($row);
+                            if($count>0){
+                                $row_data = mysqli_fetch_array($row);
+                            }
+                                if(isset($_SESSION['id_khachhang'])){
+                                    echo  $row_data['Tennguoidung'];
+                                }
+                            }else{
+                                echo '';
+                            }}else{
+                                $_SESSION['id_khachhang']=-1;
+                            }
+                            ?>
                             <div class="dropdown-content">
-                                <p><a href="index.php?quanly=dangky">Sign Up</a></p>
-                                <p><a href="index.php?quanly=dangnhap">Sign In</a></p>
-                                <p><a href="index.php?quanly=datlai">Re Pass</a></p>
+                                <p><a href="index.php?quanly=thongtin">Đăng ký</a></p>
+                                <p><a href="index.php?quanly=dangnhap">Đăng nhập</a></p>
+                                <p><a href="index.php?quanly=datlai">Đổi mật khẩu</a></p>
+                                <p><a href="index.php?quanly=dangxuat">Đăng xuất</a></p>
                             </div>
                         </div>
                     </a>

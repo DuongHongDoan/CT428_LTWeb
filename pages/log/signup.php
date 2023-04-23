@@ -1,35 +1,3 @@
-<?php
-    if(isset($_POST['signupp'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $confirmpwd = $_POST['confirmpassword'];
-        $hoten = $_POST['fullname'];
-        $gioitinh = $_POST['gender'];
-        $ngaysinh = $_POST['ngaysinh'];
-        $mail = $_POST['email'];
-        $sdt = $_POST['phonenumber'];
-        $dchi = $_POST['diachi'];
-        // Database connection
-        $conn = new mysqli('localhost','root','','ct428');
-        if($conn->connect_error){
-            echo "$conn->connect_error";
-            die("Connection Failed : ". $conn->connect_error);
-        } else {
-            $stmt1 = $conn->prepare("insert into account(Username, Password) values(?, ?)");
-            $stmt1->bind_param("si",$username,$password);
-            $execval1 = $stmt1->execute();
-            $stmt1->close();
-
-            $stmt2 = $conn->prepare("insert into user(tennguoidung,gioitinh,ngaysinh,email,sdt,diachi) value(?, ?, ?, ?, ?, ?)");
-            $stmt2->bind_param("sssssi",$hoten,$gioitinh,$ngaysinh,$mail,$sdt,$dchi);
-            $execval2 = $stmt2->execute();
-            $stmt2->close();
-            //echo $execval;
-            echo "Registration successfully...";
-            $conn->close();
-        }
-    }
-?>
 <style>
 .content1 {
   width: 1280px;
@@ -86,7 +54,6 @@
   margin: 0 auto;
 }
 .signup-wrapper .company-details .logo .icon-food {
-  /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/182774/food.png); */
   background-size: contain;
   background-repeat: no-repeat;
   width: 38px;
@@ -244,103 +211,136 @@ input::placeholder {
   text-decoration: none;
   color: #4b4a4a;
 }
-
+.signup1{
+    background-color: #007700;
+    width: 180px;
+    height: 45px;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    font-size: 1em;
+    text-transform: capitalize;
+    border-radius: 5px;
+  }
+.info {
+  color: red;
+  font-size: small;
+}
 </style>
-    <!-- <header>
-    </header> -->
-    <main>
-        <div class="content-wrapper"> 
-            <div class="content1">
-                <div class="signup-wrapper shadow-box">
-                    <div class="company-details ">
-                        <div class="shadow"></div>
-                        <div class="wrapper-1">
-                            <div class="logo"></div>
-                            <div class="slogan"></div>
+<?php
+  if(isset($_POST['signup'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $confirmpwd = $_POST['confirmpassword'];                        
+    $check1=0;
+    $check2=0;
+    $check3=0;
+    $check4=0;
+    $check5=0;
+    $sql = "SELECT * FROM account WHERE Username='$username'";
+    $kq = $conn->query($sql);
+    if(mysqli_num_rows($kq)>0){
+        $fail1="Username đã tồn tại vui lòng nhập username khác !";
+        $check1 = 1;
+    }elseif(strlen($password) < 8){
+      $fail3="Mật khẩu không hợp lệ ( ít hơn 8 ký tự)";
+      $check3 = 1;
+    }elseif($password != $confirmpwd){
+      $fail2="Mật khẩu xác nhận không khớp !";
+      $check2 = 1;
+    } 
+    else{
+      $sql1= "SELECT MAX(IDUser) maxid FROM user";
+      $kq1 = mysqli_query($conn,$sql1);
+      $kq1_data = mysqli_fetch_array($kq1);
+      $iduser = (int)$kq1_data["maxid"];
+      $password1 = md5($password);
+      $stmt2 = $conn->prepare("insert into account(Username,Password,IDUser) value(?, ?, ?)");
+      $stmt2->bind_param("ssi",$username,$password1,$iduser);
+      $execval2 = $stmt2->execute();
+      $stmt2->close();
+      echo '<script>alert("Đăng ký thành công !")</script>';
+      $_SESSION['id_khachhang'] = $iduser;
+      echo '<script>location.href = "index.php?quanly=dangnhap";</script>';
+      $conn->close();
+    }
+  }
+?>
+<main>
+    <div class="content-wrapper"> 
+        <div class="content1">
+            <div class="signup-wrapper shadow-box">
+                <div class="company-details ">
+                    <div class="shadow"></div>
+                    <div class="wrapper-1">
+                        <div class="logo"></div>
+                        <div class="slogan"></div>
+                    </div>
+                </div>
+                <div class="signup-form ">
+                    <div class="wrapper-2">
+                    <div style="text-align:center;">
+                            <a href="/CT428_LTWeb/index.php">
+                                <img src="./img/logo.png" style="width:50px; border-radius: 30px;"></img>
+                            </a>
+                    </div>
+                        <div class="form-title" style="text-align:center;">
+                            SIGN UP NOW !
+                        </div>
+                        <div class="form">
+                            <form action="" method="POST">
+                                <p class="content-item">
+                                    <label for="username"><a class="form-label lbs">Username: </a>
+                                        <input type="text" id="username" name="username"  placeholder="At least 8 chars"  required>
+                                        <p class="info">
+                                        <?php
+                                          if(isset($_POST['signup']) && $check1==1){
+                                            echo $fail1;
+                                          } 
+                                        ?>
+                                        </p>
+                                    </label>
+                                </p>
+
+                                <p class="content-item">
+                                    <label for="password"> <a class="form-label lbs">Password:</a>
+                                        <input type="password" id="password" name="password" placeholder="*****" name="password" required>
+                                        <p class="info">
+                                        <?php
+                                          if(isset($_POST['signup']) && $check3==1){
+                                            echo $fail3;
+                                          }
+                                            
+                                        ?>
+                                        </p>
+                                    </label>
+                                </p>
+                                
+                                <p class="content-item">
+                                    <label for="confirmpassword"><a class="form-label lbs">Confirm password:</a>
+                                        <input type="password" placeholder="*****" id="confirmpassword" name="confirmpassword" required>
+                                        <p class="info">
+                                        <?php
+                                          if(isset($_POST['signup']) && $check2==1){
+                                            echo $fail2;
+                                          }  
+                                        ?>
+                                        </p>
+                                    </label>
+                                </p>
+                                <p class="content-item" style="padding-top: 10px;">
+                                    <button type="submit" name="signup" class="signup" style="margin-top: 10px;">SIGN UP </button>
+                                    <button type="reset" class="signup" style="margin-top: 10px;">RESET</a></button>
+                                </p>
+                            </form>
+                            <p class="content-item">
+                              <a href="index.php?quanly=dangnhap"><button type="button" class="signup1">SIGN IN</button></a>
+                              <a href="index.php?quanly=datlai" ><button type="button" style="margin-top: 5px;" class="signup1">CHANGE PASSWORD</button></a>
+                            </p>                              
                         </div>
                     </div>
-                    <div class="signup-form ">
-                        <div class="wrapper-2">
-                        <div style="text-align:center;">
-                                <a href="/CT428_LTWeb/index.php">
-                                    <img src="./img/logo.png" style="width:50px; border-radius: 30px;"></img>
-                                </a>
-                        </div>
-                            <div class="form-title" style="text-align:center;">
-                                SIGN UP NOW !
-                            </div>
-                            <div class="form">
-                                <form action="./signupp.php" method="POST">
-                                    <p class="content-item">
-                                        <label for="username"><a class="form-label lbs">Username: </a>
-                                            <input type="text" id="username" name="username"  placeholder="At least 8 chars"  required>
-                                        </label>
-                                    </p>
-
-                                    <p class="content-item">
-                                        <label for="password"> <a class="form-label lbs">Password:</a>
-                                            <input type="password" id="password" name="password" placeholder="*****" name="password" required>
-                                        </label>
-                                    </p>
-                                    
-                                    <p class="content-item">
-                                        <label for="confirmpassword"><a class="form-label lbs">Confirm password:</a>
-                                            <input type="password" placeholder="*****" id="confirmpassword" name="confirmpassword" required>
-                                        </label>
-                                    </p>
-
-                                    <p class="content-item">
-                                        <label for="fullname"><a class="form-label lbs">Fullname: </a>
-                                            <input type="text" placeholder="Enter fullname" id="fullname" name="fullname"  required>
-                                        </label>
-                                    </p>
-
-                                    <p class="content-item">
-                                        <label for="phonenumber"><a class="form-label lbs">Phone number: </a>
-                                            <input type="text" placeholder="Enter your phone number" id="phonenumber" name="phonenumber"  required>
-                                        </label>
-                                    </p>
-
-                                    <p class="content-item">
-                                        <label for="email"><a class="form-label lbs">Email: </a>
-                                            <input type="text"  placeholder="btmy@loremipsum.com" id="email" name="email" required>
-                                        </label>
-                                    </p>
-
-                                    <p class="content-item" style="padding-top: 5px;">
-                                        <label id="gender"> <a class="form-label lbs">Gender:</a>
-                                            <input type= "radio" id="gender" name="gender" value=1><a class="lbs">Male</a>
-                                            <input  type= "radio" id="gender" name="gender" value=0><a class="lbs">Female</a>
-                                        </label>
-                                    </p>
-
-                                    <p class="content-item" style="padding-top: 10px;">
-                                        <label for="ngaysinh"> <a class="form-label lbs">Birth of date: </a>
-                                            <input type="date" id="ngaysinh" name="ngaysinh" style="border:none" required>
-                                        </label>
-                                    </p>
-
-                                    <p class="content-item" style="padding-top: 10px;">
-                                        <label for="diachi"><a class="form-label lbs">Address: </a>
-                                            <input type="text" placeholder="Enter your address" id="diachi" name="diachi"  required>
-                                        </label>
-                                    </p>
-                                    <p class="content-item" style="padding-top: 10px;">
-                                        <button type="submit" name="signupp" class="signup" style="margin-top: 10px;">SIGN UP </button>
-                                        <button type="reset" class="signup" style="margin-top: 10px;">RESET</a></button>
-                                    </p>
-                                    
-                                </form>
-                                <p class="content-item" style="margin-top:-40px">
-                                  <a href="index.php?quanly=dangnhap"><button type="button" class="signup">SIGN IN</button></a>
-                                  <a href="index.php?quanly=datlai" ><button type="button" class="signup">CHANGE</button></a>
-                                </p>                              
-                            </div>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>

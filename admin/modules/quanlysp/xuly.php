@@ -2,6 +2,7 @@
     include("../../config/connect.php");
     $danhmuc = $_POST['danhmuc'];
     $tensp = $_POST['tensp'];
+    $masp = $_POST['masp'];
     $giasp = $_POST['giasp'];
     $soluong = $_POST['soluong'];
 // xu ly hinh anh
@@ -9,11 +10,10 @@
     $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
     $hinhanh = time().'_'.$hinhanh; #them duoc nhieu anh trung nhau
     $mota = $_POST['mota'];
-    $chitiet = $_POST['chitiet'];
     $trangthai = $_POST['trangthai'];
 
     if(isset($_POST['themsanpham'])) {
-        $sql_them = "INSERT INTO tbl_products(id_danhmuc, tensp, giasp, soluong, hinhanh, mota, chitiet, trangthai) VALUE('".$danhmuc."', '".$tensp."', '".$giasp."', '".$soluong."', '".$hinhanh."', '".$mota."', '".$chitiet."', '".$trangthai."')";
+        $sql_them = "INSERT INTO tbl_products(id_danhmuc, tensp, masp, giasp, soluong, hinhanh, mota, trangthai) VALUE('".$danhmuc."', '".$tensp."', '".$masp."', '".$giasp."', '".$soluong."', '".$hinhanh."', '".$mota."', '".$trangthai."')";
         //ket noi db, them values vao bang
         mysqli_query($conn, $sql_them);
         move_uploaded_file($hinhanh_tmp, 'uploads/'.$hinhanh);
@@ -23,7 +23,7 @@
     elseif(isset($_POST['suasanpham'])) {
         if($hinhanh != '') {
             move_uploaded_file($hinhanh_tmp, 'uploads/'.$hinhanh);
-            $sql_edit = "UPDATE tbl_products SET id_danhmuc='".$danhmuc."', tensp='".$tensp."', giasp='".$giasp."', soluong='".$soluong."', hinhanh='".$hinhanh."', mota='".$mota."', chitiet='".$chitiet."', trangthai='".$trangthai."' WHERE id_sanpham='$_GET[id_sanpham]'";
+            $sql_edit = "UPDATE tbl_products SET id_danhmuc='".$danhmuc."', tensp='".$tensp."', masp='".$masp."', giasp='".$giasp."', soluong='".$soluong."', hinhanh='".$hinhanh."', mota='".$mota."', trangthai='".$trangthai."' WHERE id_sanpham='$_GET[id_sanpham]'";
         
             $sql = "SELECT * FROM tbl_products WHERE id_sanpham='$_GET[id_sanpham]' LIMIT 1";
             $query = mysqli_query($conn, $sql);
@@ -32,7 +32,7 @@
             }
         }
         else {
-            $sql_edit = "UPDATE tbl_products SET id_danhmuc='".$danhmuc."',tensp='".$tensp."', giasp='".$giasp."', soluong='".$soluong."', hinhanh='".$hinhanh."', mota='".$mota."', chitiet='".$chitiet."', trangthai='".$trangthai."' WHERE id_sanpham='$_GET[id_sanpham]'";
+            $sql_edit = "UPDATE tbl_products SET id_danhmuc='".$danhmuc."',tensp='".$tensp."', masp='".$masp."', giasp='".$giasp."', soluong='".$soluong."', hinhanh='".$hinhanh."', mota='".$mota."', trangthai='".$trangthai."' WHERE id_sanpham='$_GET[id_sanpham]'";
         }
         //ket noi db, edit values vao bang
         mysqli_query($conn, $sql_edit);
