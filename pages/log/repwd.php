@@ -1,3 +1,6 @@
+<head>
+    <title>Đổi mật khẩu</title>
+</head>
 <?php
     if(isset($_POST['change']) && isset($_POST['change'])){
         $username = $_POST['username'];
@@ -7,8 +10,11 @@
         $sql_pwd = "SELECT * FROM user WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
         $row = mysqli_query($conn,$sql_pwd);
         $count = mysqli_num_rows($row);
-
-        if($count>0){
+        if(strlen($newpassword) < 8){
+          $fail3='<script>alert("Mật khẩu không hợp lệ ( ít hơn 8 ký tự) !!!")</script>';
+          $check3 = 1;
+        }
+        elseif($count>0){
           $sql_doipass = "UPDATE user SET Password = ? WHERE Username = ?";
           $stmt = $conn->prepare($sql_doipass);
           $stmt->execute([$newpassword,$username]);
@@ -283,6 +289,11 @@
                   <label> <a class="form-label lbs">New Password:</a>
                     <input type="password" id="newpassword" placeholder="*****" name="newpassword" required>
                   </label>
+                  <?php
+                    if(isset($_POST['change']) && $check3==1){
+                      echo $fail3;
+                    }    
+                  ?>
                 </p>
 
                 <p class="content-item" style="padding-top: 10px;">

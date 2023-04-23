@@ -1,3 +1,6 @@
+<head>
+    <title>Đăng Ký</title>
+</head>
 <style>
 .content1 {
   width: 1280px;
@@ -251,10 +254,10 @@ input::placeholder {
           die("Connection Failed : ". $conn->connect_error);
       } else {
           if(strlen($sdt) != 10){
-            $fail4='<script>alert("Số điện thoại nhập không hợp lệ")</script>';
+            $fail4="Số điện thoại nhập không hợp lệ";
             $check4 = 1;
           }elseif($kqne < 473353920){
-            $fail5='<script>alert("Hãy trở lại khi đã 16 tuổi nhé !!!")</script>';
+            $fail5="Phải đủ 15 tuổi !!!";
             $check5=1;
           }
           else{
@@ -331,15 +334,15 @@ input::placeholder {
                                     </p>
 
                                     <p class="content-item" style="padding-top: 10px;">
-                                        <label for="ngaysinh"> <a class="form-label lbs">Birth of date: </a>
+                                        <label for="ngaysinh"> <a class="form-label lbs">Date of Birth: </a>
                                             <input type="date" id="ngaysinh" name="ngaysinh" style="border:none" required>
-                                            <?php
+                                        </label>
+                                        <?php
                                               if(isset($_POST['signup']) && $check5==1){
-                                                echo $fail5;
+                                                echo "</br>".$fail5;
                                               }
                                                 
-                                            ?>
-                                        </label>
+                                        ?>
                                     </p>
 
                                     <p class="content-item" style="padding-top: 10px;">
