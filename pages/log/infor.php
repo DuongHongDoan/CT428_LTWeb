@@ -253,11 +253,11 @@ input::placeholder {
       $check6=0;
       $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
       // Database connection
-      $conn = new mysqli('localhost','root','','ct428_ltweb');
-      if($conn->connect_error){
-          echo "$conn->connect_error";
-          die("Connection Failed : ". $conn->connect_error);
-      } else {
+      // $conn = new mysqli('localhost','root','','ct428_ltweb');
+      // if($conn->connect_error){
+      //     echo "$conn->connect_error";
+      //     die("Connection Failed : ". $conn->connect_error);
+      // } else {
           if(strlen($sdt) != 10){
             $fail4="Số điện thoại nhập không hợp lệ";
             $check4 = 1;
@@ -285,7 +285,7 @@ input::placeholder {
               // $conn->close();
            }
       }
-  }
+  // }
 ?>
     <!-- <header>
     </header> -->

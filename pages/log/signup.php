@@ -247,11 +247,11 @@ input::placeholder {
       $check4=0;
       $check5=0;
       // Database connection
-      $conn = new mysqli('localhost','root','','ct428_ltweb');
-      if($conn->connect_error){
-          echo "$conn->connect_error";
-          die("Connection Failed : ". $conn->connect_error);
-      } else {
+      // $conn = new mysqli('localhost','root','','ct428_ltweb');
+      // if($conn->connect_error){
+      //     echo "$conn->connect_error";
+      //     die("Connection Failed : ". $conn->connect_error);
+      // } else {
           $sql = "SELECT * FROM account WHERE Username='$username'";
           $kq = $conn->query($sql);
           if(mysqli_num_rows($kq)>0){
@@ -293,7 +293,7 @@ input::placeholder {
               $conn->close();
            }
       }
-  }
+  // }
 ?>
     <!-- <header>
     </header> -->
