@@ -132,7 +132,5 @@ if (isset($_POST['muangay'])) {
         }
     }
     $url = '../../index.php?quanly=thanhtoan';
-    echo '<script>';
-    echo 'window.location.href = "' . $url . '";';
-    echo '</script>';
+    echo '<script>window.location.href = "' . $url . '";</script>';
 }
