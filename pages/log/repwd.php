@@ -9,7 +9,7 @@ if (isset($_POST['change']) && isset($_POST['change'])) {
   $newpassword = $_POST['newpassword'];
 
   $conn = new mysqli('localhost', 'root', '', 'ct428_ltweb');
-  $sql_pwd = "SELECT * FROM user WHERE Username='" . $username . "' AND Password='" . $oldpassword . "' LIMIT 1 ";
+  $sql_pwd = "SELECT * FROM account WHERE Username='" . $username . "' AND Password='" . md5($oldpassword) . "' LIMIT 1 ";
   $row = mysqli_query($conn, $sql_pwd);
   $count = mysqli_num_rows($row);
   if (strlen($newpassword) < 8) {
