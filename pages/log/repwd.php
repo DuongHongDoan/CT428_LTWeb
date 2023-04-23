@@ -17,7 +17,7 @@
         elseif($count>0){
           $sql_doipass = "UPDATE user SET Password = ? WHERE Username = ?";
           $stmt = $conn->prepare($sql_doipass);
-          $stmt->execute([$newpassword,$username]);
+          $stmt->execute([$newpassword2,$username]);
           echo '<script>alert("Thay đổi mật khẩu thành công")</script>';
         }else{
             echo '<script>alert("Tài khoản không tồn tại hoặc sai mật khẩu hay username")</script>';
