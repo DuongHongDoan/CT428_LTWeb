@@ -247,6 +247,8 @@ input::placeholder {
       $check3=0;
       $check4=0;
       $check5=0;
+      $check6=0;
+      $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
       // Database connection
       $conn = new mysqli('localhost','root','','ct428_ltweb');
       if($conn->connect_error){
@@ -256,6 +258,10 @@ input::placeholder {
           if(strlen($sdt) != 10){
             $fail4="Số điện thoại nhập không hợp lệ";
             $check4 = 1;
+          }
+          elseif(!preg_match($regex, $mail)) {
+            $fail6="Email không đúng định dạng!";
+            $check6=1;
           }elseif($kqne < 473353920){
             $fail5="Phải đủ 15 tuổi !!!";
             $check5=1;
@@ -324,6 +330,12 @@ input::placeholder {
                                         <label for="email"><a class="form-label lbs">Email: </a>
                                             <input type="text"  placeholder="btmy@loremipsum.com" id="email" name="email" required>
                                         </label>
+                                        <?php
+                                              if(isset($_POST['signup']) && $check6==1){
+                                                echo $fail6;
+                                              }
+                                                
+                                        ?>
                                     </p>
 
                                     <p class="content-item" style="padding-top: 5px;">
