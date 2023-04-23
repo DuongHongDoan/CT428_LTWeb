@@ -131,7 +131,7 @@ if (isset($_POST['muangay'])) {
             $_SESSION['cart'] = $new_product;
         }
     }
-    $url = '../../index.php?quanly=giohang';
+    $url = '../../index.php?quanly=thanhtoan';
     echo '<script>';
     echo 'window.location.href = "' . $url . '";';
     echo '</script>';
