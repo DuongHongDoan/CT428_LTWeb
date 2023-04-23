@@ -1,4 +1,3 @@
-<!-- <p>Chi tiết sản phẩm</p> -->
 <style>
     .card-text {
         font-size: 1rem;

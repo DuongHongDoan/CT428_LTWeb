@@ -233,159 +233,141 @@ input::placeholder {
 </style>
 <?php
   if(isset($_POST['signup'])){
-      // $username = $_POST['username'];
-      // $password = $_POST['password'];
-      // $confirmpwd = $_POST['confirmpassword'];
-      $hoten = $_POST['fullname'];
-      $gioitinh = $_POST['gender'];
-      $ngaysinh = $_POST['ngaysinh'];
-      $mail = $_POST['email'];
-      $sdt = $_POST['phonenumber'];
-      $dchi = $_POST['diachi'];
-      $date=strtotime(date('Y-m-d'));
-      $date1 = strtotime($ngaysinh);
-      $kqne =  $date - $date1;                                     
-      $check1=0;
-      $check2=0;
-      $check3=0;
-      $check4=0;
-      $check5=0;
-      $check6=0;
-      $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
-      // Database connection
-      // $conn = new mysqli('localhost','root','','ct428_ltweb');
-      // if($conn->connect_error){
-      //     echo "$conn->connect_error";
-      //     die("Connection Failed : ". $conn->connect_error);
-      // } else {
-          if(strlen($sdt) != 10){
-            $fail4="Số điện thoại nhập không hợp lệ";
-            $check4 = 1;
-          }
-          elseif(!preg_match($regex, $mail)) {
-            $fail6="Email không đúng định dạng!";
-            $check6=1;
-          }elseif($kqne < 473353920){
-            $fail5="Phải đủ 15 tuổi !!!";
-            $check5=1;
-          }
-          else{
-              $stmt2 = $conn->prepare("insert into user(tennguoidung,gioitinh,ngaysinh,email,sdt,diachi) value(?, ?, ?, ?, ?, ?)");
-              $stmt2->bind_param("sissss",$hoten,$gioitinh,$ngaysinh,$mail,$sdt,$dchi);
-              $execval2 = $stmt2->execute();
-              $stmt2->close();
-              //echo $execval;
-              echo '<script>alert("Nhập thông tin thành công !")</script>';
-              
-              // $sql_dangky = "SELECT * FROM account WHERE Username='".$username."' LIMIT 1 ";
-              // $row = mysqli_query($conn,$sql_dangky);
-              // $row_data = mysqli_fetch_array($row);
-              //   $_SESSION['id_khachhang'] = $row_data['IDTaikhoan'];
-              echo '<script>location.href = "index.php?quanly=dangky";</script>';
-              // $conn->close();
-           }
-      }
-  // }
+    $hoten = $_POST['fullname'];
+    $gioitinh = $_POST['gender'];
+    $ngaysinh = $_POST['ngaysinh'];
+    $mail = $_POST['email'];
+    $sdt = $_POST['phonenumber'];
+    $dchi = $_POST['diachi'];
+    $date=strtotime(date('Y-m-d'));
+    $date1 = strtotime($ngaysinh);
+    $kqne =  $date - $date1;                                     
+    $check1=0;
+    $check2=0;
+    $check3=0;
+    $check4=0;
+    $check5=0;
+    $check6=0;
+    $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
+      
+    if(strlen($sdt) != 10){
+      $fail4="Số điện thoại nhập không hợp lệ";
+      $check4 = 1;
+    }
+    elseif(!preg_match($regex, $mail)) {
+      $fail6="Email không đúng định dạng!";
+      $check6=1;
+    }elseif($kqne < 473353920){
+      $fail5="Phải đủ 15 tuổi !!!";
+      $check5=1;
+    }
+    else{
+      $stmt2 = $conn->prepare("insert into user(tennguoidung,gioitinh,ngaysinh,email,sdt,diachi) value(?, ?, ?, ?, ?, ?)");
+      $stmt2->bind_param("sissss",$hoten,$gioitinh,$ngaysinh,$mail,$sdt,$dchi);
+      $execval2 = $stmt2->execute();
+      $stmt2->close();
+      echo '<script>alert("Nhập thông tin thành công !")</script>';
+      echo '<script>location.href = "index.php?quanly=dangky";</script>';
+    }
+  }
 ?>
-    <!-- <header>
-    </header> -->
-    <main>
-        <div class="content-wrapper"> 
-            <div class="content1">
-                <div class="signup-wrapper shadow-box">
-                    <div class="company-details ">
-                        <div class="shadow"></div>
-                        <div class="wrapper-1">
-                            <div class="logo"></div>
-                            <div class="slogan"></div>
-                        </div>
-                    </div>
-                    <div class="signup-form ">
-                        <div class="wrapper-2">
-                        <div style="text-align:center;">
-                                <a href="/CT428_LTWeb/index.php">
-                                    <img src="./img/logo.png" style="width:50px; border-radius: 30px;"></img>
-                                </a>
-                        </div>
-                            <div class="form-title" style="text-align:center;">
-                                ENTER YOUR INFORMATION !
-                            </div>
-                            <div class="form">
-                                <form action="" method="POST">
-                                    <p class="content-item">
-                                        <label for="fullname"><a class="form-label lbs">Fullname: </a>
-                                            <input type="text" placeholder="Enter fullname" id="fullname" name="fullname"  required>
-                                        </label>
-                                    </p>
+<main>
+  <div class="content-wrapper"> 
+      <div class="content1">
+          <div class="signup-wrapper shadow-box">
+              <div class="company-details ">
+                  <div class="shadow"></div>
+                  <div class="wrapper-1">
+                      <div class="logo"></div>
+                      <div class="slogan"></div>
+                  </div>
+              </div>
+              <div class="signup-form ">
+                  <div class="wrapper-2">
+                  <div style="text-align:center;">
+                          <a href="/CT428_LTWeb/index.php">
+                              <img src="./img/logo.png" style="width:50px; border-radius: 30px;"></img>
+                          </a>
+                  </div>
+                      <div class="form-title" style="text-align:center;">
+                          ENTER YOUR INFORMATION !
+                      </div>
+                      <div class="form">
+                          <form action="" method="POST">
+                              <p class="content-item">
+                                  <label for="fullname"><a class="form-label lbs">Fullname: </a>
+                                      <input type="text" placeholder="Enter fullname" id="fullname" name="fullname"  required>
+                                  </label>
+                              </p>
 
-                                    <p class="content-item">
-                                        <label for="phonenumber"><a class="form-label lbs">Phone number: </a>
-                                            <input type="text" placeholder="Enter your phone number" id="phonenumber" name="phonenumber"  required>
-                                            <p class="info">
-                                            <?php
-                                              if(isset($_POST['signup']) && $check4==1){
-                                                echo $fail4;
-                                              }  
-                                            ?>
-                                            </p>
-                                        </label>
-                                    </p>
+                              <p class="content-item">
+                                  <label for="phonenumber"><a class="form-label lbs">Phone number: </a>
+                                      <input type="text" placeholder="Enter your phone number" id="phonenumber" name="phonenumber"  required>
+                                      <p class="info">
+                                      <?php
+                                        if(isset($_POST['signup']) && $check4==1){
+                                          echo $fail4;
+                                        }  
+                                      ?>
+                                      </p>
+                                  </label>
+                              </p>
 
-                                    <p class="content-item">
-                                        <label for="email"><a class="form-label lbs">Email: </a>
-                                            <input type="text"  placeholder="btmy@loremipsum.com" id="email" name="email" required>
-                                        </label>
-                                        <p class="info">
-                                        <?php
-                                              if(isset($_POST['signup']) && $check6==1){
-                                                echo $fail6;
-                                              }
-                                                
-                                        ?>
-                                        </p>
-                                    </p>
+                              <p class="content-item">
+                                  <label for="email"><a class="form-label lbs">Email: </a>
+                                      <input type="text"  placeholder="btmy@loremipsum.com" id="email" name="email" required>
+                                  </label>
+                                  <p class="info">
+                                  <?php
+                                        if(isset($_POST['signup']) && $check6==1){
+                                          echo $fail6;
+                                        }
+                                          
+                                  ?>
+                                  </p>
+                              </p>
 
-                                    <p class="content-item" style="padding-top: 5px;">
-                                        <label id="gender"> <a class="form-label lbs">Gender:</a>
-                                            <input type= "radio" id="gender" name="gender" value=1><a class="lbs">Male</a>
-                                            <input  type= "radio" id="gender" name="gender" value=0><a class="lbs">Female</a>
-                                        </label>
-                                    </p>
+                              <p class="content-item" style="padding-top: 5px;">
+                                  <label id="gender"> <a class="form-label lbs">Gender:</a>
+                                      <input type= "radio" id="gender" name="gender" value=1><a class="lbs">Male</a>
+                                      <input  type= "radio" id="gender" name="gender" value=0><a class="lbs">Female</a>
+                                  </label>
+                              </p>
 
-                                    <p class="content-item" style="padding-top: 10px;">
-                                        <label for="ngaysinh"> <a class="form-label lbs">Date of Birth: </a>
-                                            <input type="date" id="ngaysinh" name="ngaysinh" style="border:none" required>
-                                        </label>
-                                        <p class="info">
-                                        <?php
-                                              if(isset($_POST['signup']) && $check5==1){
-                                                echo "</br>".$fail5;
-                                              }
-                                                
-                                        ?>
-                                        </p>
-                                    </p>
+                              <p class="content-item" style="padding-top: 10px;">
+                                  <label for="ngaysinh"> <a class="form-label lbs">Date of Birth: </a>
+                                      <input type="date" id="ngaysinh" name="ngaysinh" style="border:none" required>
+                                  </label>
+                                  <p class="info">
+                                  <?php
+                                        if(isset($_POST['signup']) && $check5==1){
+                                          echo "</br>".$fail5;
+                                        }
+                                          
+                                  ?>
+                                  </p>
+                              </p>
 
-                                    <p class="content-item" style="padding-top: 10px;">
-                                        <label for="diachi"><a class="form-label lbs">Address: </a>
-                                            <input type="text" placeholder="Enter your address" id="diachi" name="diachi"  required>
-                                        </label>
-                                    </p>
-                                    <p class="content-item" style="padding-top: 10px;">
-                                        <button type="submit" name="signup" class="signup" style="margin-top: 10px;">ENTER </button>
-                                        <button type="reset" class="signup" style="margin-top: 10px;">RESET</a></button>
-                                    </p>
-                                    
-                                </form>
-                                <p class="content-item">
-                                  <a href="index.php?quanly=dangnhap"><button type="button" class="signup1">SIGN IN</button></a>
-                                  <a href="index.php?quanly=datlai"><button type="button" class="signup1" style="margin-top: 5px;">CHANGE PASSWORD</button></a>
-                                </p>                              
-                            </div>
-                        </div>
-                    </div>
+                              <p class="content-item" style="padding-top: 10px;">
+                                  <label for="diachi"><a class="form-label lbs">Address: </a>
+                                      <input type="text" placeholder="Enter your address" id="diachi" name="diachi"  required>
+                                  </label>
+                              </p>
+                              <p class="content-item" style="padding-top: 10px;">
+                                  <button type="submit" name="signup" class="signup" style="margin-top: 10px;">ENTER </button>
+                                  <button type="reset" class="signup" style="margin-top: 10px;">RESET</a></button>
+                              </p>
+                              
+                          </form>
+                          <p class="content-item">
+                            <a href="index.php?quanly=dangnhap"><button type="button" class="signup1">SIGN IN</button></a>
+                            <a href="index.php?quanly=datlai"><button type="button" class="signup1" style="margin-top: 5px;">CHANGE PASSWORD</button></a>
+                          </p>                              
+                      </div>
+                  </div>
+              </div>
 
-                </div>
-            </div>
-        </div>
-    </main>
+          </div>
+      </div>
+  </div>
+</main>
