@@ -5,9 +5,9 @@
 $check3 = 0;
 if (isset($_POST['change']) && isset($_POST['change'])) {
   $username = $_POST['username'];
-  $oldpassword = md5($_POST['oldpassword']);
-  $newpassword = $_POST['newpassword'];
-
+  $oldpassword = $_POST['oldpassword'];
+  $newpassword =$_POST['newpassword'];
+  $newpassword1= md5($newpassword);
   // $conn = new mysqli('localhost', 'root', '', 'ct428_ltweb');
   $sql_pwd = "SELECT * FROM account WHERE Username='" . $username . "' AND Password='" . md5($oldpassword) . "' LIMIT 1 ";
   $row = mysqli_query($conn, $sql_pwd);
@@ -16,10 +16,10 @@ if (isset($_POST['change']) && isset($_POST['change'])) {
     $fail3 = '<script>alert("Mật khẩu không hợp lệ ( ít hơn 8 ký tự) !!!")</script>';
     $check3 = 1;
   } elseif ($count > 0) {
-    $sql_doipass = "UPDATE account SET Password = ? WHERE Username = ?";
-    $stmt = $conn->prepare($sql_doipass);
-    $stmt->execute([md5($newpassword), $username]);
-    echo '<script>alert("Thay đổi mật khẩu thành công")</script>';
+    $sql_doipass = "UPDATE account SET Password = '$newpassword1' WHERE Username = '$username'";
+    $sql_update_pass = mysqli_query($conn,$sql_doipass);
+    if ($sql_update_pass) {
+    echo '<script>alert("Thay đổi mật khẩu thành công")</script>';}
   } else {
     echo '<script>alert("Tài khoản không tồn tại hoặc sai mật khẩu hay username")</script>';
   }
