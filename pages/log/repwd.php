@@ -16,6 +16,7 @@
           $check3 = 1;
         }
         elseif($count>0){
+          $newpasswrod2 = md5($newpassword);
           $sql_doipass = "UPDATE account SET Password = ? WHERE Username = ?";
           $stmt = $conn->prepare($sql_doipass);
           $stmt->execute([$newpassword,$username]);
