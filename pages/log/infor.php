@@ -335,12 +335,14 @@ input::placeholder {
                                         <label for="email"><a class="form-label lbs">Email: </a>
                                             <input type="text"  placeholder="btmy@loremipsum.com" id="email" name="email" required>
                                         </label>
+                                        <p class="info">
                                         <?php
                                               if(isset($_POST['signup']) && $check6==1){
                                                 echo $fail6;
                                               }
                                                 
                                         ?>
+                                        </p>
                                     </p>
 
                                     <p class="content-item" style="padding-top: 5px;">

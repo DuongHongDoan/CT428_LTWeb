@@ -222,7 +222,10 @@ input::placeholder {
     text-transform: capitalize;
     border-radius: 5px;
   }
-
+.info {
+  color: red;
+  font-size: small;
+}
 </style>
 <?php
   if(isset($_POST['signup'])){
@@ -320,34 +323,40 @@ input::placeholder {
                                     <p class="content-item">
                                         <label for="username"><a class="form-label lbs">Username: </a>
                                             <input type="text" id="username" name="username"  placeholder="At least 8 chars"  required>
+                                            <p class="info">
                                             <?php
                                               if(isset($_POST['signup']) && $check1==1){
                                                 echo $fail1;
                                               } 
                                             ?>
+                                            </p>
                                         </label>
                                     </p>
 
                                     <p class="content-item">
                                         <label for="password"> <a class="form-label lbs">Password:</a>
                                             <input type="password" id="password" name="password" placeholder="*****" name="password" required>
+                                            <p class="info">
                                             <?php
                                               if(isset($_POST['signup']) && $check3==1){
                                                 echo $fail3;
                                               }
                                                 
                                             ?>
+                                            </p>
                                         </label>
                                     </p>
                                     
                                     <p class="content-item">
                                         <label for="confirmpassword"><a class="form-label lbs">Confirm password:</a>
                                             <input type="password" placeholder="*****" id="confirmpassword" name="confirmpassword" required>
+                                            <p class="info">
                                             <?php
                                               if(isset($_POST['signup']) && $check2==1){
                                                 echo $fail2;
                                               }  
                                             ?>
+                                            </p>
                                         </label>
                                     </p>
 
