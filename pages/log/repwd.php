@@ -2,11 +2,12 @@
   <title>Đổi mật khẩu</title>
 </head>
 <?php
+$check3 = 0;
 if (isset($_POST['change']) && isset($_POST['change'])) {
   $username = $_POST['username'];
   $oldpassword = $_POST['oldpassword'];
   $newpassword = $_POST['newpassword'];
-  $check3=0;
+
   $conn = new mysqli('localhost', 'root', '', 'ct428_ltweb');
   $sql_pwd = "SELECT * FROM user WHERE Username='" . $username . "' AND Password='" . $oldpassword . "' LIMIT 1 ";
   $row = mysqli_query($conn, $sql_pwd);
@@ -15,7 +16,6 @@ if (isset($_POST['change']) && isset($_POST['change'])) {
     $fail3 = '<script>alert("Mật khẩu không hợp lệ ( ít hơn 8 ký tự) !!!")</script>';
     $check3 = 1;
   } elseif ($count > 0) {
-    $newpasswrod2 = md5($newpassword);
     $sql_doipass = "UPDATE account SET Password = ? WHERE Username = ?";
     $stmt = $conn->prepare($sql_doipass);
     $stmt->execute([md5($newpassword), $username]);
