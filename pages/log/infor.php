@@ -225,7 +225,10 @@ input::placeholder {
     text-transform: capitalize;
     border-radius: 5px;
   }
-
+.info {
+  color: red;
+  font-size: small;
+}
 
 </style>
 <?php
@@ -318,11 +321,13 @@ input::placeholder {
                                     <p class="content-item">
                                         <label for="phonenumber"><a class="form-label lbs">Phone number: </a>
                                             <input type="text" placeholder="Enter your phone number" id="phonenumber" name="phonenumber"  required>
+                                            <p class="info">
                                             <?php
                                               if(isset($_POST['signup']) && $check4==1){
                                                 echo $fail4;
                                               }  
                                             ?>
+                                            </p>
                                         </label>
                                     </p>
 
@@ -349,12 +354,14 @@ input::placeholder {
                                         <label for="ngaysinh"> <a class="form-label lbs">Date of Birth: </a>
                                             <input type="date" id="ngaysinh" name="ngaysinh" style="border:none" required>
                                         </label>
+                                        <p class="info">
                                         <?php
                                               if(isset($_POST['signup']) && $check5==1){
                                                 echo "</br>".$fail5;
                                               }
                                                 
                                         ?>
+                                        </p>
                                     </p>
 
                                     <p class="content-item" style="padding-top: 10px;">

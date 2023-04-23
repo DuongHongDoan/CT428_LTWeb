@@ -2,8 +2,8 @@
     <title>Hóa đơn</title>
 </head>
 <h1 style="text-align: center;">Đơn Hàng</h1>
-<table style="width:100%;text-align: center;border-collapse: collapse;" border="1" class="table table-hover">
-    <thead class="table-info">
+<table style="width:100%;text-align: center;border-collapse: collapse;" border="1" class="table table-bordered table-hover table-responsive">
+    <thead class="table-success">
         <tr>
             <th>
                 Mã Đơn hàng
@@ -39,9 +39,9 @@
     $row_get_vanchuyen = mysqli_fetch_array($sql_get_vanchuyen);
     $count1 = mysqli_num_rows($sql_get_vanchuyen);
 
-    for ($x = 1; $x <= $count; $x++) {
 
-        $count = mysqli_num_rows($sql_get_donhang);
+    $count = mysqli_num_rows($sql_get_donhang);
+    for ($x = 1; $x <= $count; $x++) {
         if ($count > 0) {
             $row_get_donhang = mysqli_fetch_array($sql_get_donhang);
             $madh = $row_get_donhang['ma_donhang'];
@@ -63,7 +63,7 @@
             $pt = '';
         }
     ?>
-        <tbody class="table-light">
+        <tbody class="">
             <tr>
                 <td>
                     <?php echo $madh; ?>
