@@ -5,7 +5,7 @@
     $check3=0;
     if(isset($_POST['change']) && isset($_POST['change'])){
         $username = $_POST['username'];
-        $oldpassword = $_POST['oldpassword'];
+        $oldpassword = md5($_POST['oldpassword']);
         $newpassword = $_POST['newpassword'];
         $conn = new mysqli('localhost','root','','ct428_ltweb');
         $sql_pwd = "SELECT * FROM account WHERE Username='".$username."' AND Password='".$oldpassword."' LIMIT 1 ";
@@ -16,7 +16,7 @@
           $check3 = 1;
         }
         elseif($count>0){
-          $sql_doipass = "UPDATE user SET Password = ? WHERE Username = ?";
+          $sql_doipass = "UPDATE account SET Password = ? WHERE Username = ?";
           $stmt = $conn->prepare($sql_doipass);
           $stmt->execute([$newpassword,$username]);
           echo '<script>alert("Thay đổi mật khẩu thành công")</script>';
